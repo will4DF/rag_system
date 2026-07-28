@@ -1,0 +1,141 @@
+---
+title: Field Reference: Test Score (Evaluation) Fields, Part 2
+url: https://help.element451.com/en/articles/15902042-field-reference-test-score-evaluation-fields-part-2
+collection: Data Management
+---
+
+Standard test score and evaluation fields (part 2 of 2) with slugs, types, purposes, and example values.
+
+# Evaluations B (Test Scores 2 of 2) (124 fields)
+
+Note: requires "user-evaluations-root" when using an inline template. For some scores, Element451 will automatically return the super score of the test type that was requested. Titles ending in \* are repeater (per-test) variants.
+
+|  |  |  |  |  |
+| --- | --- | --- | --- | --- |
+| **Field Name** | **Slug** | **Type** | **What It Does** | **Example** |
+| Test (HSE) - Math Score - Unofficial | `user-unofficial-tests-hse-math-score` | integer | Test (HSE) - Math Score - Unofficial. Part of a test score (evaluation) record on the contact. | 165 |
+| Test (HSE) - Name - Official | `user-official-tests-hse-name` | string | Test (HSE) - Name - Official. Part of a test score (evaluation) record on the contact. | 165 |
+| Test (HSE) - Name - Unofficial | `user-unofficial-tests-hse-name` | string | Test (HSE) - Name - Unofficial. Part of a test score (evaluation) record on the contact. | 165 |
+| Test (HSE) - Reading Score - Official | `user-official-tests-hse-reading-score` | integer | Test (HSE) - Reading Score - Official. Part of a test score (evaluation) record on the contact. | 165 |
+| Test (HSE) - Reading Score - Unofficial | `user-unofficial-tests-hse-reading-score` | integer | Test (HSE) - Reading Score - Unofficial. Part of a test score (evaluation) record on the contact. | 165 |
+| Test (HSE) - Science Score - Official | `user-official-tests-hse-science-score` | integer | Test (HSE) - Science Score - Official. Part of a test score (evaluation) record on the contact. | 165 |
+| Test (HSE) - Science Score - Unofficial | `user-unofficial-tests-hse-science-score` | integer | Test (HSE) - Science Score - Unofficial. Part of a test score (evaluation) record on the contact. | 165 |
+| Test (HSE) - Social Score - Official | `user-official-tests-hse-social-score` | integer | Test (HSE) - Social Score - Official. Part of a test score (evaluation) record on the contact. | 165 |
+| Test (HSE) - Social Score - Unofficial | `user-unofficial-tests-hse-social-score` | integer | Test (HSE) - Social Score - Unofficial. Part of a test score (evaluation) record on the contact. | 165 |
+| Test (HSE) - Writing Score - Official | `user-official-tests-hse-writing-score` | integer | Test (HSE) - Writing Score - Official. Part of a test score (evaluation) record on the contact. | 165 |
+| Test (HSE) - Writing Score - Unofficial | `user-unofficial-tests-hse-writing-score` | integer | Test (HSE) - Writing Score - Unofficial. Part of a test score (evaluation) record on the contact. | 165 |
+| Test (IELTS) - Composite Score - Official | `user-official-tests-ielts-composite-score` | integer | Test (IELTS) - Composite Score - Official. Part of a test score (evaluation) record on the contact. | 7.0 |
+| Test (IELTS) - Composite Score - Unofficial | `user-unofficial-tests-ielts-composite-score` | integer | Test (IELTS) - Composite Score - Unofficial. Part of a test score (evaluation) record on the contact. | 7.0 |
+| Test (IELTS) - Date - Official | `user-official-tests-ielts-date` | date | Test (IELTS) - Date - Official. Part of a test score (evaluation) record on the contact. | 2026-08-15 |
+| Test (IELTS) - Date - Unofficial | `user-unofficial-tests-ielts-date` | date | Test (IELTS) - Date - Unofficial. Part of a test score (evaluation) record on the contact. | 2026-08-15 |
+| Test (IELTS) - Listening Score - Official | `user-official-tests-ielts-listening-score` | integer | Test (IELTS) - Listening Score - Official. Part of a test score (evaluation) record on the contact. | 7.0 |
+| Test (IELTS) - Listening Score - Unofficial | `user-unofficial-tests-ielts-listening-score` | integer | Test (IELTS) - Listening Score - Unofficial. Part of a test score (evaluation) record on the contact. | 7.0 |
+| Test (IELTS) - Name - Official | `user-official-tests-ielts-name` | string | Test (IELTS) - Name - Official. Part of a test score (evaluation) record on the contact. | 7.0 |
+| Test (IELTS) - Name - Unofficial | `user-unofficial-tests-ielts-name` | string | Test (IELTS) - Name - Unofficial. Part of a test score (evaluation) record on the contact. | 7.0 |
+| Test (IELTS) - Reading Score - Official | `user-official-tests-ielts-reading-score` | integer | Test (IELTS) - Reading Score - Official. Part of a test score (evaluation) record on the contact. | 7.0 |
+| Test (IELTS) - Reading Score - Unofficial | `user-unofficial-tests-ielts-reading-score` | integer | Test (IELTS) - Reading Score - Unofficial. Part of a test score (evaluation) record on the contact. | 7.0 |
+| Test (IELTS) - Speaking Score - Official | `user-official-tests-ielts-speaking-score` | integer | Test (IELTS) - Speaking Score - Official. Part of a test score (evaluation) record on the contact. | 7.0 |
+| Test (IELTS) - Speaking Score - Unofficial | `user-unofficial-tests-ielts-speaking-score` | integer | Test (IELTS) - Speaking Score - Unofficial. Part of a test score (evaluation) record on the contact. | 7.0 |
+| Test (IELTS) - Writing score - Official | `user-official-tests-ielts-writing-scores` | integer | Test (IELTS) - Writing score - Official. Part of a test score (evaluation) record on the contact. | 7.0 |
+| Test (IELTS) - Writing score - Unofficial | `user-unofficial-tests-ielts-writing-scores` | integer | Test (IELTS) - Writing score - Unofficial. Part of a test score (evaluation) record on the contact. | 7.0 |
+| Test (SAT) - Advance mathematics subscore - Official | `user-official-tests-nsat-advance-math-score` | integer | Test (SAT) - Advance mathematics subscore - Official. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Advance mathematics subscore - Unofficial | `user-unofficial-tests-nsat-advance-math-score` | integer | Test (SAT) - Advance mathematics subscore - Unofficial. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Analysis in History/Social Studies Cross-Test Score - Official | `user-official-tests-nsat-his-soc-sci-cross-score` | integer | Test (SAT) - Analysis in History/Social Studies Cross-Test Score - Official. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Analysis in History/Social Studies Cross-Test Score - Unofficial | `user-unofficial-tests-nsat-his-soc-sci-cross-score` | integer | Test (SAT) - Analysis in History/Social Studies Cross-Test Score - Unofficial. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Analysis in Science Cross Test Score - Official | `user-official-tests-nsat-science-score` | integer | Test (SAT) - Analysis in Science Cross Test Score - Official. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Analysis in Science Cross Test Score - Unofficial | `user-unofficial-tests-nsat-science-score` | integer | Test (SAT) - Analysis in Science Cross Test Score - Unofficial. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Command of evidence subscore - Official | `user-official-tests-nsat-command-evidence-score` | integer | Test (SAT) - Command of evidence subscore - Official. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Command of evidence subscore - Unofficial | `user-unofficial-tests-nsat-command-evidence-score` | integer | Test (SAT) - Command of evidence subscore - Unofficial. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Composite Score - Official | `user-official-tests-nsat-composite-score` | integer | Test (SAT) - Composite Score - Official. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Composite Score - Unofficial | `user-unofficial-tests-nsat-composite-score` | integer | Test (SAT) - Composite Score - Unofficial. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Essay Analysis Subscore - Official | `user-official-tests-nsat-essay-analysis-score` | integer | Test (SAT) - Essay Analysis Subscore - Official. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Essay Analysis Subscore - Unofficial | `user-unofficial-tests-nsat-essay-analysis-score` | integer | Test (SAT) - Essay Analysis Subscore - Unofficial. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Essay Reading Subscore - Official | `user-official-tests-nsat-essay-reading-score` | integer | Test (SAT) - Essay Reading Subscore - Official. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Essay Reading Subscore - Unofficial | `user-unofficial-tests-nsat-essay-reading-score` | integer | Test (SAT) - Essay Reading Subscore - Unofficial. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Essay Writing subscore - Official | `user-official-tests-nsat-essay-writing-score` | integer | Test (SAT) - Essay Writing subscore - Official. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Essay Writing subscore - Unofficial | `user-unofficial-tests-nsat-essay-writing-score` | integer | Test (SAT) - Essay Writing subscore - Unofficial. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Evidence-Based Reading and Writing - Official | `user-official-tests-nsat-evidence-rw-scores` | integer | Test (SAT) - Evidence-Based Reading and Writing - Official. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Evidence-Based Reading and Writing - Unofficial | `user-unofficial-tests-nsat-evidence-rw-scores` | integer | Test (SAT) - Evidence-Based Reading and Writing - Unofficial. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Expression of ideas subscore - Official | `user-official-tests-nsat-expression-ideas-score` | integer | Test (SAT) - Expression of ideas subscore - Official. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Expression of ideas subscore - Unofficial | `user-unofficial-tests-nsat-expression-ideas-score` | integer | Test (SAT) - Expression of ideas subscore - Unofficial. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Heart of algebra subscore - Official | `user-official-tests-nsat-heart-algebra-score` | integer | Test (SAT) - Heart of algebra subscore - Official. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Heart of algebra subscore - Unofficial | `user-unofficial-tests-nsat-heart-algebra-score` | integer | Test (SAT) - Heart of algebra subscore - Unofficial. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Math Score - Official | `user-official-tests-nsat-math-score` | integer | Test (SAT) - Math Score - Official. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Math Score - Unofficial | `user-unofficial-tests-nsat-math-score` | integer | Test (SAT) - Math Score - Unofficial. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Math Test Score - Official | `user-official-tests-nsat-math-test-score` | integer | Test (SAT) - Math Test Score - Official. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Math Test Score - Unofficial | `user-unofficial-tests-nsat-math-test-score` | integer | Test (SAT) - Math Test Score - Unofficial. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Name - Official | `user-official-tests-nsat-name` | string | Test (SAT) - Name - Official. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Name - Unofficial | `user-unofficial-tests-nsat-name` | string | Test (SAT) - Name - Unofficial. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Prob solv data subscore - Official | `user-official-tests-nsat-prob-solv-data-score` | integer | Test (SAT) - Prob solv data subscore - Official. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Prob solv data subscore - Unofficial | `user-unofficial-tests-nsat-prob-solv-data-score` | integer | Test (SAT) - Prob solv data subscore - Unofficial. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Reading Score - Official | `user-official-tests-nsat-reading-score` | integer | Test (SAT) - Reading Score - Official. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Reading Score - Unofficial | `user-unofficial-tests-nsat-reading-score` | integer | Test (SAT) - Reading Score - Unofficial. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Std Eng conventions subscore - Official | `user-official-tests-nsat-std-eng-conventions-score` | integer | Test (SAT) - Std Eng conventions subscore - Official. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Std Eng conventions subscore - Unofficial | `user-unofficial-tests-nsat-std-eng-conventions-score` | integer | Test (SAT) - Std Eng conventions subscore - Unofficial. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Test Date - Official | `user-official-tests-nsat-date` | date | Test (SAT) - Test Date - Official. Part of a test score (evaluation) record on the contact. | 2026-08-15 |
+| Test (SAT) - Test Date - Unofficial | `user-unofficial-tests-nsat-date` | date | Test (SAT) - Test Date - Unofficial. Part of a test score (evaluation) record on the contact. | 2026-08-15 |
+| Test (SAT) - Test Source - Official | `user-official-tests-nsat-source` | string | Test (SAT) - Test Source - Official. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Test Source - Unofficial | `user-unofficial-tests-nsat-source` | string | Test (SAT) - Test Source - Unofficial. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Words in context subscore - Official | `user-official-tests-nsat-words-context-score` | integer | Test (SAT) - Words in context subscore - Official. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Words in context subscore - Unofficial | `user-unofficial-tests-nsat-words-context-score` | integer | Test (SAT) - Words in context subscore - Unofficial. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Writing score - Official | `user-official-tests-nsat-writing-scores` | integer | Test (SAT) - Writing score - Official. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (SAT) - Writing score - Unofficial | `user-unofficial-tests-nsat-writing-scores` | integer | Test (SAT) - Writing score - Unofficial. Part of a test score (evaluation) record on the contact. | 1320 |
+| Test (TOEFL) - Composite Score - Official | `user-official-tests-toefl-composite-score` | integer | Test (TOEFL) - Composite Score - Official. Part of a test score (evaluation) record on the contact. | 95 |
+| Test (TOEFL) - Composite Score - Unofficial | `user-unofficial-tests-toefl-composite-score` | integer | Test (TOEFL) - Composite Score - Unofficial. Part of a test score (evaluation) record on the contact. | 95 |
+| Test (TOEFL) - Listening Score - Official | `user-official-tests-toefl-listening-score` | integer | Test (TOEFL) - Listening Score - Official. Part of a test score (evaluation) record on the contact. | 95 |
+| Test (TOEFL) - Listening Score - Unofficial | `user-unofficial-tests-toefl-listening-score` | integer | Test (TOEFL) - Listening Score - Unofficial. Part of a test score (evaluation) record on the contact. | 95 |
+| Test (TOEFL) - Reading Score - Official | `user-official-tests-toefl-reading-score` | integer | Test (TOEFL) - Reading Score - Official. Part of a test score (evaluation) record on the contact. | 95 |
+| Test (TOEFL) - Reading Score - Unofficial | `user-unofficial-tests-toefl-reading-score` | integer | Test (TOEFL) - Reading Score - Unofficial. Part of a test score (evaluation) record on the contact. | 95 |
+| Test (TOEFL) - Speaking Score - Official | `user-official-tests-toefl-speaking-score` | integer | Test (TOEFL) - Speaking Score - Official. Part of a test score (evaluation) record on the contact. | 95 |
+| Test (TOEFL) - Speaking Score - Unofficial | `user-unofficial-tests-toefl-speaking-score` | integer | Test (TOEFL) - Speaking Score - Unofficial. Part of a test score (evaluation) record on the contact. | 95 |
+| Test (TOEFL) - Test Date - Official | `user-official-tests-toefl-date` | date | Test (TOEFL) - Test Date - Official. Part of a test score (evaluation) record on the contact. | 2026-08-15 |
+| Test (TOEFL) - Test Date - Unofficial | `user-unofficial-tests-toefl-date` | date | Test (TOEFL) - Test Date - Unofficial. Part of a test score (evaluation) record on the contact. | 2026-08-15 |
+| Test (TOEFL) - Writing score - Official | `user-official-tests-toefl-writing-scores` | integer | Test (TOEFL) - Writing score - Official. Part of a test score (evaluation) record on the contact. | 95 |
+| Test (TOEFL) - Writing score - Unofficial | `user-unofficial-tests-toefl-writing-scores` | integer | Test (TOEFL) - Writing score - Unofficial. Part of a test score (evaluation) record on the contact. | 95 |
+| Test Advance Math Score \* | `user-evaluations-advance_math-score-*` | float | Test Advance Math Score. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 28 |
+| Test Advanced Algebra & Functions Test Score \* | `user-evaluations-advanced_algebra-score-*` | float | Test Advanced Algebra & Functions Test Score. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 28 |
+| Test Analysis in History/Social Studies Cross Score \* | `user-evaluations-his_soc_sci_cross-score-*` | float | Test Analysis in History/Social Studies Cross Score. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 28 |
+| Test Arithmetic Test Score \* | `user-evaluations-arithmetic-score-*` | float | Test Arithmetic Test Score. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 28 |
+| Test Command Evidence Score \* | `user-evaluations-command_evidence-score-*` | float | Test Command Evidence Score. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 28 |
+| Test Composite Score \* | `user-evaluations-composite-score-*` | float | Test Composite Score. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 28 |
+| Test Data Insights | `user-evaluations-data_insights` | float | Test Data Insights. Part of a test score (evaluation) record on the contact. | 3.75 |
+| Test Data Insights \* | `user-evaluations-data_insights-*` | float | Test Data Insights. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 3.75 |
+| Test Date \* | `user-evaluations-date-*` | date | Test Date. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 2026-08-15 |
+| Test English and Language Usage Score | `user-official-evaluations-english_language_usage` | float | Test English and Language Usage Score. Part of a test score (evaluation) record on the contact. | 28 |
+| Test English and Language Usage Score | `user-unofficial-evaluations-english_language_usage` | float | Test English and Language Usage Score. Part of a test score (evaluation) record on the contact. | 28 |
+| Test English and Language Usage Score | `user-evaluations-english_language_usage` | float | Test English and Language Usage Score. Part of a test score (evaluation) record on the contact. | 28 |
+| Test English and Language Usage Score \* | `user-evaluations-english_language_usage-*` | float | Test English and Language Usage Score. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 28 |
+| Test English Score \* | `user-evaluations-english-score-*` | float | Test English Score. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 28 |
+| Test Essay Analysis Score \* | `user-evaluations-essay_analysis-score-*` | float | Test Essay Analysis Score. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 28 |
+| Test Essay Reading Score \* | `user-evaluations-essay_reading-score-*` | float | Test Essay Reading Score. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 28 |
+| Test Essay Writing Score \* | `user-evaluations-essay_writing-score-*` | float | Test Essay Writing Score. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 28 |
+| Test Evidence RW Score \* | `user-evaluations-evidence_rw-score-*` | float | Test Evidence RW Score. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 28 |
+| Test Expression Ideas Score \* | `user-evaluations-expression_ideas-score-*` | float | Test Expression Ideas Score. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 28 |
+| Test Heart Algebra Score \* | `user-evaluations-heart_algebra-score-*` | float | Test Heart Algebra Score. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 28 |
+| Test Listening Score \* | `user-evaluations-listening-score-*` | float | Test Listening Score. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 28 |
+| Test Math Score \* | `user-evaluations-math-score-*` | float | Test Math Score. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 28 |
+| Test Math Test Score \* | `user-evaluations-math_test-score-*` | float | Test Math Test Score. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 28 |
+| Test Name \* | `user-evaluations-name-*` | string | Test Name. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | Text value |
+| Test Official (GMAT) - Date - Official | `user-official-tests-gmat-date` | date | Test Official (GMAT) - Date - Official. Part of a test score (evaluation) record on the contact. | 2026-08-15 |
+| Test Official (GMAT) - Name - Official | `user-official-tests-gmat-name` | string | Test Official (GMAT) - Name - Official. Part of a test score (evaluation) record on the contact. | 650 |
+| Test Official (GRE) - Date - Official | `user-official-tests-gre-date` | date | Test Official (GRE) - Date - Official. Part of a test score (evaluation) record on the contact. | 2026-08-15 |
+| Test Official (GRE) - Name - Official | `user-official-tests-gre-name` | string | Test Official (GRE) - Name - Official. Part of a test score (evaluation) record on the contact. | 160 |
+| Test Official \* | `user-evaluations-official-*` | boolean | Test Official. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | true / false |
+| Test Prob Solv Data Score \* | `user-evaluations-prob_solv_data-score-*` | float | Test Prob Solv Data Score. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 28 |
+| Test Quantitative Score \* | `user-evaluations-quantitative-score-*` | float | Test Quantitative Score. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 28 |
+| Test Reading Score \* | `user-evaluations-reading-score-*` | float | Test Reading Score. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 28 |
+| Test Reasoning Score \* | `user-evaluations-reasoning-score-*` | float | Test Reasoning Score. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 28 |
+| Test RLA Score \* | `user-evaluations-rla-score-*` | float | Test RLA Score. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 28 |
+| Test Science Score \* | `user-evaluations-science-score-*` | float | Test Science Score. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 28 |
+| Test Social Score \* | `user-evaluations-social-score-*` | float | Test Social Score. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 28 |
+| Test Source \* | `user-evaluations-source-*` | float | Test Source. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 3.75 |
+| Test Speaking Score \* | `user-evaluations-speaking-score-*` | float | Test Speaking Score. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 28 |
+| Test Std Eng Conventions Score \* | `user-evaluations-std_eng_conventions-score-*` | float | Test Std Eng Conventions Score. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 28 |
+| Test Type \* | `user-evaluations-type-*` | string | Test Type. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | Text value |
+| Test Verbal Score \* | `user-evaluations-verbal-score-*` | float | Test Verbal Score. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 28 |
+| Test Words Context Score \* | `user-evaluations-words_context-score-*` | float | Test Words Context Score. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 28 |
+| Test Writing Score \* | `user-evaluations-writing-score-*` | float | Test Writing Score. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 28 |
+| Write Placer Test Score | `user-evaluations-write_placer-score` | float | Write Placer Test Score. Part of a test score (evaluation) record on the contact. | 28 |
+| Write Placer Test Score \* | `user-evaluations-write_placer-score-*` | float | Write Placer Test Score. Part of a test score (evaluation) record on the contact. Repeater variant: \* targets a specific or any position in the list (1, 2, 3...). | 28 |
+
+---

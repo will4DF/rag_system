@@ -1,0 +1,2834 @@
+[
+  {
+    "title": "Playbook: Conduct a High School Visit",
+    "url": "https://help.element451.com/en/articles/12294526-playbook-conduct-a-high-school-visit",
+    "collection": "Workflows + Rules",
+    "file": "output/articles/playbook-conduct-a-high-school-visit.md"
+  },
+  {
+    "title": "Playbook: Conduct Application First Reads",
+    "url": "https://help.element451.com/en/articles/11955468-playbook-conduct-application-first-reads",
+    "collection": "Workflows + Rules",
+    "file": "output/articles/playbook-conduct-application-first-reads.md"
+  },
+  {
+    "title": "Playbook: Application Completion Outreach",
+    "url": "https://help.element451.com/en/articles/12302208-playbook-application-completion-outreach",
+    "collection": "Workflows + Rules",
+    "file": "output/articles/playbook-application-completion-outreach.md"
+  },
+  {
+    "title": "Playbook: Promote Open House/Preview Day",
+    "url": "https://help.element451.com/en/articles/12294387-playbook-promote-open-house-preview-day",
+    "collection": "Workflows + Rules",
+    "file": "output/articles/playbook-promote-open-house-preview-day.md"
+  },
+  {
+    "title": "Playbook: Drop for Non-Payment Resolution",
+    "url": "https://help.element451.com/en/articles/12482903-playbook-drop-for-non-payment-resolution",
+    "collection": "Workflows + Rules",
+    "file": "output/articles/playbook-drop-for-non-payment-resolution.md"
+  },
+  {
+    "title": "Playbook: Application Deadline Reminder",
+    "url": "https://help.element451.com/en/articles/12501212-playbook-application-deadline-reminder",
+    "collection": "Workflows + Rules",
+    "file": "output/articles/playbook-application-deadline-reminder.md"
+  },
+  {
+    "title": "Playbook: Handle Inbound Phone Calls",
+    "url": "https://help.element451.com/en/articles/12053969-playbook-handle-inbound-phone-calls",
+    "collection": "Workflows + Rules",
+    "file": "output/articles/playbook-handle-inbound-phone-calls.md"
+  },
+  {
+    "title": "Playbook: Handling Inbound Communications (Email/SMS/Live Chat)",
+    "url": "https://help.element451.com/en/articles/11993001-playbook-handling-inbound-communications-email-sms-live-chat",
+    "collection": "Workflows + Rules",
+    "file": "output/articles/playbook-handling-inbound-communications-email-sms-live-chat.md"
+  },
+  {
+    "title": "Playbook: Senior Search",
+    "url": "https://help.element451.com/en/articles/12089264-playbook-senior-search",
+    "collection": "Workflows + Rules",
+    "file": "output/articles/playbook-senior-search.md"
+  },
+  {
+    "title": "Playbook: Engaging Students on the Web",
+    "url": "https://help.element451.com/en/articles/11994507-playbook-engaging-students-on-the-web",
+    "collection": "Workflows + Rules",
+    "file": "output/articles/playbook-engaging-students-on-the-web.md"
+  },
+  {
+    "title": "Playbook: Online Lead Generation + Immediate Engagement",
+    "url": "https://help.element451.com/en/articles/12306101-playbook-online-lead-generation-immediate-engagement",
+    "collection": "Workflows + Rules",
+    "file": "output/articles/playbook-online-lead-generation-immediate-engagement.md"
+  },
+  {
+    "title": "Playbook: Automated Alerts for Grades + Attendance",
+    "url": "https://help.element451.com/en/articles/11961327-playbook-automated-alerts-for-grades-attendance",
+    "collection": "Workflows + Rules",
+    "file": "output/articles/playbook-automated-alerts-for-grades-attendance.md"
+  },
+  {
+    "title": "Playbook: Re-Engage Stopped-Out Students",
+    "url": "https://help.element451.com/en/articles/12306172-playbook-re-engage-stopped-out-students",
+    "collection": "Workflows + Rules",
+    "file": "output/articles/playbook-re-engage-stopped-out-students.md"
+  },
+  {
+    "title": "Playbook: Run Advising Appointments",
+    "url": "https://help.element451.com/en/articles/12066856-playbook-run-advising-appointments",
+    "collection": "Workflows + Rules",
+    "file": "output/articles/playbook-run-advising-appointments.md"
+  },
+  {
+    "title": "Playbook: Priority Registration Push",
+    "url": "https://help.element451.com/en/articles/12500696-playbook-priority-registration-push",
+    "collection": "Workflows + Rules",
+    "file": "output/articles/playbook-priority-registration-push.md"
+  },
+  {
+    "title": "Using Staff Agents for Help with Element451 Features",
+    "url": "https://help.element451.com/en/articles/9926140-how-to-use-bolt-ai-staff-assistants-for-help-with-element451-features",
+    "collection": "Workflows + Rules",
+    "file": "output/articles/using-staff-agents-for-help-with-element451-features.md"
+  },
+  {
+    "title": "\ud83d\udccc How to Use the Help Center",
+    "url": "https://help.element451.com/en/articles/8487747-how-to-use-the-help-center",
+    "collection": "General",
+    "file": "output/articles/how-to-use-the-help-center.md"
+  },
+  {
+    "title": "\ud83d\udccc Element451 Glossary of Terms",
+    "url": "https://help.element451.com/en/articles/3152385-element451-glossary-of-terms",
+    "collection": "General",
+    "file": "output/articles/element451-glossary-of-terms.md"
+  },
+  {
+    "title": "\ud83d\udccc Understanding Element451 Packages",
+    "url": "https://help.element451.com/en/articles/11428377-understanding-element451-packages",
+    "collection": "General",
+    "file": "output/articles/understanding-element451-packages.md"
+  },
+  {
+    "title": "Understanding Beta, Experimental, and Deprecated Features",
+    "url": "https://help.element451.com/en/articles/15055151-understanding-beta-experimental-and-deprecated-features",
+    "collection": "General",
+    "file": "output/articles/understanding-beta-experimental-and-deprecated-features.md"
+  },
+  {
+    "title": "Accessibility",
+    "url": "https://help.element451.com/en/articles/11841002-accessibility",
+    "collection": "General",
+    "file": "output/articles/accessibility.md"
+  },
+  {
+    "title": "Emergency Data Backup & Restoration Policy",
+    "url": "https://help.element451.com/en/articles/14792428-emergency-data-backup-restoration-policy",
+    "collection": "General",
+    "file": "output/articles/emergency-data-backup-restoration-policy.md"
+  },
+  {
+    "title": "SOC2 Type II Certification",
+    "url": "https://help.element451.com/en/articles/14054454-soc2-type-ii-certification",
+    "collection": "General",
+    "file": "output/articles/soc2-type-ii-certification.md"
+  },
+  {
+    "title": "PCI DSS Compliance",
+    "url": "https://help.element451.com/en/articles/14054559-pci-dss-compliance",
+    "collection": "General",
+    "file": "output/articles/pci-dss-compliance.md"
+  },
+  {
+    "title": "Element451 & the Gramm-Leach-Bliley Act",
+    "url": "https://help.element451.com/en/articles/14052322-element451-the-gramm-leach-bliley-act",
+    "collection": "General",
+    "file": "output/articles/element451-the-gramm-leach-bliley-act.md"
+  },
+  {
+    "title": "Element451 & the Health Insurance Portability and Accountability Act",
+    "url": "https://help.element451.com/en/articles/14052393-element451-the-health-insurance-portability-and-accountability-act",
+    "collection": "General",
+    "file": "output/articles/element451-the-health-insurance-portability-and-accountability-act.md"
+  },
+  {
+    "title": "Accessibility Compliance Settings Checklist",
+    "url": "https://help.element451.com/en/articles/15889548-accessibility-compliance-settings-checklist",
+    "collection": "General",
+    "file": "output/articles/accessibility-compliance-settings-checklist.md"
+  },
+  {
+    "title": "Guidance for North Carolina Community Colleges: Leon\u2019s Law",
+    "url": "https://help.element451.com/en/articles/12588083-guidance-for-north-carolina-community-colleges-leon-s-law",
+    "collection": "General",
+    "file": "output/articles/guidance-for-north-carolina-community-colleges-leon-s-law.md"
+  },
+  {
+    "title": "Canvas Data Breach | May 2026",
+    "url": "https://help.element451.com/en/articles/15032797-canvas-data-breach-may-2026",
+    "collection": "General",
+    "file": "output/articles/canvas-data-breach-may-2026.md"
+  },
+  {
+    "title": "\ud83d\udccc Applications: Frequently Asked Questions",
+    "url": "https://help.element451.com/en/articles/10607698-applications-frequently-asked-questions",
+    "collection": "Applications",
+    "file": "output/articles/applications-frequently-asked-questions.md"
+  },
+  {
+    "title": "Getting Started with Applications",
+    "url": "https://help.element451.com/en/articles/1963691-getting-started-with-applications",
+    "collection": "Applications",
+    "file": "output/articles/getting-started-with-applications.md"
+  },
+  {
+    "title": "Creating + Managing Applications",
+    "url": "https://help.element451.com/en/articles/9040630-creating-managing-applications",
+    "collection": "Applications",
+    "file": "output/articles/creating-managing-applications.md"
+  },
+  {
+    "title": "Application Settings",
+    "url": "https://help.element451.com/en/articles/9062223-application-settings",
+    "collection": "Applications",
+    "file": "output/articles/application-settings.md"
+  },
+  {
+    "title": "Application Sites",
+    "url": "https://help.element451.com/en/articles/9077560-application-sites",
+    "collection": "Applications",
+    "file": "output/articles/application-sites.md"
+  },
+  {
+    "title": "Understanding Application Registration Flows from the Student Perspective",
+    "url": "https://help.element451.com/en/articles/9264459-understanding-application-registration-flows-from-the-student-perspective",
+    "collection": "Applications",
+    "file": "output/articles/understanding-application-registration-flows-from-the-student-perspective.md"
+  },
+  {
+    "title": "Application Submission Form",
+    "url": "https://help.element451.com/en/articles/10869730-application-submission-form",
+    "collection": "Applications",
+    "file": "output/articles/application-submission-form.md"
+  },
+  {
+    "title": "Supplemental Application Forms",
+    "url": "https://help.element451.com/en/articles/7030801-supplemental-application-forms",
+    "collection": "Applications",
+    "file": "output/articles/supplemental-application-forms.md"
+  },
+  {
+    "title": "Request Information in Applications",
+    "url": "https://help.element451.com/en/articles/8421103-request-information-in-applications",
+    "collection": "Applications",
+    "file": "output/articles/request-information-in-applications.md"
+  },
+  {
+    "title": "Automate Application Submitted Notifications",
+    "url": "https://help.element451.com/en/articles/3760587-automate-application-submitted-notifications",
+    "collection": "Applications",
+    "file": "output/articles/automate-application-submitted-notifications.md"
+  },
+  {
+    "title": "Identity Verification",
+    "url": "https://help.element451.com/en/articles/13006508-identity-verification",
+    "collection": "Applications",
+    "file": "output/articles/identity-verification.md"
+  },
+  {
+    "title": "\ud83d\udccc Appointments: Frequently Asked Questions",
+    "url": "https://help.element451.com/en/articles/8834280-appointments-frequently-asked-questions",
+    "collection": "Appointments",
+    "file": "output/articles/appointments-frequently-asked-questions.md"
+  },
+  {
+    "title": "How Appointments Are Booked",
+    "url": "https://help.element451.com/en/articles/14658760-how-appointments-are-booked",
+    "collection": "Appointments",
+    "file": "output/articles/how-appointments-are-booked.md"
+  },
+  {
+    "title": "Getting Started with Appointments",
+    "url": "https://help.element451.com/en/articles/10458679-getting-started-with-appointments",
+    "collection": "Appointments",
+    "file": "output/articles/getting-started-with-appointments.md"
+  },
+  {
+    "title": "Initial Setup for Appointments (Admins)",
+    "url": "https://help.element451.com/en/articles/8141376-initial-setup-for-appointments-admins",
+    "collection": "Appointments",
+    "file": "output/articles/initial-setup-for-appointments-admins.md"
+  },
+  {
+    "title": "Appointments Site + Settings",
+    "url": "https://help.element451.com/en/articles/11157302-appointments-site-settings",
+    "collection": "Appointments",
+    "file": "output/articles/appointments-site-settings.md"
+  },
+  {
+    "title": "Configuring Appointment Availability",
+    "url": "https://help.element451.com/en/articles/8148396-configuring-appointment-availability",
+    "collection": "Appointments",
+    "file": "output/articles/configuring-appointment-availability.md"
+  },
+  {
+    "title": "Connecting Your Calendar to Appointments",
+    "url": "https://help.element451.com/en/articles/8144429-connecting-your-calendar-to-appointments",
+    "collection": "Appointments",
+    "file": "output/articles/connecting-your-calendar-to-appointments.md"
+  },
+  {
+    "title": "Appointment Notifications + Messages",
+    "url": "https://help.element451.com/en/articles/9362119-appointment-notifications-messages",
+    "collection": "Appointments",
+    "file": "output/articles/appointment-notifications-messages.md"
+  },
+  {
+    "title": "Appointments: Quick Start Video Guides",
+    "url": "https://help.element451.com/en/articles/8050913-appointments-quick-start-video-guides",
+    "collection": "Appointments",
+    "file": "output/articles/appointments-quick-start-video-guides.md"
+  },
+  {
+    "title": "Appointment Booking Authentication",
+    "url": "https://help.element451.com/en/articles/13798820-appointment-booking-authentication",
+    "collection": "Appointments",
+    "file": "output/articles/appointment-booking-authentication.md"
+  },
+  {
+    "title": "Team Appointments",
+    "url": "https://help.element451.com/en/articles/13921320-team-appointments",
+    "collection": "Appointments",
+    "file": "output/articles/team-appointments.md"
+  },
+  {
+    "title": "\ud83d\udccc Bolt AI: Frequently Asked Questions",
+    "url": "https://help.element451.com/en/articles/10540370-bolt-ai-frequently-asked-questions",
+    "collection": "Bolt AI",
+    "file": "output/articles/bolt-ai-frequently-asked-questions.md"
+  },
+  {
+    "title": "Getting Started with Bolt AI",
+    "url": "https://help.element451.com/en/articles/11061870-getting-started-with-bolt-ai",
+    "collection": "Bolt AI",
+    "file": "output/articles/getting-started-with-bolt-ai.md"
+  },
+  {
+    "title": "Element451 Bolt AI & the Problem of Hallucinations",
+    "url": "https://help.element451.com/en/articles/12921886-element451-bolt-ai-the-problem-of-hallucinations",
+    "collection": "Bolt AI",
+    "file": "output/articles/element451-bolt-ai-the-problem-of-hallucinations.md"
+  },
+  {
+    "title": "AI at Element451: Security, Privacy, and Responsible Use",
+    "url": "https://help.element451.com/en/articles/13146389-ai-at-element451-security-privacy-and-responsible-use",
+    "collection": "Bolt AI",
+    "file": "output/articles/ai-at-element451-security-privacy-and-responsible-use.md"
+  },
+  {
+    "title": "Getting Started with Bolt Agent Jobs",
+    "url": "https://help.element451.com/en/articles/11131186-getting-started-with-bolt-agent-jobs",
+    "collection": "Bolt AI",
+    "file": "output/articles/getting-started-with-bolt-agent-jobs.md"
+  },
+  {
+    "title": "Creating a Bolt Agent Job",
+    "url": "https://help.element451.com/en/articles/11646573-creating-a-bolt-agent-job",
+    "collection": "Bolt AI",
+    "file": "output/articles/creating-a-bolt-agent-job.md"
+  },
+  {
+    "title": "Monitoring + Managing Bolt Agent Jobs",
+    "url": "https://help.element451.com/en/articles/11128001-monitoring-managing-bolt-agent-jobs",
+    "collection": "Bolt AI",
+    "file": "output/articles/monitoring-managing-bolt-agent-jobs.md"
+  },
+  {
+    "title": "Managing Enrollments (Contacts) + Approvals in Bolt Agent Jobs",
+    "url": "https://help.element451.com/en/articles/12037492-managing-enrollments-contacts-approvals-in-bolt-agent-jobs",
+    "collection": "Bolt AI",
+    "file": "output/articles/managing-enrollments-contacts-approvals-in-bolt-agent-jobs.md"
+  },
+  {
+    "title": "Advanced Strategies and Best Practices for Bolt Agent Jobs",
+    "url": "https://help.element451.com/en/articles/11128047-advanced-strategies-and-best-practices-for-bolt-agent-jobs",
+    "collection": "Bolt AI",
+    "file": "output/articles/advanced-strategies-and-best-practices-for-bolt-agent-jobs.md"
+  },
+  {
+    "title": "Bolt Agent Job Templates",
+    "url": "https://help.element451.com/en/articles/12270426-bolt-agent-job-templates",
+    "collection": "Bolt AI",
+    "file": "output/articles/bolt-agent-job-templates.md"
+  },
+  {
+    "title": "Creating Bolt Agent Jobs via Staff Agent + Shortcuts",
+    "url": "https://help.element451.com/en/articles/13350880-creating-bolt-agent-jobs-via-staff-agent-shortcuts",
+    "collection": "Bolt AI",
+    "file": "output/articles/creating-bolt-agent-jobs-via-staff-agent-shortcuts.md"
+  },
+  {
+    "title": "Bolt Discovery Overview",
+    "url": "https://help.element451.com/en/articles/9331910-bolt-discovery-overview",
+    "collection": "Bolt AI",
+    "file": "output/articles/bolt-discovery-overview.md"
+  },
+  {
+    "title": "Bolt Discovery Settings",
+    "url": "https://help.element451.com/en/articles/9397400-bolt-discovery-settings",
+    "collection": "Bolt AI",
+    "file": "output/articles/bolt-discovery-settings.md"
+  },
+  {
+    "title": "Deploying Bolt Discovery",
+    "url": "https://help.element451.com/en/articles/9397459-deploying-bolt-discovery",
+    "collection": "Bolt AI",
+    "file": "output/articles/deploying-bolt-discovery.md"
+  },
+  {
+    "title": "Reviewing Bolt Discovery Thread History",
+    "url": "https://help.element451.com/en/articles/10533818-reviewing-bolt-discovery-thread-history",
+    "collection": "Bolt AI",
+    "file": "output/articles/reviewing-bolt-discovery-thread-history.md"
+  },
+  {
+    "title": "Bolt Discovery Use Case Examples",
+    "url": "https://help.element451.com/en/articles/9787541-bolt-discovery-use-case-examples",
+    "collection": "Bolt AI",
+    "file": "output/articles/bolt-discovery-use-case-examples.md"
+  },
+  {
+    "title": "Bolt Discovery vs. Bolt Agents: Understanding the Difference",
+    "url": "https://help.element451.com/en/articles/9764775-bolt-discovery-vs-bolt-agents-understanding-the-difference",
+    "collection": "Bolt AI",
+    "file": "output/articles/bolt-discovery-vs-bolt-agents-understanding-the-difference.md"
+  },
+  {
+    "title": "3 Ways to Launch Bolt Discovery in Under 5 Minutes",
+    "url": "https://help.element451.com/en/articles/10055417-3-ways-to-launch-bolt-discovery-in-under-5-minutes",
+    "collection": "Bolt AI",
+    "file": "output/articles/3-ways-to-launch-bolt-discovery-in-under-5-minutes.md"
+  },
+  {
+    "title": "Using Bolt Discovery on WordPress Sites",
+    "url": "https://help.element451.com/en/articles/10444331-using-bolt-discovery-on-wordpress-sites",
+    "collection": "Bolt AI",
+    "file": "output/articles/using-bolt-discovery-on-wordpress-sites.md"
+  },
+  {
+    "title": "Getting Started with Knowledge Hub",
+    "url": "https://help.element451.com/en/articles/10302715-getting-started-with-knowledge-hub",
+    "collection": "Bolt AI",
+    "file": "output/articles/getting-started-with-knowledge-hub.md"
+  },
+  {
+    "title": "Adding Knowledge Hub Sources",
+    "url": "https://help.element451.com/en/articles/12276752-adding-knowledge-hub-sources",
+    "collection": "Bolt AI",
+    "file": "output/articles/adding-knowledge-hub-sources.md"
+  },
+  {
+    "title": "Managing Knowledge Hub Sources",
+    "url": "https://help.element451.com/en/articles/12277392-managing-knowledge-hub-sources",
+    "collection": "Bolt AI",
+    "file": "output/articles/managing-knowledge-hub-sources.md"
+  },
+  {
+    "title": "Advanced Knowledge Hub Strategy + Governance",
+    "url": "https://help.element451.com/en/articles/10416357-advanced-knowledge-hub-strategy-governance",
+    "collection": "Bolt AI",
+    "file": "output/articles/advanced-knowledge-hub-strategy-governance.md"
+  },
+  {
+    "title": "Getting Started with Bolt Student Agent Plugins [Closed Beta]",
+    "url": "https://help.element451.com/en/articles/11750044-getting-started-with-bolt-student-agent-plugins-closed-beta",
+    "collection": "Bolt AI",
+    "file": "output/articles/getting-started-with-bolt-student-agent-plugins-closed-beta.md"
+  },
+  {
+    "title": "Getting Started with Bolt Staff Agent Plugins via Zapier (Beta)",
+    "url": "https://help.element451.com/en/articles/11632278-getting-started-with-bolt-staff-agent-plugins-via-zapier-beta",
+    "collection": "Bolt AI",
+    "file": "output/articles/getting-started-with-bolt-staff-agent-plugins-via-zapier-beta.md"
+  },
+  {
+    "title": "Bolt Writing Tools",
+    "url": "https://help.element451.com/en/articles/8380026-bolt-writing-tools",
+    "collection": "Bolt AI",
+    "file": "output/articles/bolt-writing-tools.md"
+  },
+  {
+    "title": "Brand Writing Style Settings for Staff Agents",
+    "url": "https://help.element451.com/en/articles/9265392-brand-writing-style-settings-for-staff-agents",
+    "collection": "Bolt AI",
+    "file": "output/articles/brand-writing-style-settings-for-staff-agents.md"
+  },
+  {
+    "title": "Getting Started with Bolt Agents for Students",
+    "url": "https://help.element451.com/en/articles/7173429-getting-started-with-bolt-agents-for-students",
+    "collection": "Bolt AI",
+    "file": "output/articles/getting-started-with-bolt-agents-for-students.md"
+  },
+  {
+    "title": "Bolt Agent Skills",
+    "url": "https://help.element451.com/en/articles/8993380-bolt-agent-skills",
+    "collection": "Bolt AI",
+    "file": "output/articles/bolt-agent-skills.md"
+  },
+  {
+    "title": "Custom Skills for Bolt Agents | Beta",
+    "url": "https://help.element451.com/en/articles/14846841-custom-skills-for-bolt-agents-beta",
+    "collection": "Bolt AI",
+    "file": "output/articles/custom-skills-for-bolt-agents-beta.md"
+  },
+  {
+    "title": "Custom Skills Video Setup Walkthrough | Beta",
+    "url": "https://help.element451.com/en/articles/15293273-custom-skills-video-setup-walkthrough-beta",
+    "collection": "Bolt AI",
+    "file": "output/articles/custom-skills-video-setup-walkthrough-beta.md"
+  },
+  {
+    "title": "Using Custom Skills for Voice Transfers and Agent Handoffs | Beta",
+    "url": "https://help.element451.com/en/articles/15935383-using-custom-skills-for-voice-transfers-and-agent-handoffs-beta",
+    "collection": "Bolt AI",
+    "file": "output/articles/using-custom-skills-for-voice-transfers-and-agent-handoffs-beta.md"
+  },
+  {
+    "title": "When to Use Custom Skills | Beta",
+    "url": "https://help.element451.com/en/articles/15232459-when-to-use-custom-skills-beta",
+    "collection": "Bolt AI",
+    "file": "output/articles/when-to-use-custom-skills-beta.md"
+  },
+  {
+    "title": "Custom Skills Best Practices | Beta",
+    "url": "https://help.element451.com/en/articles/15232436-custom-skills-best-practices-beta",
+    "collection": "Bolt AI",
+    "file": "output/articles/custom-skills-best-practices-beta.md"
+  },
+  {
+    "title": "Troubleshooting Custom Skills | Beta",
+    "url": "https://help.element451.com/en/articles/15232472-troubleshooting-custom-skills-beta",
+    "collection": "Bolt AI",
+    "file": "output/articles/troubleshooting-custom-skills-beta.md"
+  },
+  {
+    "title": "Onboarding + Managing Bolt Agents For Students",
+    "url": "https://help.element451.com/en/articles/11426404-onboarding-managing-bolt-agents-for-students",
+    "collection": "Bolt AI",
+    "file": "output/articles/onboarding-managing-bolt-agents-for-students.md"
+  },
+  {
+    "title": "Bolt Agent Teams",
+    "url": "https://help.element451.com/en/articles/12068259-bolt-agent-teams",
+    "collection": "Bolt AI",
+    "file": "output/articles/bolt-agent-teams.md"
+  },
+  {
+    "title": "Bolt Agent Handoffs",
+    "url": "https://help.element451.com/en/articles/8993398-bolt-agent-handoffs",
+    "collection": "Bolt AI",
+    "file": "output/articles/bolt-agent-handoffs.md"
+  },
+  {
+    "title": "Advanced Voice Mode for Bolt Agents",
+    "url": "https://help.element451.com/en/articles/10093808-advanced-voice-mode-for-bolt-agents",
+    "collection": "Bolt AI",
+    "file": "output/articles/advanced-voice-mode-for-bolt-agents.md"
+  },
+  {
+    "title": "Bolt Agent Content Moderation",
+    "url": "https://help.element451.com/en/articles/9859790-bolt-agent-content-moderation",
+    "collection": "Bolt AI",
+    "file": "output/articles/bolt-agent-content-moderation.md"
+  },
+  {
+    "title": "Testing Bolt Agents",
+    "url": "https://help.element451.com/en/articles/8993362-testing-bolt-agents",
+    "collection": "Bolt AI",
+    "file": "output/articles/testing-bolt-agents.md"
+  },
+  {
+    "title": "Best Practices for Creating Bolt Agents + Teams",
+    "url": "https://help.element451.com/en/articles/9876034-best-practices-for-creating-bolt-agents-teams",
+    "collection": "Bolt AI",
+    "file": "output/articles/best-practices-for-creating-bolt-agents-teams.md"
+  },
+  {
+    "title": "Listing Agents on Your Website",
+    "url": "https://help.element451.com/en/articles/11932732-listing-agents-on-your-website",
+    "collection": "Bolt AI",
+    "file": "output/articles/listing-agents-on-your-website.md"
+  },
+  {
+    "title": "Bolt Agent Settings",
+    "url": "https://help.element451.com/en/articles/8993375-bolt-agent-settings",
+    "collection": "Bolt AI",
+    "file": "output/articles/bolt-agent-settings.md"
+  },
+  {
+    "title": "Getting Started with Bolt Agents for Staff",
+    "url": "https://help.element451.com/en/articles/7173423-getting-started-with-bolt-agents-for-staff",
+    "collection": "Bolt AI",
+    "file": "output/articles/getting-started-with-bolt-agents-for-staff.md"
+  },
+  {
+    "title": "Bolt Campaign Creator Agent",
+    "url": "https://help.element451.com/en/articles/8312170-bolt-campaign-creator-agent",
+    "collection": "Bolt AI",
+    "file": "output/articles/bolt-campaign-creator-agent.md"
+  },
+  {
+    "title": "Bolt Page Builder Agent",
+    "url": "https://help.element451.com/en/articles/8377457-bolt-page-builder-agent",
+    "collection": "Bolt AI",
+    "file": "output/articles/bolt-page-builder-agent.md"
+  },
+  {
+    "title": "Staff Agent Use Cases",
+    "url": "https://help.element451.com/en/articles/8771377-staff-agent-use-cases",
+    "collection": "Bolt AI",
+    "file": "output/articles/staff-agent-use-cases.md"
+  },
+  {
+    "title": "Using Staff Agents for Help with Element451 Features",
+    "url": "https://help.element451.com/en/articles/9926140-using-staff-agents-for-help-with-element451-features",
+    "collection": "Bolt AI",
+    "file": "output/articles/using-staff-agents-for-help-with-element451-features.md"
+  },
+  {
+    "title": "Bolt App Fraud Detector Agent",
+    "url": "https://help.element451.com/en/articles/9927313-bolt-app-fraud-detector-agent",
+    "collection": "Bolt AI",
+    "file": "output/articles/bolt-app-fraud-detector-agent.md"
+  },
+  {
+    "title": "Bolt App Reader Agent",
+    "url": "https://help.element451.com/en/articles/10697700-bolt-app-reader-agent",
+    "collection": "Bolt AI",
+    "file": "output/articles/bolt-app-reader-agent.md"
+  },
+  {
+    "title": "Bolt Transcript Evaluation Agent",
+    "url": "https://help.element451.com/en/articles/12639660-bolt-transcript-evaluation-agent",
+    "collection": "Bolt AI",
+    "file": "output/articles/bolt-transcript-evaluation-agent.md"
+  },
+  {
+    "title": "Understanding Fraud Detector Agent Reasoning Terminology",
+    "url": "https://help.element451.com/en/articles/15032569-understanding-fraud-detector-agent-reasoning-terminology",
+    "collection": "Bolt AI",
+    "file": "output/articles/understanding-fraud-detector-agent-reasoning-terminology.md"
+  },
+  {
+    "title": "\ud83d\udccc Campaigns: Frequently Asked Questions",
+    "url": "https://help.element451.com/en/articles/10608654-campaigns-frequently-asked-questions",
+    "collection": "Campaigns",
+    "file": "output/articles/campaigns-frequently-asked-questions.md"
+  },
+  {
+    "title": "Getting Started with Campaigns",
+    "url": "https://help.element451.com/en/articles/1513671-getting-started-with-campaigns",
+    "collection": "Campaigns",
+    "file": "output/articles/getting-started-with-campaigns.md"
+  },
+  {
+    "title": "Creating a Campaign (All Channels)",
+    "url": "https://help.element451.com/en/articles/9922192-creating-a-campaign-all-channels",
+    "collection": "Campaigns",
+    "file": "output/articles/creating-a-campaign-all-channels.md"
+  },
+  {
+    "title": "Configuring Email Campaigns",
+    "url": "https://help.element451.com/en/articles/1513676-configuring-email-campaigns",
+    "collection": "Campaigns",
+    "file": "output/articles/configuring-email-campaigns.md"
+  },
+  {
+    "title": "Configuring SMS Campaigns",
+    "url": "https://help.element451.com/en/articles/8901214-configuring-sms-campaigns",
+    "collection": "Campaigns",
+    "file": "output/articles/configuring-sms-campaigns.md"
+  },
+  {
+    "title": "Configuring Push Notification Campaigns",
+    "url": "https://help.element451.com/en/articles/9923167-configuring-push-notification-campaigns",
+    "collection": "Campaigns",
+    "file": "output/articles/configuring-push-notification-campaigns.md"
+  },
+  {
+    "title": "Testing + Previewing Campaigns",
+    "url": "https://help.element451.com/en/articles/8901250-testing-previewing-campaigns",
+    "collection": "Campaigns",
+    "file": "output/articles/testing-previewing-campaigns.md"
+  },
+  {
+    "title": "Campaign Tokens",
+    "url": "https://help.element451.com/en/articles/1524113-campaign-tokens",
+    "collection": "Campaigns",
+    "file": "output/articles/campaign-tokens.md"
+  },
+  {
+    "title": "Dynamic Content: Personalization Versions",
+    "url": "https://help.element451.com/en/articles/1513684-dynamic-content-personalization-versions",
+    "collection": "Campaigns",
+    "file": "output/articles/dynamic-content-personalization-versions.md"
+  },
+  {
+    "title": "Campaign Email Custom Components",
+    "url": "https://help.element451.com/en/articles/9922629-campaign-email-custom-components",
+    "collection": "Campaigns",
+    "file": "output/articles/campaign-email-custom-components.md"
+  },
+  {
+    "title": "Campaign Templates",
+    "url": "https://help.element451.com/en/articles/1513678-campaign-templates",
+    "collection": "Campaigns",
+    "file": "output/articles/campaign-templates.md"
+  },
+  {
+    "title": "A/B Testing",
+    "url": "https://help.element451.com/en/articles/1513687-a-b-testing",
+    "collection": "Campaigns",
+    "file": "output/articles/a-b-testing.md"
+  },
+  {
+    "title": "Sent Campaign Details + Analytics",
+    "url": "https://help.element451.com/en/articles/1513688-sent-campaign-details-analytics",
+    "collection": "Campaigns",
+    "file": "output/articles/sent-campaign-details-analytics.md"
+  },
+  {
+    "title": "How to Find, Use, and Crop Free Images from Unsplash",
+    "url": "https://help.element451.com/en/articles/5142105-how-to-find-use-and-crop-free-images-from-unsplash",
+    "collection": "Campaigns",
+    "file": "output/articles/how-to-find-use-and-crop-free-images-from-unsplash.md"
+  },
+  {
+    "title": "Image Transformations with imgix",
+    "url": "https://help.element451.com/en/articles/6963949-image-transformations-with-imgix",
+    "collection": "Campaigns",
+    "file": "output/articles/image-transformations-with-imgix.md"
+  },
+  {
+    "title": "Email Campaign Accessibility Tips",
+    "url": "https://help.element451.com/en/articles/15825094-email-campaign-accessibility-tips",
+    "collection": "Campaigns",
+    "file": "output/articles/email-campaign-accessibility-tips.md"
+  },
+  {
+    "title": "Email: Unsubscribe/Opt-Out + Federal Regulations",
+    "url": "https://help.element451.com/en/articles/2608500-email-unsubscribe-opt-out-federal-regulations",
+    "collection": "Campaigns",
+    "file": "output/articles/email-unsubscribe-opt-out-federal-regulations.md"
+  },
+  {
+    "title": "SMS: Subscribe/Unsubscribe + Federal Regulations",
+    "url": "https://help.element451.com/en/articles/8390046-sms-subscribe-unsubscribe-federal-regulations",
+    "collection": "Campaigns",
+    "file": "output/articles/sms-subscribe-unsubscribe-federal-regulations.md"
+  },
+  {
+    "title": "SMS Opt-In System Field",
+    "url": "https://help.element451.com/en/articles/9007065-sms-opt-in-system-field",
+    "collection": "Campaigns",
+    "file": "output/articles/sms-opt-in-system-field.md"
+  },
+  {
+    "title": "Email Deliverability Tips",
+    "url": "https://help.element451.com/en/articles/4519281-email-deliverability-tips",
+    "collection": "Campaigns",
+    "file": "output/articles/email-deliverability-tips.md"
+  },
+  {
+    "title": "Email Bounces",
+    "url": "https://help.element451.com/en/articles/4606176-email-bounces",
+    "collection": "Campaigns",
+    "file": "output/articles/email-bounces.md"
+  },
+  {
+    "title": "Email Renderings in Outlook",
+    "url": "https://help.element451.com/en/articles/8549932-email-renderings-in-outlook",
+    "collection": "Campaigns",
+    "file": "output/articles/email-renderings-in-outlook.md"
+  },
+  {
+    "title": "\ud83d\udccc Case Management: Frequently Asked Questions [Beta]",
+    "url": "https://help.element451.com/en/articles/13775881-case-management-frequently-asked-questions-beta",
+    "collection": "Case Management (Beta)",
+    "file": "output/articles/case-management-frequently-asked-questions-beta.md"
+  },
+  {
+    "title": "Getting Started with Case Management [Beta]",
+    "url": "https://help.element451.com/en/articles/13764725-getting-started-with-case-management-beta",
+    "collection": "Case Management (Beta)",
+    "file": "output/articles/getting-started-with-case-management-beta.md"
+  },
+  {
+    "title": "What's Coming to Case Management [Beta]",
+    "url": "https://help.element451.com/en/articles/15465101-what-s-coming-to-case-management-beta",
+    "collection": "Case Management (Beta)",
+    "file": "output/articles/what-s-coming-to-case-management-beta.md"
+  },
+  {
+    "title": "Alerts [Beta]",
+    "url": "https://help.element451.com/en/articles/13771971-alerts-beta",
+    "collection": "Case Management (Beta)",
+    "file": "output/articles/alerts-beta.md"
+  },
+  {
+    "title": "Cases [Beta]",
+    "url": "https://help.element451.com/en/articles/13772190-cases-beta",
+    "collection": "Case Management (Beta)",
+    "file": "output/articles/cases-beta.md"
+  },
+  {
+    "title": "Relating Objects to Cases [Beta]",
+    "url": "https://help.element451.com/en/articles/13772358-relating-objects-to-cases-beta",
+    "collection": "Case Management (Beta)",
+    "file": "output/articles/relating-objects-to-cases-beta.md"
+  },
+  {
+    "title": "Alert and Case Templates [Beta]",
+    "url": "https://help.element451.com/en/articles/14659708-alert-and-case-templates-beta",
+    "collection": "Case Management (Beta)",
+    "file": "output/articles/alert-and-case-templates-beta.md"
+  },
+  {
+    "title": "Using Case Management Data: Segments + Insights [Beta]",
+    "url": "https://help.element451.com/en/articles/14656928-using-case-management-data-segments-insights-beta",
+    "collection": "Case Management (Beta)",
+    "file": "output/articles/using-case-management-data-segments-insights-beta.md"
+  },
+  {
+    "title": "Alert Settings [Beta]",
+    "url": "https://help.element451.com/en/articles/13772418-alert-settings-beta",
+    "collection": "Case Management (Beta)",
+    "file": "output/articles/alert-settings-beta.md"
+  },
+  {
+    "title": "Permissions and Visibility in Case Management [Beta]",
+    "url": "https://help.element451.com/en/articles/15465236-permissions-and-visibility-in-case-management-beta",
+    "collection": "Case Management (Beta)",
+    "file": "output/articles/permissions-and-visibility-in-case-management-beta.md"
+  },
+  {
+    "title": "Case Settings [Beta]",
+    "url": "https://help.element451.com/en/articles/13775536-case-settings-beta",
+    "collection": "Case Management (Beta)",
+    "file": "output/articles/case-settings-beta.md"
+  },
+  {
+    "title": "Bolt AI in Case Management [Beta]",
+    "url": "https://help.element451.com/en/articles/15465010-bolt-ai-in-case-management-beta",
+    "collection": "Case Management (Beta)",
+    "file": "output/articles/bolt-ai-in-case-management-beta.md"
+  },
+  {
+    "title": "Bolt Analysis for Cases [Beta]",
+    "url": "https://help.element451.com/en/articles/15265836-bolt-analysis-for-cases-beta",
+    "collection": "Case Management (Beta)",
+    "file": "output/articles/bolt-analysis-for-cases-beta.md"
+  },
+  {
+    "title": "Automating Case Management [Closed Beta]",
+    "url": "https://help.element451.com/en/articles/14712713-automating-case-management-closed-beta",
+    "collection": "Case Management (Beta)",
+    "file": "output/articles/automating-case-management-closed-beta.md"
+  },
+  {
+    "title": "Portal for Case Management [Beta]",
+    "url": "https://help.element451.com/en/articles/13772401-portal-for-case-management-beta",
+    "collection": "Case Management (Beta)",
+    "file": "output/articles/portal-for-case-management-beta.md"
+  },
+  {
+    "title": "Closing the Follow-Through Gap with Case Management [Beta]",
+    "url": "https://help.element451.com/en/articles/14062601-closing-the-follow-through-gap-with-case-management-beta",
+    "collection": "Case Management (Beta)",
+    "file": "output/articles/closing-the-follow-through-gap-with-case-management-beta.md"
+  },
+  {
+    "title": "\ud83d\udccc Conversations: Frequently Asked Questions",
+    "url": "https://help.element451.com/en/articles/10604714-conversations-frequently-asked-questions",
+    "collection": "Conversations",
+    "file": "output/articles/conversations-frequently-asked-questions.md"
+  },
+  {
+    "title": "Getting Started with Conversations",
+    "url": "https://help.element451.com/en/articles/1894279-getting-started-with-conversations",
+    "collection": "Conversations",
+    "file": "output/articles/getting-started-with-conversations.md"
+  },
+  {
+    "title": "Conversations Inbox",
+    "url": "https://help.element451.com/en/articles/8507376-conversations-inbox",
+    "collection": "Conversations",
+    "file": "output/articles/conversations-inbox.md"
+  },
+  {
+    "title": "Custom Conversation Views",
+    "url": "https://help.element451.com/en/articles/10223032-custom-conversation-views",
+    "collection": "Conversations",
+    "file": "output/articles/custom-conversation-views.md"
+  },
+  {
+    "title": "Conversations Settings",
+    "url": "https://help.element451.com/en/articles/8510895-conversations-settings",
+    "collection": "Conversations",
+    "file": "output/articles/conversations-settings.md"
+  },
+  {
+    "title": "Assignees vs. Participants",
+    "url": "https://help.element451.com/en/articles/1894304-assignees-vs-participants",
+    "collection": "Conversations",
+    "file": "output/articles/assignees-vs-participants.md"
+  },
+  {
+    "title": "Private Conversations",
+    "url": "https://help.element451.com/en/articles/9682245-private-conversations",
+    "collection": "Conversations",
+    "file": "output/articles/private-conversations.md"
+  },
+  {
+    "title": "Anonymous Conversations",
+    "url": "https://help.element451.com/en/articles/9688991-anonymous-conversations",
+    "collection": "Conversations",
+    "file": "output/articles/anonymous-conversations.md"
+  },
+  {
+    "title": "Saved Replies in Conversations",
+    "url": "https://help.element451.com/en/articles/10302526-saved-replies-in-conversations",
+    "collection": "Conversations",
+    "file": "output/articles/saved-replies-in-conversations.md"
+  },
+  {
+    "title": "Text Message (SMS/MMS)",
+    "url": "https://help.element451.com/en/articles/8506260-text-message-sms-mms",
+    "collection": "Conversations",
+    "file": "output/articles/text-message-sms-mms.md"
+  },
+  {
+    "title": "Messenger (Live Chat)",
+    "url": "https://help.element451.com/en/articles/6249763-messenger-live-chat",
+    "collection": "Conversations",
+    "file": "output/articles/messenger-live-chat.md"
+  },
+  {
+    "title": "Email",
+    "url": "https://help.element451.com/en/articles/8506447-email",
+    "collection": "Conversations",
+    "file": "output/articles/email.md"
+  },
+  {
+    "title": "WhatsApp",
+    "url": "https://help.element451.com/en/articles/8495755-whatsapp",
+    "collection": "Conversations",
+    "file": "output/articles/whatsapp.md"
+  },
+  {
+    "title": "Phone Calling",
+    "url": "https://help.element451.com/en/articles/8400679-phone-calling",
+    "collection": "Conversations",
+    "file": "output/articles/phone-calling.md"
+  },
+  {
+    "title": "Adding Email Inboxes to Conversations (Outlook + Gmail Forwarding)",
+    "url": "https://help.element451.com/en/articles/6321778-adding-email-inboxes-to-conversations-outlook-gmail-forwarding",
+    "collection": "Conversations",
+    "file": "output/articles/adding-email-inboxes-to-conversations-outlook-gmail-forwarding.md"
+  },
+  {
+    "title": "Conversation Rules",
+    "url": "https://help.element451.com/en/articles/1930478-conversation-rules",
+    "collection": "Conversations",
+    "file": "output/articles/conversation-rules.md"
+  },
+  {
+    "title": "Recorded Voice Messages in Messenger",
+    "url": "https://help.element451.com/en/articles/9626902-recorded-voice-messages-in-messenger",
+    "collection": "Conversations",
+    "file": "output/articles/recorded-voice-messages-in-messenger.md"
+  },
+  {
+    "title": "Sentiment Analysis",
+    "url": "https://help.element451.com/en/articles/8267878-sentiment-analysis",
+    "collection": "Conversations",
+    "file": "output/articles/sentiment-analysis.md"
+  },
+  {
+    "title": "Increasing Deliverability of SMS Messages in Conversations",
+    "url": "https://help.element451.com/en/articles/2845643-increasing-deliverability-of-sms-messages-in-conversations",
+    "collection": "Conversations",
+    "file": "output/articles/increasing-deliverability-of-sms-messages-in-conversations.md"
+  },
+  {
+    "title": "Manually Unsubscribe a User from Email + SMS Communication",
+    "url": "https://help.element451.com/en/articles/6066486-manually-unsubscribe-a-user-from-email-sms-communication",
+    "collection": "Conversations",
+    "file": "output/articles/manually-unsubscribe-a-user-from-email-sms-communication.md"
+  },
+  {
+    "title": "Email Inbox and Forwarding and Troubleshooting",
+    "url": "https://help.element451.com/en/articles/8663239-email-inbox-and-forwarding-and-troubleshooting",
+    "collection": "Conversations",
+    "file": "output/articles/email-inbox-and-forwarding-and-troubleshooting.md"
+  },
+  {
+    "title": "Outlook to Element451 Email Forwarding Troubleshooting",
+    "url": "https://help.element451.com/en/articles/9876273-outlook-to-element451-email-forwarding-troubleshooting",
+    "collection": "Conversations",
+    "file": "output/articles/outlook-to-element451-email-forwarding-troubleshooting.md"
+  },
+  {
+    "title": "\ud83d\udccc Courses: Frequently Asked Questions",
+    "url": "https://help.element451.com/en/articles/11787583-courses-frequently-asked-questions",
+    "collection": "Courses",
+    "file": "output/articles/courses-frequently-asked-questions.md"
+  },
+  {
+    "title": "Getting Started with Courses",
+    "url": "https://help.element451.com/en/articles/10420398-getting-started-with-courses",
+    "collection": "Courses",
+    "file": "output/articles/getting-started-with-courses.md"
+  },
+  {
+    "title": "Grade Risk Detection for Courses",
+    "url": "https://help.element451.com/en/articles/12824243-grade-risk-detection-for-courses",
+    "collection": "Courses",
+    "file": "output/articles/grade-risk-detection-for-courses.md"
+  },
+  {
+    "title": "Use Cases for Leveraging Course Data",
+    "url": "https://help.element451.com/en/articles/11124878-use-cases-for-leveraging-course-data",
+    "collection": "Courses",
+    "file": "output/articles/use-cases-for-leveraging-course-data.md"
+  },
+  {
+    "title": "Native Courses Integrations for Learning Management Systems (LMS)",
+    "url": "https://help.element451.com/en/articles/11589065-native-courses-integrations-for-learning-management-systems-lms",
+    "collection": "Courses",
+    "file": "output/articles/native-courses-integrations-for-learning-management-systems-lms.md"
+  },
+  {
+    "title": "\ud83d\udccc Data: Frequently Asked Questions",
+    "url": "https://help.element451.com/en/articles/10606718-data-frequently-asked-questions",
+    "collection": "Data Management",
+    "file": "output/articles/data-frequently-asked-questions.md"
+  },
+  {
+    "title": "Data Sources",
+    "url": "https://help.element451.com/en/articles/2066888-data-sources",
+    "collection": "Data Management",
+    "file": "output/articles/data-sources.md"
+  },
+  {
+    "title": "Adding Majors, Terms, Degrees, Campuses & Schools",
+    "url": "https://help.element451.com/en/articles/3152502-adding-majors-terms-degrees-campuses-schools",
+    "collection": "Data Management",
+    "file": "output/articles/adding-majors-terms-degrees-campuses-schools.md"
+  },
+  {
+    "title": "Changing Data Sources on a Pre-Existing Field",
+    "url": "https://help.element451.com/en/articles/7321708-changing-data-sources-on-a-pre-existing-field",
+    "collection": "Data Management",
+    "file": "output/articles/changing-data-sources-on-a-pre-existing-field.md"
+  },
+  {
+    "title": "Using Tags to Organize Majors, Terms, Degrees, Campuses, Schools, and Courses",
+    "url": "https://help.element451.com/en/articles/6959335-using-tags-to-organize-majors-terms-degrees-campuses-schools-and-courses",
+    "collection": "Data Management",
+    "file": "output/articles/using-tags-to-organize-majors-terms-degrees-campuses-schools-and-courses.md"
+  },
+  {
+    "title": "Setting up Integration Codes",
+    "url": "https://help.element451.com/en/articles/5181322-setting-up-integration-codes",
+    "collection": "Data Management",
+    "file": "output/articles/setting-up-integration-codes.md"
+  },
+  {
+    "title": "Field Management",
+    "url": "https://help.element451.com/en/articles/9118615-field-management",
+    "collection": "Data Management",
+    "file": "output/articles/field-management.md"
+  },
+  {
+    "title": "Fields, Validation, + Conditional Logic",
+    "url": "https://help.element451.com/en/articles/9093505-fields-validation-conditional-logic",
+    "collection": "Data Management",
+    "file": "output/articles/fields-validation-conditional-logic.md"
+  },
+  {
+    "title": "Field Groupings",
+    "url": "https://help.element451.com/en/articles/2582910-field-groupings",
+    "collection": "Data Management",
+    "file": "output/articles/field-groupings.md"
+  },
+  {
+    "title": "Intended vs Application Fields",
+    "url": "https://help.element451.com/en/articles/2582913-intended-vs-application-fields",
+    "collection": "Data Management",
+    "file": "output/articles/intended-vs-application-fields.md"
+  },
+  {
+    "title": "Field Filtering",
+    "url": "https://help.element451.com/en/articles/7321011-field-filtering",
+    "collection": "Data Management",
+    "file": "output/articles/field-filtering.md"
+  },
+  {
+    "title": "Troubleshooting\u202fField\u202fFiltering",
+    "url": "https://help.element451.com/en/articles/11321105-troubleshooting-field-filtering",
+    "collection": "Data Management",
+    "file": "output/articles/troubleshooting-field-filtering.md"
+  },
+  {
+    "title": "Race & Ethnicity Field Group: Race Categories and Subgroups",
+    "url": "https://help.element451.com/en/articles/14478232-race-ethnicity-field-group-race-categories-and-subgroups",
+    "collection": "Data Management",
+    "file": "output/articles/race-ethnicity-field-group-race-categories-and-subgroups.md"
+  },
+  {
+    "title": "Sources",
+    "url": "https://help.element451.com/en/articles/2066892-sources",
+    "collection": "Data Management",
+    "file": "output/articles/sources.md"
+  },
+  {
+    "title": "Importing and Exporting Sources",
+    "url": "https://help.element451.com/en/articles/3456097-importing-and-exporting-sources",
+    "collection": "Data Management",
+    "file": "output/articles/importing-and-exporting-sources.md"
+  },
+  {
+    "title": "3 Essential Source Tracking Tactics",
+    "url": "https://help.element451.com/en/articles/10269979-3-essential-source-tracking-tactics",
+    "collection": "Data Management",
+    "file": "output/articles/3-essential-source-tracking-tactics.md"
+  },
+  {
+    "title": "Managing Document Types",
+    "url": "https://help.element451.com/en/articles/2433933-managing-document-types",
+    "collection": "Data Management",
+    "file": "output/articles/managing-document-types.md"
+  },
+  {
+    "title": "All Media / Media Manager",
+    "url": "https://help.element451.com/en/articles/9718138-all-media-media-manager",
+    "collection": "Data Management",
+    "file": "output/articles/all-media-media-manager.md"
+  },
+  {
+    "title": "Documents Bin",
+    "url": "https://help.element451.com/en/articles/14077692-documents-bin",
+    "collection": "Data Management",
+    "file": "output/articles/documents-bin.md"
+  },
+  {
+    "title": "Integration Log: Monitoring + Troubleshooting Integrations",
+    "url": "https://help.element451.com/en/articles/9455171-integration-log-monitoring-troubleshooting-integrations",
+    "collection": "Data Management",
+    "file": "output/articles/integration-log-monitoring-troubleshooting-integrations.md"
+  },
+  {
+    "title": "Integration Mapping Templates",
+    "url": "https://help.element451.com/en/articles/9736811-integration-mapping-templates",
+    "collection": "Data Management",
+    "file": "output/articles/integration-mapping-templates.md"
+  },
+  {
+    "title": "The Element451 Data Model",
+    "url": "https://help.element451.com/en/articles/9824701-the-element451-data-model",
+    "collection": "Data Management",
+    "file": "output/articles/the-element451-data-model.md"
+  },
+  {
+    "title": "Activity, Task, and Note Types",
+    "url": "https://help.element451.com/en/articles/3096969-activity-task-and-note-types",
+    "collection": "Data Management",
+    "file": "output/articles/activity-task-and-note-types.md"
+  },
+  {
+    "title": "Getting Started with My Dashboards (Legacy Feature)",
+    "url": "https://help.element451.com/en/articles/11831413-getting-started-with-my-dashboards-legacy-feature",
+    "collection": "Data Management",
+    "file": "output/articles/getting-started-with-my-dashboards-legacy-feature.md"
+  },
+  {
+    "title": "Getting Started with Imports",
+    "url": "https://help.element451.com/en/articles/9000459-getting-started-with-imports",
+    "collection": "Data Management",
+    "file": "output/articles/getting-started-with-imports.md"
+  },
+  {
+    "title": "Import Management",
+    "url": "https://help.element451.com/en/articles/9000606-import-management",
+    "collection": "Data Management",
+    "file": "output/articles/import-management.md"
+  },
+  {
+    "title": "Creating Imports",
+    "url": "https://help.element451.com/en/articles/9001231-creating-imports",
+    "collection": "Data Management",
+    "file": "output/articles/creating-imports.md"
+  },
+  {
+    "title": "Column Setting Options for Imports",
+    "url": "https://help.element451.com/en/articles/9006325-column-setting-options-for-imports",
+    "collection": "Data Management",
+    "file": "output/articles/column-setting-options-for-imports.md"
+  },
+  {
+    "title": "Data Quality Guide",
+    "url": "https://help.element451.com/en/articles/9006443-data-quality-guide",
+    "collection": "Data Management",
+    "file": "output/articles/data-quality-guide.md"
+  },
+  {
+    "title": "Creating Document Imports",
+    "url": "https://help.element451.com/en/articles/9011140-creating-document-imports",
+    "collection": "Data Management",
+    "file": "output/articles/creating-document-imports.md"
+  },
+  {
+    "title": "Creating Document Imports with Index Files",
+    "url": "https://help.element451.com/en/articles/9585086-creating-document-imports-with-index-files",
+    "collection": "Data Management",
+    "file": "output/articles/creating-document-imports-with-index-files.md"
+  },
+  {
+    "title": "Import Mapping Examples",
+    "url": "https://help.element451.com/en/articles/9620676-import-mapping-examples",
+    "collection": "Data Management",
+    "file": "output/articles/import-mapping-examples.md"
+  },
+  {
+    "title": "Getting Started with Exports",
+    "url": "https://help.element451.com/en/articles/9006515-getting-started-with-exports",
+    "collection": "Data Management",
+    "file": "output/articles/getting-started-with-exports.md"
+  },
+  {
+    "title": "Creating Exports",
+    "url": "https://help.element451.com/en/articles/9007317-creating-exports",
+    "collection": "Data Management",
+    "file": "output/articles/creating-exports.md"
+  },
+  {
+    "title": "Column Setting Options for Exports",
+    "url": "https://help.element451.com/en/articles/9007047-column-setting-options-for-exports",
+    "collection": "Data Management",
+    "file": "output/articles/column-setting-options-for-exports.md"
+  },
+  {
+    "title": "Creating Document Exports",
+    "url": "https://help.element451.com/en/articles/9011277-creating-document-exports",
+    "collection": "Data Management",
+    "file": "output/articles/creating-document-exports.md"
+  },
+  {
+    "title": "Export Management",
+    "url": "https://help.element451.com/en/articles/9006645-export-management",
+    "collection": "Data Management",
+    "file": "output/articles/export-management.md"
+  },
+  {
+    "title": "Export Mapping Examples",
+    "url": "https://help.element451.com/en/articles/9621148-export-mapping-examples",
+    "collection": "Data Management",
+    "file": "output/articles/export-mapping-examples.md"
+  },
+  {
+    "title": "Calculated Fields",
+    "url": "https://help.element451.com/en/articles/9007704-calculated-fields",
+    "collection": "Data Management",
+    "file": "output/articles/calculated-fields.md"
+  },
+  {
+    "title": "Star (*) Mappings",
+    "url": "https://help.element451.com/en/articles/9745028-star-mappings",
+    "collection": "Data Management",
+    "file": "output/articles/star-mappings.md"
+  },
+  {
+    "title": "Scheduling Import + Export",
+    "url": "https://help.element451.com/en/articles/9007716-scheduling-import-export",
+    "collection": "Data Management",
+    "file": "output/articles/scheduling-import-export.md"
+  },
+  {
+    "title": "Importing Application Data",
+    "url": "https://help.element451.com/en/articles/9007767-importing-application-data",
+    "collection": "Data Management",
+    "file": "output/articles/importing-application-data.md"
+  },
+  {
+    "title": "A Guide for Data Clean-Up",
+    "url": "https://help.element451.com/en/articles/4404458-a-guide-for-data-clean-up",
+    "collection": "Data Management",
+    "file": "output/articles/a-guide-for-data-clean-up.md"
+  },
+  {
+    "title": "Data Connectors",
+    "url": "https://help.element451.com/en/articles/9007788-data-connectors",
+    "collection": "Data Management",
+    "file": "output/articles/data-connectors.md"
+  },
+  {
+    "title": "Securely Transferring Files (SFTP)",
+    "url": "https://help.element451.com/en/articles/9146573-securely-transferring-files-sftp",
+    "collection": "Data Management",
+    "file": "output/articles/securely-transferring-files-sftp.md"
+  },
+  {
+    "title": "Resolving \"This app is blocked\" Error for Google Drive Connectors",
+    "url": "https://help.element451.com/en/articles/9999308-resolving-this-app-is-blocked-error-for-google-drive-connectors",
+    "collection": "Data Management",
+    "file": "output/articles/resolving-this-app-is-blocked-error-for-google-drive-connectors.md"
+  },
+  {
+    "title": "Getting Starting with Mapping Templates",
+    "url": "https://help.element451.com/en/articles/9007817-getting-starting-with-mapping-templates",
+    "collection": "Data Management",
+    "file": "output/articles/getting-starting-with-mapping-templates.md"
+  },
+  {
+    "title": "Creating Import Mapping Templates",
+    "url": "https://help.element451.com/en/articles/9002061-creating-import-mapping-templates",
+    "collection": "Data Management",
+    "file": "output/articles/creating-import-mapping-templates.md"
+  },
+  {
+    "title": "Creating Export Mapping Templates",
+    "url": "https://help.element451.com/en/articles/9006851-creating-export-mapping-templates",
+    "collection": "Data Management",
+    "file": "output/articles/creating-export-mapping-templates.md"
+  },
+  {
+    "title": "Getting Started with Importing Historic Data",
+    "url": "https://help.element451.com/en/articles/10763369-getting-started-with-importing-historic-data",
+    "collection": "Data Management",
+    "file": "output/articles/getting-started-with-importing-historic-data.md"
+  },
+  {
+    "title": "Importing Record Bio-Demographic Data",
+    "url": "https://help.element451.com/en/articles/10771204-importing-record-bio-demographic-data",
+    "collection": "Data Management",
+    "file": "output/articles/importing-record-bio-demographic-data.md"
+  },
+  {
+    "title": "Importing Historic Application Data",
+    "url": "https://help.element451.com/en/articles/10776247-importing-historic-application-data",
+    "collection": "Data Management",
+    "file": "output/articles/importing-historic-application-data.md"
+  },
+  {
+    "title": "Importing Family/Emergency Contact Records",
+    "url": "https://help.element451.com/en/articles/10826356-importing-family-emergency-contact-records",
+    "collection": "Data Management",
+    "file": "output/articles/importing-family-emergency-contact-records.md"
+  },
+  {
+    "title": "Importing School History",
+    "url": "https://help.element451.com/en/articles/10830714-importing-school-history",
+    "collection": "Data Management",
+    "file": "output/articles/importing-school-history.md"
+  },
+  {
+    "title": "Importing Milestones/Funnel Stages",
+    "url": "https://help.element451.com/en/articles/11048532-importing-milestones-funnel-stages",
+    "collection": "Data Management",
+    "file": "output/articles/importing-milestones-funnel-stages.md"
+  },
+  {
+    "title": "Importing Historic Sources",
+    "url": "https://help.element451.com/en/articles/11048688-importing-historic-sources",
+    "collection": "Data Management",
+    "file": "output/articles/importing-historic-sources.md"
+  },
+  {
+    "title": "Importing Historic Test Scores",
+    "url": "https://help.element451.com/en/articles/11088661-importing-historic-test-scores",
+    "collection": "Data Management",
+    "file": "output/articles/importing-historic-test-scores.md"
+  },
+  {
+    "title": "Element451 Field Reference (Data Dictionary)",
+    "url": "https://help.element451.com/en/articles/15902105-element451-field-reference-data-dictionary",
+    "collection": "Data Management",
+    "file": "output/articles/element451-field-reference-data-dictionary.md"
+  },
+  {
+    "title": "Field Reference: Application, Decision + Checklist Fields",
+    "url": "https://help.element451.com/en/articles/15901975-field-reference-application-decision-checklist-fields",
+    "collection": "Data Management",
+    "file": "output/articles/field-reference-application-decision-checklist-fields.md"
+  },
+  {
+    "title": "Field Reference: Education Fields",
+    "url": "https://help.element451.com/en/articles/15902012-field-reference-education-fields",
+    "collection": "Data Management",
+    "file": "output/articles/field-reference-education-fields.md"
+  },
+  {
+    "title": "Field Reference: Event, Milestone, Source + Note Fields",
+    "url": "https://help.element451.com/en/articles/15902096-field-reference-event-milestone-source-note-fields",
+    "collection": "Data Management",
+    "file": "output/articles/field-reference-event-milestone-source-note-fields.md"
+  },
+  {
+    "title": "Field Reference: Family, Emergency Contact + Employment Fields",
+    "url": "https://help.element451.com/en/articles/15902065-field-reference-family-emergency-contact-employment-fields",
+    "collection": "Data Management",
+    "file": "output/articles/field-reference-family-emergency-contact-employment-fields.md"
+  },
+  {
+    "title": "Field Reference: Test Score (Evaluation) Fields, Part 1",
+    "url": "https://help.element451.com/en/articles/15902029-field-reference-test-score-evaluation-fields-part-1",
+    "collection": "Data Management",
+    "file": "output/articles/field-reference-test-score-evaluation-fields-part-1.md"
+  },
+  {
+    "title": "Field Reference: Test Score (Evaluation) Fields, Part 2",
+    "url": "https://help.element451.com/en/articles/15902042-field-reference-test-score-evaluation-fields-part-2",
+    "collection": "Data Management",
+    "file": "output/articles/field-reference-test-score-evaluation-fields-part-2.md"
+  },
+  {
+    "title": "Field Reference: User Profile Fields",
+    "url": "https://help.element451.com/en/articles/15901962-field-reference-user-profile-fields",
+    "collection": "Data Management",
+    "file": "output/articles/field-reference-user-profile-fields.md"
+  },
+  {
+    "title": "\ud83d\udccc Decisions: Frequently Asked Questions",
+    "url": "https://help.element451.com/en/articles/9251710-decisions-frequently-asked-questions",
+    "collection": "Decisions",
+    "file": "output/articles/decisions-frequently-asked-questions.md"
+  },
+  {
+    "title": "Getting Started with Decisions",
+    "url": "https://help.element451.com/en/articles/9200421-getting-started-with-decisions",
+    "collection": "Decisions",
+    "file": "output/articles/getting-started-with-decisions.md"
+  },
+  {
+    "title": "All Decisions Page + Searching/Filtering",
+    "url": "https://help.element451.com/en/articles/9210566-all-decisions-page-searching-filtering",
+    "collection": "Decisions",
+    "file": "output/articles/all-decisions-page-searching-filtering.md"
+  },
+  {
+    "title": "Reviewing + Processing Application Decisions",
+    "url": "https://help.element451.com/en/articles/9241630-reviewing-processing-application-decisions",
+    "collection": "Decisions",
+    "file": "output/articles/reviewing-processing-application-decisions.md"
+  },
+  {
+    "title": "Understanding Score Calculations + Weighted Criteria",
+    "url": "https://help.element451.com/en/articles/9261175-understanding-score-calculations-weighted-criteria",
+    "collection": "Decisions",
+    "file": "output/articles/understanding-score-calculations-weighted-criteria.md"
+  },
+  {
+    "title": "Evaluations (Tests) & Superscores",
+    "url": "https://help.element451.com/en/articles/10966006-evaluations-tests-superscores",
+    "collection": "Decisions",
+    "file": "output/articles/evaluations-tests-superscores.md"
+  },
+  {
+    "title": "Decisions: Groups + Permissions",
+    "url": "https://help.element451.com/en/articles/9210585-decisions-groups-permissions",
+    "collection": "Decisions",
+    "file": "output/articles/decisions-groups-permissions.md"
+  },
+  {
+    "title": "Decision Board: Stages + Statuses",
+    "url": "https://help.element451.com/en/articles/9210610-decision-board-stages-statuses",
+    "collection": "Decisions",
+    "file": "output/articles/decision-board-stages-statuses.md"
+  },
+  {
+    "title": "Decisions: Criteria",
+    "url": "https://help.element451.com/en/articles/9210619-decisions-criteria",
+    "collection": "Decisions",
+    "file": "output/articles/decisions-criteria.md"
+  },
+  {
+    "title": "Decisions: Checklists",
+    "url": "https://help.element451.com/en/articles/9210688-decisions-checklists",
+    "collection": "Decisions",
+    "file": "output/articles/decisions-checklists.md"
+  },
+  {
+    "title": "Decisions: Packages",
+    "url": "https://help.element451.com/en/articles/9236362-decisions-packages",
+    "collection": "Decisions",
+    "file": "output/articles/decisions-packages.md"
+  },
+  {
+    "title": "Decisions: Cohorts",
+    "url": "https://help.element451.com/en/articles/9235440-decisions-cohorts",
+    "collection": "Decisions",
+    "file": "output/articles/decisions-cohorts.md"
+  },
+  {
+    "title": "Intelligent Admissions: Decision Rules + Automation",
+    "url": "https://help.element451.com/en/articles/9241624-intelligent-admissions-decision-rules-automation",
+    "collection": "Decisions",
+    "file": "output/articles/intelligent-admissions-decision-rules-automation.md"
+  },
+  {
+    "title": "Decisions: Tests",
+    "url": "https://help.element451.com/en/articles/9236142-decisions-tests",
+    "collection": "Decisions",
+    "file": "output/articles/decisions-tests.md"
+  },
+  {
+    "title": "Using Bolt AI to Support Decisions",
+    "url": "https://help.element451.com/en/articles/11101486-using-bolt-ai-to-support-decisions",
+    "collection": "Decisions",
+    "file": "output/articles/using-bolt-ai-to-support-decisions.md"
+  },
+  {
+    "title": "Smarter First Reads: A Modern Admissions Process with Bolt Agents",
+    "url": "https://help.element451.com/en/articles/11503037-smarter-first-reads-a-modern-admissions-process-with-bolt-agents",
+    "collection": "Decisions",
+    "file": "output/articles/smarter-first-reads-a-modern-admissions-process-with-bolt-agents.md"
+  },
+  {
+    "title": "\ud83d\udccc Events: Frequently Asked Questions",
+    "url": "https://help.element451.com/en/articles/9354041-events-frequently-asked-questions",
+    "collection": "Events",
+    "file": "output/articles/events-frequently-asked-questions.md"
+  },
+  {
+    "title": "Getting Started with Events",
+    "url": "https://help.element451.com/en/articles/1520520-getting-started-with-events",
+    "collection": "Events",
+    "file": "output/articles/getting-started-with-events.md"
+  },
+  {
+    "title": "Event Settings",
+    "url": "https://help.element451.com/en/articles/8981854-event-settings",
+    "collection": "Events",
+    "file": "output/articles/event-settings.md"
+  },
+  {
+    "title": "Event Sites",
+    "url": "https://help.element451.com/en/articles/13997534-event-sites",
+    "collection": "Events",
+    "file": "output/articles/event-sites.md"
+  },
+  {
+    "title": "Event Landing Page",
+    "url": "https://help.element451.com/en/articles/1524123-event-landing-page",
+    "collection": "Events",
+    "file": "output/articles/event-landing-page.md"
+  },
+  {
+    "title": "Creating an Event",
+    "url": "https://help.element451.com/en/articles/1520582-creating-an-event",
+    "collection": "Events",
+    "file": "output/articles/creating-an-event.md"
+  },
+  {
+    "title": "Adding + Editing Event Details",
+    "url": "https://help.element451.com/en/articles/1520647-adding-editing-event-details",
+    "collection": "Events",
+    "file": "output/articles/adding-editing-event-details.md"
+  },
+  {
+    "title": "Event Dates/Occurrences",
+    "url": "https://help.element451.com/en/articles/9094765-event-dates-occurrences",
+    "collection": "Events",
+    "file": "output/articles/event-dates-occurrences.md"
+  },
+  {
+    "title": "Event Registration Form + Payments",
+    "url": "https://help.element451.com/en/articles/1520669-event-registration-form-payments",
+    "collection": "Events",
+    "file": "output/articles/event-registration-form-payments.md"
+  },
+  {
+    "title": "Event Self Check-In",
+    "url": "https://help.element451.com/en/articles/9650448-event-self-check-in",
+    "collection": "Events",
+    "file": "output/articles/event-self-check-in.md"
+  },
+  {
+    "title": "Event Registration Authentication",
+    "url": "https://help.element451.com/en/articles/13797957-event-registration-authentication",
+    "collection": "Events",
+    "file": "output/articles/event-registration-authentication.md"
+  },
+  {
+    "title": "Event Messaging and Notifications",
+    "url": "https://help.element451.com/en/articles/1524108-event-messaging-and-notifications",
+    "collection": "Events",
+    "file": "output/articles/event-messaging-and-notifications.md"
+  },
+  {
+    "title": "Tokens for Events Messages",
+    "url": "https://help.element451.com/en/articles/6067308-tokens-for-events-messages",
+    "collection": "Events",
+    "file": "output/articles/tokens-for-events-messages.md"
+  },
+  {
+    "title": "Managing Event Attendees",
+    "url": "https://help.element451.com/en/articles/1520725-managing-event-attendees",
+    "collection": "Events",
+    "file": "output/articles/managing-event-attendees.md"
+  },
+  {
+    "title": "Event Notes",
+    "url": "https://help.element451.com/en/articles/9389582-event-notes",
+    "collection": "Events",
+    "file": "output/articles/event-notes.md"
+  },
+  {
+    "title": "Featured Events",
+    "url": "https://help.element451.com/en/articles/1524124-featured-events",
+    "collection": "Events",
+    "file": "output/articles/featured-events.md"
+  },
+  {
+    "title": "Event Series",
+    "url": "https://help.element451.com/en/articles/1524125-event-series",
+    "collection": "Events",
+    "file": "output/articles/event-series.md"
+  },
+  {
+    "title": "Attendee-Managed Event Registration",
+    "url": "https://help.element451.com/en/articles/9092396-attendee-managed-event-registration",
+    "collection": "Events",
+    "file": "output/articles/attendee-managed-event-registration.md"
+  },
+  {
+    "title": "Element451 Event Plugin for WordPress by Spark451",
+    "url": "https://help.element451.com/en/articles/8390940-element451-event-plugin-for-wordpress-by-spark451",
+    "collection": "Events",
+    "file": "output/articles/element451-event-plugin-for-wordpress-by-spark451.md"
+  },
+  {
+    "title": "Zoom Integration: Getting Started",
+    "url": "https://help.element451.com/en/articles/5108060-zoom-integration-getting-started",
+    "collection": "Events",
+    "file": "output/articles/zoom-integration-getting-started.md"
+  },
+  {
+    "title": "Zoom Integration: Adding + Managing Zoom Events",
+    "url": "https://help.element451.com/en/articles/5108154-zoom-integration-adding-managing-zoom-events",
+    "collection": "Events",
+    "file": "output/articles/zoom-integration-adding-managing-zoom-events.md"
+  },
+  {
+    "title": "Zoom Integration: Removing/Uninstalling",
+    "url": "https://help.element451.com/en/articles/5120424-zoom-integration-removing-uninstalling",
+    "collection": "Events",
+    "file": "output/articles/zoom-integration-removing-uninstalling.md"
+  },
+  {
+    "title": "Zoom Integration: Troubleshooting",
+    "url": "https://help.element451.com/en/articles/8927495-zoom-integration-troubleshooting",
+    "collection": "Events",
+    "file": "output/articles/zoom-integration-troubleshooting.md"
+  },
+  {
+    "title": "\ud83d\udccc Forms: Frequently Asked Questions",
+    "url": "https://help.element451.com/en/articles/10602253-forms-frequently-asked-questions",
+    "collection": "Forms",
+    "file": "output/articles/forms-frequently-asked-questions.md"
+  },
+  {
+    "title": "Getting Started with Forms",
+    "url": "https://help.element451.com/en/articles/2582904-getting-started-with-forms",
+    "collection": "Forms",
+    "file": "output/articles/getting-started-with-forms.md"
+  },
+  {
+    "title": "Creating + Managing Forms",
+    "url": "https://help.element451.com/en/articles/9001082-creating-managing-forms",
+    "collection": "Forms",
+    "file": "output/articles/creating-managing-forms.md"
+  },
+  {
+    "title": "Understanding Form Submissions",
+    "url": "https://help.element451.com/en/articles/9184596-understanding-form-submissions",
+    "collection": "Forms",
+    "file": "output/articles/understanding-form-submissions.md"
+  },
+  {
+    "title": "Embedding Forms on Pages + External Sites",
+    "url": "https://help.element451.com/en/articles/9000414-embedding-forms-on-pages-external-sites",
+    "collection": "Forms",
+    "file": "output/articles/embedding-forms-on-pages-external-sites.md"
+  },
+  {
+    "title": "Generating + Accessing PDFs from Forms",
+    "url": "https://help.element451.com/en/articles/7030166-generating-accessing-pdfs-from-forms",
+    "collection": "Forms",
+    "file": "output/articles/generating-accessing-pdfs-from-forms.md"
+  },
+  {
+    "title": "Pre-Populating Forms on Pages",
+    "url": "https://help.element451.com/en/articles/9320127-pre-populating-forms-on-pages",
+    "collection": "Forms",
+    "file": "output/articles/pre-populating-forms-on-pages.md"
+  },
+  {
+    "title": "\ud83d\udccc Insights: Frequently Asked Questions",
+    "url": "https://help.element451.com/en/articles/10629724-insights-frequently-asked-questions",
+    "collection": "Insights",
+    "file": "output/articles/insights-frequently-asked-questions.md"
+  },
+  {
+    "title": "Insights Overview",
+    "url": "https://help.element451.com/en/articles/6666068-insights-overview",
+    "collection": "Insights",
+    "file": "output/articles/insights-overview.md"
+  },
+  {
+    "title": "Using Segments in Insights",
+    "url": "https://help.element451.com/en/articles/6798155-using-segments-in-insights",
+    "collection": "Insights",
+    "file": "output/articles/using-segments-in-insights.md"
+  },
+  {
+    "title": "Applications Dashboard",
+    "url": "https://help.element451.com/en/articles/9768967-applications-dashboard",
+    "collection": "Insights",
+    "file": "output/articles/applications-dashboard.md"
+  },
+  {
+    "title": "Appointments Dashboard",
+    "url": "https://help.element451.com/en/articles/8148075-appointments-dashboard",
+    "collection": "Insights",
+    "file": "output/articles/appointments-dashboard.md"
+  },
+  {
+    "title": "Bolt Agent Jobs Dashboard",
+    "url": "https://help.element451.com/en/articles/12012080-bolt-agent-jobs-dashboard",
+    "collection": "Insights",
+    "file": "output/articles/bolt-agent-jobs-dashboard.md"
+  },
+  {
+    "title": "Bolt Discovery Dashboard",
+    "url": "https://help.element451.com/en/articles/9740909-bolt-discovery-dashboard",
+    "collection": "Insights",
+    "file": "output/articles/bolt-discovery-dashboard.md"
+  },
+  {
+    "title": "Campaigns Dashboard",
+    "url": "https://help.element451.com/en/articles/6788884-campaigns-dashboard",
+    "collection": "Insights",
+    "file": "output/articles/campaigns-dashboard.md"
+  },
+  {
+    "title": "Conversations Dashboard",
+    "url": "https://help.element451.com/en/articles/6909340-conversations-dashboard",
+    "collection": "Insights",
+    "file": "output/articles/conversations-dashboard.md"
+  },
+  {
+    "title": "Data Hygiene Dashboard",
+    "url": "https://help.element451.com/en/articles/8814567-data-hygiene-dashboard",
+    "collection": "Insights",
+    "file": "output/articles/data-hygiene-dashboard.md"
+  },
+  {
+    "title": "Events Dashboard",
+    "url": "https://help.element451.com/en/articles/6792609-events-dashboard",
+    "collection": "Insights",
+    "file": "output/articles/events-dashboard.md"
+  },
+  {
+    "title": "Funnel Dashboard",
+    "url": "https://help.element451.com/en/articles/6797207-funnel-dashboard",
+    "collection": "Insights",
+    "file": "output/articles/funnel-dashboard.md"
+  },
+  {
+    "title": "Management Dashboard",
+    "url": "https://help.element451.com/en/articles/7436092-management-dashboard",
+    "collection": "Insights",
+    "file": "output/articles/management-dashboard.md"
+  },
+  {
+    "title": "Payments Dashboard",
+    "url": "https://help.element451.com/en/articles/9118668-payments-dashboard",
+    "collection": "Insights",
+    "file": "output/articles/payments-dashboard.md"
+  },
+  {
+    "title": "Sources Dashboard",
+    "url": "https://help.element451.com/en/articles/6916688-sources-dashboard",
+    "collection": "Insights",
+    "file": "output/articles/sources-dashboard.md"
+  },
+  {
+    "title": "Tasks Performance Dashboard",
+    "url": "https://help.element451.com/en/articles/6786937-tasks-performance-dashboard",
+    "collection": "Insights",
+    "file": "output/articles/tasks-performance-dashboard.md"
+  },
+  {
+    "title": "Web Activities Dashboard",
+    "url": "https://help.element451.com/en/articles/7111747-web-activities-dashboard",
+    "collection": "Insights",
+    "file": "output/articles/web-activities-dashboard.md"
+  },
+  {
+    "title": "Student Success Dashboard",
+    "url": "https://help.element451.com/en/articles/13929676-student-success-dashboard",
+    "collection": "Insights",
+    "file": "output/articles/student-success-dashboard.md"
+  },
+  {
+    "title": "Data Sharing - Data Dictionary",
+    "url": "https://help.element451.com/en/articles/7888528-data-sharing-data-dictionary",
+    "collection": "Insights",
+    "file": "output/articles/data-sharing-data-dictionary.md"
+  },
+  {
+    "title": "Snowflake Data Sharing",
+    "url": "https://help.element451.com/en/articles/8155946-snowflake-data-sharing",
+    "collection": "Insights",
+    "file": "output/articles/snowflake-data-sharing.md"
+  },
+  {
+    "title": "Getting Started with Integrations",
+    "url": "https://help.element451.com/en/articles/9791528-getting-started-with-integrations",
+    "collection": "Integrations",
+    "file": "output/articles/getting-started-with-integrations.md"
+  },
+  {
+    "title": "Courses Native Integration: Blackboard Learn LMS",
+    "url": "https://help.element451.com/en/articles/11199263-courses-native-integration-blackboard-learn-lms",
+    "collection": "Integrations",
+    "file": "output/articles/courses-native-integration-blackboard-learn-lms.md"
+  },
+  {
+    "title": "Courses Native Integration: D2L Brightspace LMS",
+    "url": "https://help.element451.com/en/articles/11116105-courses-native-integration-d2l-brightspace-lms",
+    "collection": "Integrations",
+    "file": "output/articles/courses-native-integration-d2l-brightspace-lms.md"
+  },
+  {
+    "title": "Courses Native Integration: Canvas LMS",
+    "url": "https://help.element451.com/en/articles/11124554-courses-native-integration-canvas-lms",
+    "collection": "Integrations",
+    "file": "output/articles/courses-native-integration-canvas-lms.md"
+  },
+  {
+    "title": "Courses Native Integration: OpenLMS [Beta]",
+    "url": "https://help.element451.com/en/articles/13195039-courses-native-integration-openlms-beta",
+    "collection": "Integrations",
+    "file": "output/articles/courses-native-integration-openlms-beta.md"
+  },
+  {
+    "title": "Native Salesforce Integration [Beta]",
+    "url": "https://help.element451.com/en/articles/12633650-native-salesforce-integration-beta",
+    "collection": "Integrations",
+    "file": "output/articles/native-salesforce-integration-beta.md"
+  },
+  {
+    "title": "Webhooks",
+    "url": "https://help.element451.com/en/articles/7960898-webhooks",
+    "collection": "Integrations",
+    "file": "output/articles/webhooks.md"
+  },
+  {
+    "title": "Integrate Your Tools with Zapier",
+    "url": "https://help.element451.com/en/articles/6350700-integrate-your-tools-with-zapier",
+    "collection": "Integrations",
+    "file": "output/articles/integrate-your-tools-with-zapier.md"
+  },
+  {
+    "title": "Element451 Plugin for WordPress",
+    "url": "https://help.element451.com/en/articles/10423713-element451-plugin-for-wordpress",
+    "collection": "Integrations",
+    "file": "output/articles/element451-plugin-for-wordpress.md"
+  },
+  {
+    "title": "Managed Integration: Ellucian Colleague",
+    "url": "https://help.element451.com/en/articles/12294737-managed-integration-ellucian-colleague",
+    "collection": "Integrations",
+    "file": "output/articles/managed-integration-ellucian-colleague.md"
+  },
+  {
+    "title": "Managed Integration: Ellucian Banner",
+    "url": "https://help.element451.com/en/articles/12305739-managed-integration-ellucian-banner",
+    "collection": "Integrations",
+    "file": "output/articles/managed-integration-ellucian-banner.md"
+  },
+  {
+    "title": "Courses Integration: Ethos for Banner + Colleague",
+    "url": "https://help.element451.com/en/articles/11586099-courses-integration-ethos-for-banner-colleague",
+    "collection": "Integrations",
+    "file": "output/articles/courses-integration-ethos-for-banner-colleague.md"
+  },
+  {
+    "title": "\ud83d\udccc Journeys: Frequently Asked Questions",
+    "url": "https://help.element451.com/en/articles/10606462-journeys-frequently-asked-questions",
+    "collection": "Journeys",
+    "file": "output/articles/journeys-frequently-asked-questions.md"
+  },
+  {
+    "title": "Getting Started with Journeys",
+    "url": "https://help.element451.com/en/articles/6825003-getting-started-with-journeys",
+    "collection": "Journeys",
+    "file": "output/articles/getting-started-with-journeys.md"
+  },
+  {
+    "title": "Creating + Managing Journeys",
+    "url": "https://help.element451.com/en/articles/9492988-creating-managing-journeys",
+    "collection": "Journeys",
+    "file": "output/articles/creating-managing-journeys.md"
+  },
+  {
+    "title": "Journeys: Managing Enrollees",
+    "url": "https://help.element451.com/en/articles/9493679-journeys-managing-enrollees",
+    "collection": "Journeys",
+    "file": "output/articles/journeys-managing-enrollees.md"
+  },
+  {
+    "title": "Journeys: Analytics",
+    "url": "https://help.element451.com/en/articles/9493632-journeys-analytics",
+    "collection": "Journeys",
+    "file": "output/articles/journeys-analytics.md"
+  },
+  {
+    "title": "\ud83d\udccc Microsites: Frequently Asked Questions",
+    "url": "https://help.element451.com/en/articles/10617690-microsites-frequently-asked-questions",
+    "collection": "Microsites",
+    "file": "output/articles/microsites-frequently-asked-questions.md"
+  },
+  {
+    "title": "Getting Started with Microsites",
+    "url": "https://help.element451.com/en/articles/9274424-getting-started-with-microsites",
+    "collection": "Microsites",
+    "file": "output/articles/getting-started-with-microsites.md"
+  },
+  {
+    "title": "Microsites Part 1: Creating a Basic Microsite",
+    "url": "https://help.element451.com/en/articles/8576402-microsites-part-1-creating-a-basic-microsite",
+    "collection": "Microsites",
+    "file": "output/articles/microsites-part-1-creating-a-basic-microsite.md"
+  },
+  {
+    "title": "Microsites Part 2: Design, Layout, and Settings",
+    "url": "https://help.element451.com/en/articles/8576827-microsites-part-2-design-layout-and-settings",
+    "collection": "Microsites",
+    "file": "output/articles/microsites-part-2-design-layout-and-settings.md"
+  },
+  {
+    "title": "Microsites Part 3: Content Block and Section Descriptions",
+    "url": "https://help.element451.com/en/articles/8576832-microsites-part-3-content-block-and-section-descriptions",
+    "collection": "Microsites",
+    "file": "output/articles/microsites-part-3-content-block-and-section-descriptions.md"
+  },
+  {
+    "title": "Microsites Part 4: Adding Content to Your Microsite",
+    "url": "https://help.element451.com/en/articles/8576825-microsites-part-4-adding-content-to-your-microsite",
+    "collection": "Microsites",
+    "file": "output/articles/microsites-part-4-adding-content-to-your-microsite.md"
+  },
+  {
+    "title": "Linking the Admitted Student Dashboard to the Microsite",
+    "url": "https://help.element451.com/en/articles/3763471-linking-the-admitted-student-dashboard-to-the-microsite",
+    "collection": "Microsites",
+    "file": "output/articles/linking-the-admitted-student-dashboard-to-the-microsite.md"
+  },
+  {
+    "title": "Getting Started with Organizations",
+    "url": "https://help.element451.com/en/articles/6362685-getting-started-with-organizations",
+    "collection": "Organizations",
+    "file": "output/articles/getting-started-with-organizations.md"
+  },
+  {
+    "title": "Organization Settings",
+    "url": "https://help.element451.com/en/articles/6607904-organization-settings",
+    "collection": "Organizations",
+    "file": "output/articles/organization-settings.md"
+  },
+  {
+    "title": "Creating + Managing Organizations",
+    "url": "https://help.element451.com/en/articles/9471960-creating-managing-organizations",
+    "collection": "Organizations",
+    "file": "output/articles/creating-managing-organizations.md"
+  },
+  {
+    "title": "Getting Started with Packs",
+    "url": "https://help.element451.com/en/articles/6836779-getting-started-with-packs",
+    "collection": "Packs",
+    "file": "output/articles/getting-started-with-packs.md"
+  },
+  {
+    "title": "Guide to Packs Tokens",
+    "url": "https://help.element451.com/en/articles/6825249-guide-to-packs-tokens",
+    "collection": "Packs",
+    "file": "output/articles/guide-to-packs-tokens.md"
+  },
+  {
+    "title": "Packs Index and Descriptions",
+    "url": "https://help.element451.com/en/articles/6830799-packs-index-and-descriptions",
+    "collection": "Packs",
+    "file": "output/articles/packs-index-and-descriptions.md"
+  },
+  {
+    "title": "Happy Birthday Pack",
+    "url": "https://help.element451.com/en/articles/6879979-happy-birthday-pack",
+    "collection": "Packs",
+    "file": "output/articles/happy-birthday-pack.md"
+  },
+  {
+    "title": "Prospect Gen and Capture Page and Embeddable Request for Information Form",
+    "url": "https://help.element451.com/en/articles/6574636-prospect-gen-and-capture-page-and-embeddable-request-for-information-form",
+    "collection": "Packs",
+    "file": "output/articles/prospect-gen-and-capture-page-and-embeddable-request-for-information-form.md"
+  },
+  {
+    "title": "Sophomore/Junior Search Campaign (By Grade Level)",
+    "url": "https://help.element451.com/en/articles/6916482-sophomore-junior-search-campaign-by-grade-level",
+    "collection": "Packs",
+    "file": "output/articles/sophomore-junior-search-campaign-by-grade-level.md"
+  },
+  {
+    "title": "Sophomore/Junior Search Campaign (By Funnel Stage)",
+    "url": "https://help.element451.com/en/articles/6922626-sophomore-junior-search-campaign-by-funnel-stage",
+    "collection": "Packs",
+    "file": "output/articles/sophomore-junior-search-campaign-by-funnel-stage.md"
+  },
+  {
+    "title": "Senior Search Campaign Pack",
+    "url": "https://help.element451.com/en/articles/6901152-senior-search-campaign-pack",
+    "collection": "Packs",
+    "file": "output/articles/senior-search-campaign-pack.md"
+  },
+  {
+    "title": "Parents and Families Campaign Pack",
+    "url": "https://help.element451.com/en/articles/6901153-parents-and-families-campaign-pack",
+    "collection": "Packs",
+    "file": "output/articles/parents-and-families-campaign-pack.md"
+  },
+  {
+    "title": "Transfer Search Campaign Pack",
+    "url": "https://help.element451.com/en/articles/6901158-transfer-search-campaign-pack",
+    "collection": "Packs",
+    "file": "output/articles/transfer-search-campaign-pack.md"
+  },
+  {
+    "title": "Graduate Nurture Campaign",
+    "url": "https://help.element451.com/en/articles/6901154-graduate-nurture-campaign",
+    "collection": "Packs",
+    "file": "output/articles/graduate-nurture-campaign.md"
+  },
+  {
+    "title": "Application Completion Push",
+    "url": "https://help.element451.com/en/articles/6887547-application-completion-push",
+    "collection": "Packs",
+    "file": "output/articles/application-completion-push.md"
+  },
+  {
+    "title": "Application Submit Push",
+    "url": "https://help.element451.com/en/articles/6887554-application-submit-push",
+    "collection": "Packs",
+    "file": "output/articles/application-submit-push.md"
+  },
+  {
+    "title": "Admitted Yield Campaign",
+    "url": "https://help.element451.com/en/articles/6887556-admitted-yield-campaign",
+    "collection": "Packs",
+    "file": "output/articles/admitted-yield-campaign.md"
+  },
+  {
+    "title": "On Campus Tour and Virtual Information Session Packs",
+    "url": "https://help.element451.com/en/articles/6879991-on-campus-tour-and-virtual-information-session-packs",
+    "collection": "Packs",
+    "file": "output/articles/on-campus-tour-and-virtual-information-session-packs.md"
+  },
+  {
+    "title": "Application Checklist Campaign Pack",
+    "url": "https://help.element451.com/en/articles/6786708-application-checklist-campaign-pack",
+    "collection": "Packs",
+    "file": "output/articles/application-checklist-campaign-pack.md"
+  },
+  {
+    "title": "Decision Announcement Pack",
+    "url": "https://help.element451.com/en/articles/6789194-decision-announcement-pack",
+    "collection": "Packs",
+    "file": "output/articles/decision-announcement-pack.md"
+  },
+  {
+    "title": "FAFSA Reminder Campaign",
+    "url": "https://help.element451.com/en/articles/6825340-fafsa-reminder-campaign",
+    "collection": "Packs",
+    "file": "output/articles/fafsa-reminder-campaign.md"
+  },
+  {
+    "title": "SCOIR Integration Pack",
+    "url": "https://help.element451.com/en/articles/6821033-scoir-integration-pack",
+    "collection": "Packs",
+    "file": "output/articles/scoir-integration-pack.md"
+  },
+  {
+    "title": "Survey Invite Email Templates",
+    "url": "https://help.element451.com/en/articles/6866485-survey-invite-email-templates",
+    "collection": "Packs",
+    "file": "output/articles/survey-invite-email-templates.md"
+  },
+  {
+    "title": "Event Invite Email Templates",
+    "url": "https://help.element451.com/en/articles/6866490-event-invite-email-templates",
+    "collection": "Packs",
+    "file": "output/articles/event-invite-email-templates.md"
+  },
+  {
+    "title": "Nudge Email Templates",
+    "url": "https://help.element451.com/en/articles/6866487-nudge-email-templates",
+    "collection": "Packs",
+    "file": "output/articles/nudge-email-templates.md"
+  },
+  {
+    "title": "Newsletter Email Templates",
+    "url": "https://help.element451.com/en/articles/6866492-newsletter-email-templates",
+    "collection": "Packs",
+    "file": "output/articles/newsletter-email-templates.md"
+  },
+  {
+    "title": "\ud83d\udccc Pages: Frequently Asked Questions",
+    "url": "https://help.element451.com/en/articles/10859799-pages-frequently-asked-questions",
+    "collection": "Pages",
+    "file": "output/articles/pages-frequently-asked-questions.md"
+  },
+  {
+    "title": "Getting Started with Pages",
+    "url": "https://help.element451.com/en/articles/9311641-getting-started-with-pages",
+    "collection": "Pages",
+    "file": "output/articles/getting-started-with-pages.md"
+  },
+  {
+    "title": "Creating + Managing Pages",
+    "url": "https://help.element451.com/en/articles/2582895-creating-managing-pages",
+    "collection": "Pages",
+    "file": "output/articles/creating-managing-pages.md"
+  },
+  {
+    "title": "Subpages",
+    "url": "https://help.element451.com/en/articles/9546851-subpages",
+    "collection": "Pages",
+    "file": "output/articles/subpages.md"
+  },
+  {
+    "title": "\ud83d\udccc People: Frequently Asked Questions",
+    "url": "https://help.element451.com/en/articles/10602482-people-frequently-asked-questions",
+    "collection": "People",
+    "file": "output/articles/people-frequently-asked-questions.md"
+  },
+  {
+    "title": "People Overview",
+    "url": "https://help.element451.com/en/articles/6942790-people-overview",
+    "collection": "People",
+    "file": "output/articles/people-overview.md"
+  },
+  {
+    "title": "Adding and Removing People (Contacts)",
+    "url": "https://help.element451.com/en/articles/6943621-adding-and-removing-people-contacts",
+    "collection": "People",
+    "file": "output/articles/adding-and-removing-people-contacts.md"
+  },
+  {
+    "title": "Searching for a User by Name, Email, or Characteristic",
+    "url": "https://help.element451.com/en/articles/1475605-searching-for-a-user-by-name-email-or-characteristic",
+    "collection": "People",
+    "file": "output/articles/searching-for-a-user-by-name-email-or-characteristic.md"
+  },
+  {
+    "title": "Magic Links",
+    "url": "https://help.element451.com/en/articles/8106669-magic-links",
+    "collection": "People",
+    "file": "output/articles/magic-links.md"
+  },
+  {
+    "title": "Funnel Stages",
+    "url": "https://help.element451.com/en/articles/3419549-funnel-stages",
+    "collection": "People",
+    "file": "output/articles/funnel-stages.md"
+  },
+  {
+    "title": "Contact (People) Assignees",
+    "url": "https://help.element451.com/en/articles/8813617-contact-people-assignees",
+    "collection": "People",
+    "file": "output/articles/contact-people-assignees.md"
+  },
+  {
+    "title": "Bulk Deleting Contacts by Segment",
+    "url": "https://help.element451.com/en/articles/10010901-bulk-deleting-contacts-by-segment",
+    "collection": "People",
+    "file": "output/articles/bulk-deleting-contacts-by-segment.md"
+  },
+  {
+    "title": "How to Protect Your Contact Data from Accidental Overwrites",
+    "url": "https://help.element451.com/en/articles/13920046-how-to-protect-your-contact-data-from-accidental-overwrites",
+    "collection": "People",
+    "file": "output/articles/how-to-protect-your-contact-data-from-accidental-overwrites.md"
+  },
+  {
+    "title": "The Person Profile",
+    "url": "https://help.element451.com/en/articles/1475735-the-person-profile",
+    "collection": "People",
+    "file": "output/articles/the-person-profile.md"
+  },
+  {
+    "title": "Milestones",
+    "url": "https://help.element451.com/en/articles/3419189-milestones",
+    "collection": "People",
+    "file": "output/articles/milestones.md"
+  },
+  {
+    "title": "Student Engagement Score",
+    "url": "https://help.element451.com/en/articles/4957167-student-engagement-score",
+    "collection": "People",
+    "file": "output/articles/student-engagement-score.md"
+  },
+  {
+    "title": "Athletics",
+    "url": "https://help.element451.com/en/articles/3229317-athletics",
+    "collection": "People",
+    "file": "output/articles/athletics.md"
+  },
+  {
+    "title": "Administrative Holds - Data Object",
+    "url": "https://help.element451.com/en/articles/8704178-administrative-holds-data-object",
+    "collection": "People",
+    "file": "output/articles/administrative-holds-data-object.md"
+  },
+  {
+    "title": "Traits",
+    "url": "https://help.element451.com/en/articles/6960851-traits",
+    "collection": "People",
+    "file": "output/articles/traits.md"
+  },
+  {
+    "title": "Bolt Priority Index",
+    "url": "https://help.element451.com/en/articles/9579868-bolt-priority-index",
+    "collection": "People",
+    "file": "output/articles/bolt-priority-index.md"
+  },
+  {
+    "title": "Territory Management",
+    "url": "https://help.element451.com/en/articles/3990795-territory-management",
+    "collection": "People",
+    "file": "output/articles/territory-management.md"
+  },
+  {
+    "title": "Labels Overview",
+    "url": "https://help.element451.com/en/articles/6953481-labels-overview",
+    "collection": "People",
+    "file": "output/articles/labels-overview.md"
+  },
+  {
+    "title": "Apply a Label to a Person's Profile",
+    "url": "https://help.element451.com/en/articles/1474174-apply-a-label-to-a-person-s-profile",
+    "collection": "People",
+    "file": "output/articles/apply-a-label-to-a-person-s-profile.md"
+  },
+  {
+    "title": "Apply a Label to a Segment",
+    "url": "https://help.element451.com/en/articles/1474167-apply-a-label-to-a-segment",
+    "collection": "People",
+    "file": "output/articles/apply-a-label-to-a-segment.md"
+  },
+  {
+    "title": "Family Members + Relationships",
+    "url": "https://help.element451.com/en/articles/8903525-family-members-relationships",
+    "collection": "People",
+    "file": "output/articles/family-members-relationships.md"
+  },
+  {
+    "title": "Sending Campaigns to Parents/Guardians",
+    "url": "https://help.element451.com/en/articles/8901542-sending-campaigns-to-parents-guardians",
+    "collection": "People",
+    "file": "output/articles/sending-campaigns-to-parents-guardians.md"
+  },
+  {
+    "title": "Getting Started with the Deduplication Module",
+    "url": "https://help.element451.com/en/articles/2511116-getting-started-with-the-deduplication-module",
+    "collection": "People",
+    "file": "output/articles/getting-started-with-the-deduplication-module.md"
+  },
+  {
+    "title": "Deduplication Logic",
+    "url": "https://help.element451.com/en/articles/4935488-deduplication-logic",
+    "collection": "People",
+    "file": "output/articles/deduplication-logic.md"
+  },
+  {
+    "title": "Merging Duplicate Records",
+    "url": "https://help.element451.com/en/articles/9472960-merging-duplicate-records",
+    "collection": "People",
+    "file": "output/articles/merging-duplicate-records.md"
+  },
+  {
+    "title": "Activity Feed: Overview",
+    "url": "https://help.element451.com/en/articles/5159877-activity-feed-overview",
+    "collection": "People",
+    "file": "output/articles/activity-feed-overview.md"
+  },
+  {
+    "title": "Activity Feed: Adding Custom Activities",
+    "url": "https://help.element451.com/en/articles/3097376-activity-feed-adding-custom-activities",
+    "collection": "People",
+    "file": "output/articles/activity-feed-adding-custom-activities.md"
+  },
+  {
+    "title": "Activity Feed: Track Admin Changes",
+    "url": "https://help.element451.com/en/articles/5166922-activity-feed-track-admin-changes",
+    "collection": "People",
+    "file": "output/articles/activity-feed-track-admin-changes.md"
+  },
+  {
+    "title": "Understanding Enrolled Programs",
+    "url": "https://help.element451.com/en/articles/15032187-understanding-enrolled-programs",
+    "collection": "People",
+    "file": "output/articles/understanding-enrolled-programs.md"
+  },
+  {
+    "title": "Working with Enrolled Programs Data",
+    "url": "https://help.element451.com/en/articles/15032196-working-with-enrolled-programs-data",
+    "collection": "People",
+    "file": "output/articles/working-with-enrolled-programs-data.md"
+  },
+  {
+    "title": "Filters Overview",
+    "url": "https://help.element451.com/en/articles/1476084-filters-overview",
+    "collection": "People",
+    "file": "output/articles/filters-overview.md"
+  },
+  {
+    "title": "Filters: Property Types",
+    "url": "https://help.element451.com/en/articles/8800347-filters-property-types",
+    "collection": "People",
+    "file": "output/articles/filters-property-types.md"
+  },
+  {
+    "title": "Filters: All + Any Operators",
+    "url": "https://help.element451.com/en/articles/3648165-filters-all-any-operators",
+    "collection": "People",
+    "file": "output/articles/filters-all-any-operators.md"
+  },
+  {
+    "title": "Filters: Constraint Operators",
+    "url": "https://help.element451.com/en/articles/1476149-filters-constraint-operators",
+    "collection": "People",
+    "file": "output/articles/filters-constraint-operators.md"
+  },
+  {
+    "title": "Filters: All Properties | Has + Does Not Have",
+    "url": "https://help.element451.com/en/articles/7024581-filters-all-properties-has-does-not-have",
+    "collection": "People",
+    "file": "output/articles/filters-all-properties-has-does-not-have.md"
+  },
+  {
+    "title": "Geocoding",
+    "url": "https://help.element451.com/en/articles/8834728-geocoding",
+    "collection": "People",
+    "file": "output/articles/geocoding.md"
+  },
+  {
+    "title": "Filtering with Custom Fields in Segments",
+    "url": "https://help.element451.com/en/articles/10167508-filtering-with-custom-fields-in-segments",
+    "collection": "People",
+    "file": "output/articles/filtering-with-custom-fields-in-segments.md"
+  },
+  {
+    "title": "Segments Overview",
+    "url": "https://help.element451.com/en/articles/1474191-segments-overview",
+    "collection": "People",
+    "file": "output/articles/segments-overview.md"
+  },
+  {
+    "title": "Creating a Segment",
+    "url": "https://help.element451.com/en/articles/1474208-creating-a-segment",
+    "collection": "People",
+    "file": "output/articles/creating-a-segment.md"
+  },
+  {
+    "title": "Calculated Segments",
+    "url": "https://help.element451.com/en/articles/7891959-calculated-segments",
+    "collection": "People",
+    "file": "output/articles/calculated-segments.md"
+  },
+  {
+    "title": "Accessing and Managing Segments",
+    "url": "https://help.element451.com/en/articles/1474175-accessing-and-managing-segments",
+    "collection": "People",
+    "file": "output/articles/accessing-and-managing-segments.md"
+  },
+  {
+    "title": "How to Export a Segment",
+    "url": "https://help.element451.com/en/articles/1472092-how-to-export-a-segment",
+    "collection": "People",
+    "file": "output/articles/how-to-export-a-segment.md"
+  },
+  {
+    "title": "\ud83d\udccc Settings + Permissions: Frequently Asked Questions",
+    "url": "https://help.element451.com/en/articles/10602408-settings-permissions-frequently-asked-questions",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/settings-permissions-frequently-asked-questions.md"
+  },
+  {
+    "title": "Resetting a User's Password",
+    "url": "https://help.element451.com/en/articles/8525346-resetting-a-user-s-password",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/resetting-a-user-s-password.md"
+  },
+  {
+    "title": "Security + Authentication Settings",
+    "url": "https://help.element451.com/en/articles/8569773-security-authentication-settings",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/security-authentication-settings.md"
+  },
+  {
+    "title": "Configuring + Managing Single-Sign-On (SSO)",
+    "url": "https://help.element451.com/en/articles/10542911-configuring-managing-single-sign-on-sso",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/configuring-managing-single-sign-on-sso.md"
+  },
+  {
+    "title": "Adding + Managing Internal Users",
+    "url": "https://help.element451.com/en/articles/2735199-adding-managing-internal-users",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/adding-managing-internal-users.md"
+  },
+  {
+    "title": "Managing Internal User Profiles",
+    "url": "https://help.element451.com/en/articles/14727910-managing-internal-user-profiles",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/managing-internal-user-profiles.md"
+  },
+  {
+    "title": "Teams",
+    "url": "https://help.element451.com/en/articles/8346250-teams",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/teams.md"
+  },
+  {
+    "title": "Automatic Deactivation of Internal Users",
+    "url": "https://help.element451.com/en/articles/9675433-automatic-deactivation-of-internal-users",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/automatic-deactivation-of-internal-users.md"
+  },
+  {
+    "title": "Element451 Live Support Access + Assigning Seats",
+    "url": "https://help.element451.com/en/articles/9717577-element451-live-support-access-assigning-seats",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/element451-live-support-access-assigning-seats.md"
+  },
+  {
+    "title": "Permission Groups Overview",
+    "url": "https://help.element451.com/en/articles/2735389-permission-groups-overview",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/permission-groups-overview.md"
+  },
+  {
+    "title": "Creating + Managing Custom Permission Groups",
+    "url": "https://help.element451.com/en/articles/9020578-creating-managing-custom-permission-groups",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/creating-managing-custom-permission-groups.md"
+  },
+  {
+    "title": "List + Details of Individual Permissions",
+    "url": "https://help.element451.com/en/articles/6590379-list-details-of-individual-permissions",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/list-details-of-individual-permissions.md"
+  },
+  {
+    "title": "Visibility Groups",
+    "url": "https://help.element451.com/en/articles/5214533-visibility-groups",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/visibility-groups.md"
+  },
+  {
+    "title": "Getting Started with Profile Templates",
+    "url": "https://help.element451.com/en/articles/6449965-getting-started-with-profile-templates",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/getting-started-with-profile-templates.md"
+  },
+  {
+    "title": "Configuring Profile Templates",
+    "url": "https://help.element451.com/en/articles/10471008-configuring-profile-templates",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/configuring-profile-templates.md"
+  },
+  {
+    "title": "Getting Started with Payments + How to Add and Connect Payment Providers",
+    "url": "https://help.element451.com/en/articles/3136121-getting-started-with-payments-how-to-add-and-connect-payment-providers",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/getting-started-with-payments-how-to-add-and-connect-payment-providers.md"
+  },
+  {
+    "title": "Paypal Smart Button Payment Integration Setup",
+    "url": "https://help.element451.com/en/articles/9083465-paypal-smart-button-payment-integration-setup",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/paypal-smart-button-payment-integration-setup.md"
+  },
+  {
+    "title": "Payment Types",
+    "url": "https://help.element451.com/en/articles/9071731-payment-types",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/payment-types.md"
+  },
+  {
+    "title": "Payment Rules",
+    "url": "https://help.element451.com/en/articles/9071765-payment-rules",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/payment-rules.md"
+  },
+  {
+    "title": "Discount Codes",
+    "url": "https://help.element451.com/en/articles/9039727-discount-codes",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/discount-codes.md"
+  },
+  {
+    "title": "Authorize.net Setup (Payment Integration)",
+    "url": "https://help.element451.com/en/articles/12884655-authorize-net-setup-payment-integration",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/authorize-net-setup-payment-integration.md"
+  },
+  {
+    "title": "Getting Started with Google Tag Manager + Element451 Tracking Pixel",
+    "url": "https://help.element451.com/en/articles/5207588-getting-started-with-google-tag-manager-element451-tracking-pixel",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/getting-started-with-google-tag-manager-element451-tracking-pixel.md"
+  },
+  {
+    "title": "Element451 Tracking Pixel",
+    "url": "https://help.element451.com/en/articles/5208086-element451-tracking-pixel",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/element451-tracking-pixel.md"
+  },
+  {
+    "title": "Google Tag Manager Integration",
+    "url": "https://help.element451.com/en/articles/5208134-google-tag-manager-integration",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/google-tag-manager-integration.md"
+  },
+  {
+    "title": "General Settings",
+    "url": "https://help.element451.com/en/articles/8471334-general-settings",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/general-settings.md"
+  },
+  {
+    "title": "Access Rules",
+    "url": "https://help.element451.com/en/articles/12987558-access-rules",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/access-rules.md"
+  },
+  {
+    "title": "Usage-Based Billing + Credits",
+    "url": "https://help.element451.com/en/articles/10421758-usage-based-billing-credits",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/usage-based-billing-credits.md"
+  },
+  {
+    "title": "Usage-Based Pricing",
+    "url": "https://help.element451.com/en/articles/15934836-usage-based-pricing",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/usage-based-pricing.md"
+  },
+  {
+    "title": "Understanding Usage Caps",
+    "url": "https://help.element451.com/en/articles/15934464-understanding-usage-caps",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/understanding-usage-caps.md"
+  },
+  {
+    "title": "My Profile Settings",
+    "url": "https://help.element451.com/en/articles/8774461-my-profile-settings",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/my-profile-settings.md"
+  },
+  {
+    "title": "Preferred Start Page",
+    "url": "https://help.element451.com/en/articles/8774503-preferred-start-page",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/preferred-start-page.md"
+  },
+  {
+    "title": "Start Page",
+    "url": "https://help.element451.com/en/articles/8792299-start-page",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/start-page.md"
+  },
+  {
+    "title": "Configuring External Domains",
+    "url": "https://help.element451.com/en/articles/9358702-configuring-external-domains",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/configuring-external-domains.md"
+  },
+  {
+    "title": "Overview of Email Authentication",
+    "url": "https://help.element451.com/en/articles/8810117-overview-of-email-authentication",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/overview-of-email-authentication.md"
+  },
+  {
+    "title": "Element451's Email-Sending IP Addresses",
+    "url": "https://help.element451.com/en/articles/10413535-element451-s-email-sending-ip-addresses",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/element451-s-email-sending-ip-addresses.md"
+  },
+  {
+    "title": "Registering Your Phone Number for Text Messages & Voice Calling",
+    "url": "https://help.element451.com/en/articles/10628858-registering-your-phone-number-for-text-messages-voice-calling",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/registering-your-phone-number-for-text-messages-voice-calling.md"
+  },
+  {
+    "title": "Sample SMS Privacy Policy and Terms of Service statements",
+    "url": "https://help.element451.com/en/articles/14690283-sample-sms-privacy-policy-and-terms-of-service-statements",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/sample-sms-privacy-policy-and-terms-of-service-statements.md"
+  },
+  {
+    "title": "SFTP Management",
+    "url": "https://help.element451.com/en/articles/9953382-sftp-management",
+    "collection": "Settings + Permissions",
+    "file": "output/articles/sftp-management.md"
+  },
+  {
+    "title": "Getting Started with StudentHub",
+    "url": "https://help.element451.com/en/articles/9827408-getting-started-with-studenthub",
+    "collection": "StudentHub",
+    "file": "output/articles/getting-started-with-studenthub.md"
+  },
+  {
+    "title": "StudentHub Features + Functionality",
+    "url": "https://help.element451.com/en/articles/9854238-studenthub-features-functionality",
+    "collection": "StudentHub",
+    "file": "output/articles/studenthub-features-functionality.md"
+  },
+  {
+    "title": "StudentHub Settings + Configuration",
+    "url": "https://help.element451.com/en/articles/9956808-studenthub-settings-configuration",
+    "collection": "StudentHub",
+    "file": "output/articles/studenthub-settings-configuration.md"
+  },
+  {
+    "title": "How Students Access the StudentHub",
+    "url": "https://help.element451.com/en/articles/9956815-how-students-access-the-studenthub",
+    "collection": "StudentHub",
+    "file": "output/articles/how-students-access-the-studenthub.md"
+  },
+  {
+    "title": "StudentHub Push Notifications",
+    "url": "https://help.element451.com/en/articles/9888911-studenthub-push-notifications",
+    "collection": "StudentHub",
+    "file": "output/articles/studenthub-push-notifications.md"
+  },
+  {
+    "title": "Network: Connect Contacts with Internal Users",
+    "url": "https://help.element451.com/en/articles/9884014-network-connect-contacts-with-internal-users",
+    "collection": "StudentHub",
+    "file": "output/articles/network-connect-contacts-with-internal-users.md"
+  },
+  {
+    "title": "Rolling Out Element451 StudentHub: A Strategic Guide for Campus-Wide Adoption",
+    "url": "https://help.element451.com/en/articles/10128202-rolling-out-element451-studenthub-a-strategic-guide-for-campus-wide-adoption",
+    "collection": "StudentHub",
+    "file": "output/articles/rolling-out-element451-studenthub-a-strategic-guide-for-campus-wide-adoption.md"
+  },
+  {
+    "title": "Getting Started with Surveys",
+    "url": "https://help.element451.com/en/articles/5405227-getting-started-with-surveys",
+    "collection": "Surveys",
+    "file": "output/articles/getting-started-with-surveys.md"
+  },
+  {
+    "title": "Creating + Managing Surveys",
+    "url": "https://help.element451.com/en/articles/9468174-creating-managing-surveys",
+    "collection": "Surveys",
+    "file": "output/articles/creating-managing-surveys.md"
+  },
+  {
+    "title": "Reviewing + Exporting Survey Responses",
+    "url": "https://help.element451.com/en/articles/9468178-reviewing-exporting-survey-responses",
+    "collection": "Surveys",
+    "file": "output/articles/reviewing-exporting-survey-responses.md"
+  },
+  {
+    "title": "\ud83d\udccc Tasks: Frequently Asked Questions",
+    "url": "https://help.element451.com/en/articles/10605936-tasks-frequently-asked-questions",
+    "collection": "Tasks",
+    "file": "output/articles/tasks-frequently-asked-questions.md"
+  },
+  {
+    "title": "Getting Started with Tasks",
+    "url": "https://help.element451.com/en/articles/3065709-getting-started-with-tasks",
+    "collection": "Tasks",
+    "file": "output/articles/getting-started-with-tasks.md"
+  },
+  {
+    "title": "Task Management",
+    "url": "https://help.element451.com/en/articles/8718430-task-management",
+    "collection": "Tasks",
+    "file": "output/articles/task-management.md"
+  },
+  {
+    "title": "Creating Tasks - Manually",
+    "url": "https://help.element451.com/en/articles/8716070-creating-tasks-manually",
+    "collection": "Tasks",
+    "file": "output/articles/creating-tasks-manually.md"
+  },
+  {
+    "title": "Creating Tasks via Workflow",
+    "url": "https://help.element451.com/en/articles/7960169-creating-tasks-via-workflow",
+    "collection": "Tasks",
+    "file": "output/articles/creating-tasks-via-workflow.md"
+  },
+  {
+    "title": "Task Notes",
+    "url": "https://help.element451.com/en/articles/8718453-task-notes",
+    "collection": "Tasks",
+    "file": "output/articles/task-notes.md"
+  },
+  {
+    "title": "Task Subscribers",
+    "url": "https://help.element451.com/en/articles/9101711-task-subscribers",
+    "collection": "Tasks",
+    "file": "output/articles/task-subscribers.md"
+  },
+  {
+    "title": "Task Mode",
+    "url": "https://help.element451.com/en/articles/8718187-task-mode",
+    "collection": "Tasks",
+    "file": "output/articles/task-mode.md"
+  },
+  {
+    "title": "Task Settings + Notifications",
+    "url": "https://help.element451.com/en/articles/6878418-task-settings-notifications",
+    "collection": "Tasks",
+    "file": "output/articles/task-settings-notifications.md"
+  },
+  {
+    "title": "Task Templates",
+    "url": "https://help.element451.com/en/articles/8715931-task-templates",
+    "collection": "Tasks",
+    "file": "output/articles/task-templates.md"
+  },
+  {
+    "title": "Task Statuses",
+    "url": "https://help.element451.com/en/articles/8715866-task-statuses",
+    "collection": "Tasks",
+    "file": "output/articles/task-statuses.md"
+  },
+  {
+    "title": "Task Priorities",
+    "url": "https://help.element451.com/en/articles/8715883-task-priorities",
+    "collection": "Tasks",
+    "file": "output/articles/task-priorities.md"
+  },
+  {
+    "title": "Task Queues",
+    "url": "https://help.element451.com/en/articles/6882428-task-queues",
+    "collection": "Tasks",
+    "file": "output/articles/task-queues.md"
+  },
+  {
+    "title": "\ud83d\udccc Workflows + Rules: Frequently Asked Questions",
+    "url": "https://help.element451.com/en/articles/10618199-workflows-rules-frequently-asked-questions",
+    "collection": "Workflows + Rules",
+    "file": "output/articles/workflows-rules-frequently-asked-questions.md"
+  },
+  {
+    "title": "Getting Started with Workflows + Rules",
+    "url": "https://help.element451.com/en/articles/1500265-getting-started-with-workflows-rules",
+    "collection": "Workflows + Rules",
+    "file": "output/articles/getting-started-with-workflows-rules.md"
+  },
+  {
+    "title": "How to Create a Workflow",
+    "url": "https://help.element451.com/en/articles/1500282-how-to-create-a-workflow",
+    "collection": "Workflows + Rules",
+    "file": "output/articles/how-to-create-a-workflow.md"
+  },
+  {
+    "title": "How to Manage a Workflow",
+    "url": "https://help.element451.com/en/articles/1500286-how-to-manage-a-workflow",
+    "collection": "Workflows + Rules",
+    "file": "output/articles/how-to-manage-a-workflow.md"
+  },
+  {
+    "title": "How to Create a Rule",
+    "url": "https://help.element451.com/en/articles/8859695-how-to-create-a-rule",
+    "collection": "Workflows + Rules",
+    "file": "output/articles/how-to-create-a-rule.md"
+  },
+  {
+    "title": "How to Manage a Rule",
+    "url": "https://help.element451.com/en/articles/8860013-how-to-manage-a-rule",
+    "collection": "Workflows + Rules",
+    "file": "output/articles/how-to-manage-a-rule.md"
+  },
+  {
+    "title": "Steps",
+    "url": "https://help.element451.com/en/articles/1500291-steps",
+    "collection": "Workflows + Rules",
+    "file": "output/articles/steps.md"
+  },
+  {
+    "title": "Actions",
+    "url": "https://help.element451.com/en/articles/1500292-actions",
+    "collection": "Workflows + Rules",
+    "file": "output/articles/actions.md"
+  },
+  {
+    "title": "Delays",
+    "url": "https://help.element451.com/en/articles/10618338-delays",
+    "collection": "Workflows + Rules",
+    "file": "output/articles/delays.md"
+  },
+  {
+    "title": "Conditions",
+    "url": "https://help.element451.com/en/articles/1500294-conditions",
+    "collection": "Workflows + Rules",
+    "file": "output/articles/conditions.md"
+  },
+  {
+    "title": "Triggers",
+    "url": "https://help.element451.com/en/articles/1500290-triggers",
+    "collection": "Workflows + Rules",
+    "file": "output/articles/triggers.md"
+  },
+  {
+    "title": "Preferred Time to Send",
+    "url": "https://help.element451.com/en/articles/8857428-preferred-time-to-send",
+    "collection": "Workflows + Rules",
+    "file": "output/articles/preferred-time-to-send.md"
+  },
+  {
+    "title": "Assignment Behavior",
+    "url": "https://help.element451.com/en/articles/8857504-assignment-behavior",
+    "collection": "Workflows + Rules",
+    "file": "output/articles/assignment-behavior.md"
+  },
+  {
+    "title": "Formula Field",
+    "url": "https://help.element451.com/en/articles/8857623-formula-field",
+    "collection": "Workflows + Rules",
+    "file": "output/articles/formula-field.md"
+  },
+  {
+    "title": "Why is a Contact not in the Workflow or Rule?",
+    "url": "https://help.element451.com/en/articles/3488271-why-is-a-contact-not-in-the-workflow-or-rule",
+    "collection": "Workflows + Rules",
+    "file": "output/articles/why-is-a-contact-not-in-the-workflow-or-rule.md"
+  }
+]
