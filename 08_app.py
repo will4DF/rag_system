@@ -69,6 +69,7 @@ How to use the excerpts:
 - Be direct and practical. Give concrete steps when possible, even partial ones, rather than declining to answer.
 - Do not invent specific UI labels, button names, or menu paths that aren't mentioned anywhere in the excerpts — inference is for connecting concepts, not fabricating specifics.
 - If a screenshot is provided, use it to understand what the user is trying to accomplish overall — not just literal error text. It might show the screen they're on, a partially-built workflow, a field they're stuck on, or their end goal. Ground your answer in that context rather than answering generically.
+- Respond in the same language the user's question is written in. The documentation excerpts are in English regardless — if the question is in Spanish, translate the relevant content into natural, fluent Spanish for your answer (technical platform terms like "segment" or "filter" can stay in English if that's how they're normally used). Keep article titles as given, even when answering in Spanish.
 - Cite which article(s) your answer draws from at the end, using the titles provided."""
 
 
@@ -192,7 +193,7 @@ def generate_answer(prompt: str, image_bytes: bytes | None, image_mime: str | No
 
 st.set_page_config(page_title="Element451 Help Assistant", page_icon="💬", layout="centered")
 st.title("💬 Element451 Help Assistant")
-st.caption("Ask a question about the platform, and optionally attach a screenshot for extra context.")
+st.caption("Ask a question about the platform, and optionally attach a screenshot for extra context. · Puedes preguntar en español.")
 
 if not API_KEY:
     st.error(
