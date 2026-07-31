@@ -70,7 +70,9 @@ API_KEY = get_api_key()
 GEN_MODEL = "gemini-2.5-flash"
 FALLBACK_MODEL = "gemini-2.5-flash-lite"  # separate free-tier quota pool from GEN_MODEL —
                                            # tried automatically if the primary model is rate-limited
-MAX_RETRIES = 4
+MAX_RETRIES = 2       # per model — kept low; with a fallback model available, it's better to
+                       # move on to it quickly than sit waiting on a model that's still busy
+MAX_WAIT_SECONDS = 15  # cap on any single retry wait, so total time stays bounded and predictable
 INITIAL_BACKOFF = 5.0
 
 
@@ -129,23 +131,34 @@ def retrieve(model, collection, query: str, top_k: int = TOP_K) -> list[dict]:
     return hits
 
 
-def _call_gemini(payload: dict, models: tuple[str, ...] = (GEN_MODEL, FALLBACK_MODEL)) -> tuple[str, str]:
-    """POST to Gemini. Retries on 429 using Google's own retry-after time; if a
-    model's quota is still exhausted after retrying, moves on to the next model
-    in `models` (e.g. flash -> flash-lite, separate free-tier quota pools).
+def _call_gemini(
+    payload: dict,
+    models: tuple[str, ...] = (GEN_MODEL, FALLBACK_MODEL),
+    status_callback=None,
+) -> tuple[str, str]:
+    """POST to Gemini. Retries on 429 using Google's own retry-after time (capped so a
+    single wait never balloons); if a model's quota is still exhausted after retrying,
+    moves on to the next model in `models` (e.g. flash -> flash-lite, separate free-tier
+    quota pools). status_callback(str), if given, is called with progress text so the UI
+    can show what's happening instead of sitting on a static "thinking" message.
     Returns (answer_text, model_that_actually_answered).
     Raises RuntimeError only if every model in the list fails.
     """
+    def report(msg: str):
+        if status_callback:
+            status_callback(msg)
+
     last_error: Exception | None = None
 
     for model in models:
         backoff = INITIAL_BACKOFF
         for attempt in range(1, MAX_RETRIES + 1):
+            report(f"Asking {model}..." if attempt == 1 else f"Retrying {model} (attempt {attempt}/{MAX_RETRIES})...")
             resp = requests.post(
                 endpoint_for(model),
                 headers={"x-goog-api-key": API_KEY, "Content-Type": "application/json"},
                 json=payload,
-                timeout=60,
+                timeout=30,
             )
             if resp.status_code == 200:
                 data = resp.json()
@@ -153,7 +166,9 @@ def _call_gemini(payload: dict, models: tuple[str, ...] = (GEN_MODEL, FALLBACK_M
 
             if resp.status_code == 429 and attempt < MAX_RETRIES:
                 # Google tells us exactly how long to wait (RetryInfo.retryDelay,
-                # e.g. "13s") — use that if present, more reliable than guessing.
+                # e.g. "13s") — use that if present, but cap it: a very busy quota
+                # can report long delays, and we'd rather fall back to the next
+                # model quickly than sit through a minute-plus wait.
                 wait_seconds = backoff
                 try:
                     details = resp.json().get("error", {}).get("details", [])
@@ -163,6 +178,8 @@ def _call_gemini(payload: dict, models: tuple[str, ...] = (GEN_MODEL, FALLBACK_M
                             break
                 except (ValueError, AttributeError):
                     pass
+                wait_seconds = min(wait_seconds, MAX_WAIT_SECONDS)
+                report(f"{model} is rate-limited — waiting {wait_seconds:.0f}s before retrying...")
                 time.sleep(wait_seconds)
                 backoff *= 2
                 continue
@@ -170,6 +187,7 @@ def _call_gemini(payload: dict, models: tuple[str, ...] = (GEN_MODEL, FALLBACK_M
             if resp.status_code == 429:
                 last_error = RuntimeError(f"{model} rate limit still full after retrying")
                 break  # give the next model (if any) a try
+
 
             # Non-429 errors aren't fixed by trying another model — raise immediately
             raise RuntimeError(f"Generation request failed: {resp.status_code} {resp.text[:500]}")
@@ -253,7 +271,13 @@ def prepare_image(raw_bytes: bytes) -> tuple[bytes, str]:
     return buf.getvalue(), "image/jpeg"
 
 
-def generate_answer(history_contents: list[dict], turn_text: str, image_bytes: bytes | None, image_mime: str | None) -> tuple[str, str]:
+def generate_answer(
+    history_contents: list[dict],
+    turn_text: str,
+    image_bytes: bytes | None,
+    image_mime: str | None,
+    status_callback=None,
+) -> tuple[str, str]:
     """history_contents: prior turns as [{"role": "user"|"model", "parts": [...]}, ...]
     turn_text / image_*: the current question (and optional screenshot) to append.
     Returns (answer_text, model_that_answered).
@@ -272,7 +296,7 @@ def generate_answer(history_contents: list[dict], turn_text: str, image_bytes: b
         "contents": history_contents + [{"role": "user", "parts": current_parts}],
     }
 
-    return _call_gemini(payload)
+    return _call_gemini(payload, status_callback=status_callback)
 
 
 # ---------------------------------------------------------------------------
@@ -361,15 +385,20 @@ if query:
             st.image(display_image, width=250)
 
     with st.chat_message("assistant"):
-        with st.spinner("Searching docs and thinking..."):
+        with st.status("Searching docs...", expanded=False) as status:
             hits = retrieve(embed_model, collection, search_text)
             turn_text = build_turn_text(query, hits, has_image=image_bytes is not None)
             model_used = GEN_MODEL
             try:
-                answer, model_used = generate_answer(history_contents, turn_text, image_bytes, image_mime)
+                answer, model_used = generate_answer(
+                    history_contents, turn_text, image_bytes, image_mime,
+                    status_callback=lambda msg: status.update(label=msg),
+                )
+                status.update(label="Done", state="complete")
             except RuntimeError as e:
                 answer = f"⚠️ {e}"
                 hits = []
+                status.update(label="Failed", state="error")
 
         st.markdown(answer)
         if model_used == FALLBACK_MODEL:
