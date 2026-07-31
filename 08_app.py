@@ -109,6 +109,45 @@ def retrieve(model, collection, query: str, top_k: int = TOP_K) -> list[dict]:
     return hits
 
 
+REWRITE_ENDPOINT = f"https://generativelanguage.googleapis.com/v1beta/models/{GEN_MODEL}:generateContent"
+
+REWRITE_INSTRUCTIONS = """You rewrite the latest message in a conversation into a standalone search query, for looking up documentation. Use the conversation for context, but output ONLY the rewritten query text — no explanation, no quotes, no labels.
+
+Rules:
+- If the latest message is already a clear, standalone question, return it unchanged (translated to English if it wasn't already, since the docs are in English).
+- If it's a vague follow-up (e.g. "hola", "search better", "what about that"), rewrite it into a full standalone question using the conversation's topic.
+- If it's a genuinely new, unrelated question, just return it as-is (don't drag in old topics).
+- Keep it short — one sentence."""
+
+
+def rewrite_query(history_contents: list[dict], query: str) -> str | None:
+    """Turn a vague follow-up into a standalone search query using conversation context.
+    Returns None on any failure so the caller can fall back to a simpler heuristic —
+    this is a nice-to-have, not something that should ever break the main flow.
+    """
+    if not history_contents:
+        return None  # nothing to rewrite against on the first message
+
+    payload = {
+        "system_instruction": {"parts": [{"text": REWRITE_INSTRUCTIONS}]},
+        "contents": history_contents + [{"role": "user", "parts": [{"text": query}]}],
+        "generationConfig": {"temperature": 0, "maxOutputTokens": 60},
+    }
+    try:
+        resp = requests.post(
+            REWRITE_ENDPOINT,
+            headers={"x-goog-api-key": API_KEY, "Content-Type": "application/json"},
+            json=payload,
+            timeout=20,
+        )
+        if resp.status_code != 200:
+            return None
+        text = resp.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
+        return text or None
+    except Exception:
+        return None
+
+
 def build_turn_text(query: str, hits: list[dict], has_image: bool) -> str:
     context_blocks = []
     for i, h in enumerate(hits, 1):
@@ -249,6 +288,7 @@ for msg in st.session_state.messages:
                     st.markdown(f"- [{title}]({url})")
 
 # Screenshot uploader lives above the chat box so it's attached to the *next* message
+st.caption("⚠️ Screenshots are sent to Google's Gemini API for processing. Avoid including SSNs, financial aid details, health information, or other sensitive student data — crop or blur first if a screen shows any.")
 uploaded_file = st.file_uploader(
     "Attach a screenshot to show what you're working on (optional)",
     type=["png", "jpg", "jpeg"],
@@ -280,10 +320,14 @@ if query:
             prior_user_texts.append(msg["content"])
 
     # The doc search only sees whatever text we hand it — a short follow-up like
-    # "hola" or "search better" carries no topic signal on its own. Fold in the
-    # last couple of prior questions so search still finds the right docs when
-    # someone is continuing a thread rather than starting a fresh, complete question.
-    search_text = " ".join(prior_user_texts[-2:] + [query])
+    # "hola" or "search better" carries no topic signal on its own. Try an LLM
+    # rewrite into a standalone search query first (handles topic drift correctly);
+    # fall back to simple concatenation if that call fails or gets rate-limited.
+    rewritten = rewrite_query(history_contents, query)
+    if rewritten:
+        search_text = rewritten
+    else:
+        search_text = " ".join(prior_user_texts[-2:] + [query])
 
     st.session_state.messages.append({"role": "user", "content": query, "image": display_image})
     with st.chat_message("user"):
