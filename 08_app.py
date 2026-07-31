@@ -70,6 +70,7 @@ How to use the excerpts:
 - Do not invent specific UI labels, button names, or menu paths that aren't mentioned anywhere in the excerpts — inference is for connecting concepts, not fabricating specifics.
 - If a screenshot is provided, use it to understand what the user is trying to accomplish overall — not just literal error text. It might show the screen they're on, a partially-built workflow, a field they're stuck on, or their end goal. Ground your answer in that context rather than answering generically.
 - Respond in the same language the user's question is written in. The documentation excerpts are in English regardless — if the question is in Spanish, translate the relevant content into natural, fluent Spanish for your answer (technical platform terms like "segment" or "filter" can stay in English if that's how they're normally used). Keep article titles as given, even when answering in Spanish.
+- If the user explicitly asks you to switch languages (e.g. "answer in English" or "respondeme en español"), follow that instruction for the rest of the conversation, overriding the default of matching each new question's language.
 - Cite which article(s) your answer draws from at the end, using the titles provided."""
 
 
@@ -108,7 +109,7 @@ def retrieve(model, collection, query: str, top_k: int = TOP_K) -> list[dict]:
     return hits
 
 
-def build_prompt(query: str, hits: list[dict], has_image: bool) -> str:
+def build_turn_text(query: str, hits: list[dict], has_image: bool) -> str:
     context_blocks = []
     for i, h in enumerate(hits, 1):
         context_blocks.append(f"[Excerpt {i}] From \"{h['title']}\" ({h['collection']}):\n{h['text']}")
@@ -120,9 +121,7 @@ def build_prompt(query: str, hits: list[dict], has_image: bool) -> str:
         if has_image else ""
     )
 
-    return f"""{SYSTEM_INSTRUCTIONS}
-
---- DOCUMENTATION EXCERPTS ---
+    return f"""--- DOCUMENTATION EXCERPTS ---
 {context}
 --- END EXCERPTS ---
 {image_note}
@@ -153,17 +152,23 @@ def prepare_image(raw_bytes: bytes) -> tuple[bytes, str]:
     return buf.getvalue(), "image/jpeg"
 
 
-def generate_answer(prompt: str, image_bytes: bytes | None, image_mime: str | None) -> str:
-    parts = [{"text": prompt}]
+def generate_answer(history_contents: list[dict], turn_text: str, image_bytes: bytes | None, image_mime: str | None) -> str:
+    """history_contents: prior turns as [{"role": "user"|"model", "parts": [...]}, ...]
+    turn_text / image_*: the current question (and optional screenshot) to append.
+    """
+    current_parts = [{"text": turn_text}]
     if image_bytes is not None:
-        parts.append({
+        current_parts.append({
             "inline_data": {
                 "mime_type": image_mime,
                 "data": base64.b64encode(image_bytes).decode("utf-8"),
             }
         })
 
-    payload = {"contents": [{"parts": parts}]}
+    payload = {
+        "system_instruction": {"parts": [{"text": SYSTEM_INSTRUCTIONS}]},
+        "contents": history_contents + [{"role": "user", "parts": current_parts}],
+    }
 
     backoff = INITIAL_BACKOFF
     for attempt in range(1, MAX_RETRIES + 1):
@@ -242,6 +247,15 @@ if query:
         except Exception as e:
             st.warning(f"Couldn't process that screenshot ({e}) — continuing without it.")
 
+    # Build history from prior turns (before this new question is appended).
+    # Only text is replayed for older turns — re-sending old screenshots on every
+    # request would bloat the payload and burn through the daily quota fast; the
+    # model doesn't need to re-see an old image to remember what was *said* about it.
+    history_contents = []
+    for msg in st.session_state.messages:
+        role = "model" if msg["role"] == "assistant" else "user"
+        history_contents.append({"role": role, "parts": [{"text": msg["content"]}]})
+
     st.session_state.messages.append({"role": "user", "content": query, "image": display_image})
     with st.chat_message("user"):
         st.markdown(query)
@@ -251,9 +265,9 @@ if query:
     with st.chat_message("assistant"):
         with st.spinner("Searching docs and thinking..."):
             hits = retrieve(embed_model, collection, query)
-            prompt = build_prompt(query, hits, has_image=image_bytes is not None)
+            turn_text = build_turn_text(query, hits, has_image=image_bytes is not None)
             try:
-                answer = generate_answer(prompt, image_bytes, image_mime)
+                answer = generate_answer(history_contents, turn_text, image_bytes, image_mime)
             except RuntimeError as e:
                 answer = f"⚠️ {e}"
                 hits = []
