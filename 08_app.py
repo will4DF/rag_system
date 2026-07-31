@@ -135,13 +135,13 @@ def _call_gemini(
     payload: dict,
     models: tuple[str, ...] = (GEN_MODEL, FALLBACK_MODEL),
     status_callback=None,
-) -> tuple[str, str]:
+) -> tuple[str, str, str]:
     """POST to Gemini. Retries on 429 using Google's own retry-after time (capped so a
     single wait never balloons); if a model's quota is still exhausted after retrying,
     moves on to the next model in `models` (e.g. flash -> flash-lite, separate free-tier
     quota pools). status_callback(str), if given, is called with progress text so the UI
     can show what's happening instead of sitting on a static "thinking" message.
-    Returns (answer_text, model_that_actually_answered).
+    Returns (answer_text, model_that_actually_answered, thought_summary — "" if none/not requested).
     Raises RuntimeError only if every model in the list fails.
     """
     def report(msg: str):
@@ -162,7 +162,13 @@ def _call_gemini(
             )
             if resp.status_code == 200:
                 data = resp.json()
-                return data["candidates"][0]["content"]["parts"][0]["text"], model
+                parts = data["candidates"][0]["content"]["parts"]
+                # Thought-summary parts are flagged with "thought": true when
+                # thinkingConfig.includeThoughts was requested; everything else
+                # is the actual answer text.
+                thought_text = "".join(p.get("text", "") for p in parts if p.get("thought"))
+                answer_text = "".join(p.get("text", "") for p in parts if not p.get("thought"))
+                return answer_text, model, thought_text
 
             if resp.status_code == 429 and attempt < MAX_RETRIES:
                 # Google tells us exactly how long to wait (RetryInfo.retryDelay,
@@ -222,7 +228,7 @@ def rewrite_query(history_contents: list[dict], query: str) -> str | None:
         "generationConfig": {"temperature": 0, "maxOutputTokens": 60},
     }
     try:
-        text, _ = _call_gemini(payload)
+        text, _, _ = _call_gemini(payload)
         return text.strip() or None
     except Exception:
         return None
@@ -277,10 +283,10 @@ def generate_answer(
     image_bytes: bytes | None,
     image_mime: str | None,
     status_callback=None,
-) -> tuple[str, str]:
+) -> tuple[str, str, str]:
     """history_contents: prior turns as [{"role": "user"|"model", "parts": [...]}, ...]
     turn_text / image_*: the current question (and optional screenshot) to append.
-    Returns (answer_text, model_that_answered).
+    Returns (answer_text, model_that_answered, thought_summary).
     """
     current_parts = [{"text": turn_text}]
     if image_bytes is not None:
@@ -294,6 +300,7 @@ def generate_answer(
     payload = {
         "system_instruction": {"parts": [{"text": SYSTEM_INSTRUCTIONS}]},
         "contents": history_contents + [{"role": "user", "parts": current_parts}],
+        "generationConfig": {"thinkingConfig": {"includeThoughts": True}},
     }
 
     return _call_gemini(payload, status_callback=status_callback)
@@ -331,6 +338,11 @@ for msg in st.session_state.messages:
         st.markdown(msg["content"])
         if msg.get("image"):
             st.image(msg["image"], width=250)
+        if msg.get("thoughts"):
+            with st.expander("🧠 Thinking"):
+                st.markdown(msg["thoughts"])
+        if msg.get("model_used"):
+            st.caption(f"Answered by `{msg['model_used']}`")
         if msg.get("sources"):
             with st.expander("Sources"):
                 for title, url in msg["sources"]:
@@ -389,8 +401,9 @@ if query:
             hits = retrieve(embed_model, collection, search_text)
             turn_text = build_turn_text(query, hits, has_image=image_bytes is not None)
             model_used = GEN_MODEL
+            thoughts = ""
             try:
-                answer, model_used = generate_answer(
+                answer, model_used, thoughts = generate_answer(
                     history_contents, turn_text, image_bytes, image_mime,
                     status_callback=lambda msg: status.update(label=msg),
                 )
@@ -401,8 +414,10 @@ if query:
                 status.update(label="Failed", state="error")
 
         st.markdown(answer)
-        if model_used == FALLBACK_MODEL:
-            st.caption(f"ℹ️ Answered using {FALLBACK_MODEL} — {GEN_MODEL} was rate-limited.")
+        if thoughts:
+            with st.expander("🧠 Thinking"):
+                st.markdown(thoughts)
+        st.caption(f"Answered by `{model_used}`" + (" — primary model was rate-limited" if model_used == FALLBACK_MODEL else ""))
 
         sources = []
         seen = set()
@@ -419,5 +434,7 @@ if query:
         "role": "assistant",
         "content": answer,
         "sources": sources,
+        "thoughts": thoughts,
+        "model_used": model_used,
     })
     st.rerun()  # clears the file_uploader for the next question
