@@ -18,9 +18,23 @@ http://192.168.x.x:8501) with coworkers on the same office network.
 """
 
 import base64
+import io
 import os
+import sys
 import time
 from pathlib import Path
+
+from PIL import Image
+
+try:
+    # Streamlit Community Cloud ships an old system sqlite3 that Chroma
+    # rejects. pysqlite3-binary provides a newer one; swap it in before
+    # chromadb is imported. Falls back silently if not installed (e.g.
+    # running locally on Mac, where the system sqlite3 is new enough).
+    import pysqlite3
+    sys.modules["sqlite3"] = pysqlite3
+except ImportError:
+    pass
 
 import chromadb
 import requests
@@ -43,7 +57,8 @@ GEN_ENDPOINT = f"https://generativelanguage.googleapis.com/v1beta/models/{GEN_MO
 MAX_RETRIES = 3
 INITIAL_BACKOFF = 5.0
 
-MAX_IMAGE_MB = 4  # keep screenshots reasonably small for the API
+MAX_IMAGE_DIMENSION = 1600  # longest side, in pixels — plenty for Gemini to read UI text
+JPEG_QUALITY = 85
 
 SYSTEM_INSTRUCTIONS = """You are a helpful assistant answering questions about the Element451 platform, using the documentation excerpts provided below.
 
@@ -113,6 +128,28 @@ def build_prompt(query: str, hits: list[dict], has_image: bool) -> str:
 Question: {query}
 
 Answer:"""
+
+
+def prepare_image(raw_bytes: bytes) -> tuple[bytes, str]:
+    """Downscale + re-encode any uploaded screenshot to a small JPEG.
+
+    Full-resolution Mac/Windows screenshots are often several MB, well past
+    what's needed for Gemini to read on-screen text. Rather than rejecting
+    large uploads, we always normalize to something small and reliable so
+    an image never silently fails to attach.
+    """
+    img = Image.open(io.BytesIO(raw_bytes))
+    img = img.convert("RGB")  # drops alpha channel; needed for JPEG
+
+    longest_side = max(img.size)
+    if longest_side > MAX_IMAGE_DIMENSION:
+        scale = MAX_IMAGE_DIMENSION / longest_side
+        new_size = (round(img.width * scale), round(img.height * scale))
+        img = img.resize(new_size, Image.LANCZOS)
+
+    buf = io.BytesIO()
+    img.save(buf, format="JPEG", quality=JPEG_QUALITY)
+    return buf.getvalue(), "image/jpeg"
 
 
 def generate_answer(prompt: str, image_bytes: bytes | None, image_mime: str | None) -> str:
@@ -197,13 +234,12 @@ query = st.chat_input("Ask a question...")
 if query:
     image_bytes, image_mime, display_image = None, None, None
     if uploaded_file is not None:
-        image_bytes = uploaded_file.getvalue()
-        if len(image_bytes) > MAX_IMAGE_MB * 1024 * 1024:
-            st.warning(f"Screenshot is over {MAX_IMAGE_MB}MB — try a smaller crop or lower resolution.")
-            image_bytes = None
-        else:
-            image_mime = uploaded_file.type or "image/png"
-            display_image = image_bytes
+        raw_bytes = uploaded_file.getvalue()
+        display_image = raw_bytes  # show the original in the chat history
+        try:
+            image_bytes, image_mime = prepare_image(raw_bytes)
+        except Exception as e:
+            st.warning(f"Couldn't process that screenshot ({e}) — continuing without it.")
 
     st.session_state.messages.append({"role": "user", "content": query, "image": display_image})
     with st.chat_message("user"):
