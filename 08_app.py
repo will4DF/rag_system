@@ -68,9 +68,14 @@ def get_api_key() -> str | None:
 
 API_KEY = get_api_key()
 GEN_MODEL = "gemini-2.5-flash"
-GEN_ENDPOINT = f"https://generativelanguage.googleapis.com/v1beta/models/{GEN_MODEL}:generateContent"
+FALLBACK_MODEL = "gemini-2.5-flash-lite"  # separate free-tier quota pool from GEN_MODEL —
+                                           # tried automatically if the primary model is rate-limited
 MAX_RETRIES = 4
 INITIAL_BACKOFF = 5.0
+
+
+def endpoint_for(model: str) -> str:
+    return f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
 
 MAX_IMAGE_DIMENSION = 1600  # longest side, in pixels — plenty for Gemini to read UI text
 JPEG_QUALITY = 85
@@ -124,7 +129,57 @@ def retrieve(model, collection, query: str, top_k: int = TOP_K) -> list[dict]:
     return hits
 
 
-REWRITE_ENDPOINT = f"https://generativelanguage.googleapis.com/v1beta/models/{GEN_MODEL}:generateContent"
+def _call_gemini(payload: dict, models: tuple[str, ...] = (GEN_MODEL, FALLBACK_MODEL)) -> tuple[str, str]:
+    """POST to Gemini. Retries on 429 using Google's own retry-after time; if a
+    model's quota is still exhausted after retrying, moves on to the next model
+    in `models` (e.g. flash -> flash-lite, separate free-tier quota pools).
+    Returns (answer_text, model_that_actually_answered).
+    Raises RuntimeError only if every model in the list fails.
+    """
+    last_error: Exception | None = None
+
+    for model in models:
+        backoff = INITIAL_BACKOFF
+        for attempt in range(1, MAX_RETRIES + 1):
+            resp = requests.post(
+                endpoint_for(model),
+                headers={"x-goog-api-key": API_KEY, "Content-Type": "application/json"},
+                json=payload,
+                timeout=60,
+            )
+            if resp.status_code == 200:
+                data = resp.json()
+                return data["candidates"][0]["content"]["parts"][0]["text"], model
+
+            if resp.status_code == 429 and attempt < MAX_RETRIES:
+                # Google tells us exactly how long to wait (RetryInfo.retryDelay,
+                # e.g. "13s") — use that if present, more reliable than guessing.
+                wait_seconds = backoff
+                try:
+                    details = resp.json().get("error", {}).get("details", [])
+                    for d in details:
+                        if d.get("@type", "").endswith("RetryInfo"):
+                            wait_seconds = float(d.get("retryDelay", "").rstrip("s")) + 1
+                            break
+                except (ValueError, AttributeError):
+                    pass
+                time.sleep(wait_seconds)
+                backoff *= 2
+                continue
+
+            if resp.status_code == 429:
+                last_error = RuntimeError(f"{model} rate limit still full after retrying")
+                break  # give the next model (if any) a try
+
+            # Non-429 errors aren't fixed by trying another model — raise immediately
+            raise RuntimeError(f"Generation request failed: {resp.status_code} {resp.text[:500]}")
+
+    raise RuntimeError(
+        "Gemini's free-tier rate limit is temporarily full across all available models "
+        "(this app shares its quota across everyone using it). Wait about 30-60 seconds "
+        "and try again."
+    ) from last_error
+
 
 REWRITE_INSTRUCTIONS = """You rewrite the latest message in a conversation into a standalone search query, for looking up documentation. Use the conversation for context, but output ONLY the rewritten query text — no explanation, no quotes, no labels.
 
@@ -149,16 +204,8 @@ def rewrite_query(history_contents: list[dict], query: str) -> str | None:
         "generationConfig": {"temperature": 0, "maxOutputTokens": 60},
     }
     try:
-        resp = requests.post(
-            REWRITE_ENDPOINT,
-            headers={"x-goog-api-key": API_KEY, "Content-Type": "application/json"},
-            json=payload,
-            timeout=20,
-        )
-        if resp.status_code != 200:
-            return None
-        text = resp.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
-        return text or None
+        text, _ = _call_gemini(payload)
+        return text.strip() or None
     except Exception:
         return None
 
@@ -206,9 +253,10 @@ def prepare_image(raw_bytes: bytes) -> tuple[bytes, str]:
     return buf.getvalue(), "image/jpeg"
 
 
-def generate_answer(history_contents: list[dict], turn_text: str, image_bytes: bytes | None, image_mime: str | None) -> str:
+def generate_answer(history_contents: list[dict], turn_text: str, image_bytes: bytes | None, image_mime: str | None) -> tuple[str, str]:
     """history_contents: prior turns as [{"role": "user"|"model", "parts": [...]}, ...]
     turn_text / image_*: the current question (and optional screenshot) to append.
+    Returns (answer_text, model_that_answered).
     """
     current_parts = [{"text": turn_text}]
     if image_bytes is not None:
@@ -224,46 +272,7 @@ def generate_answer(history_contents: list[dict], turn_text: str, image_bytes: b
         "contents": history_contents + [{"role": "user", "parts": current_parts}],
     }
 
-    backoff = INITIAL_BACKOFF
-    for attempt in range(1, MAX_RETRIES + 1):
-        resp = requests.post(
-            GEN_ENDPOINT,
-            headers={"x-goog-api-key": API_KEY, "Content-Type": "application/json"},
-            json=payload,
-            timeout=60,
-        )
-        if resp.status_code == 200:
-            data = resp.json()
-            return data["candidates"][0]["content"]["parts"][0]["text"]
-
-        if resp.status_code == 429 and attempt < MAX_RETRIES:
-            # Google tells us exactly how long to wait in the error body
-            # (RetryInfo.retryDelay, e.g. "13s") — use that if present,
-            # since it's far more reliable than guessing with fixed backoff.
-            wait_seconds = backoff
-            try:
-                details = resp.json().get("error", {}).get("details", [])
-                for d in details:
-                    if d.get("@type", "").endswith("RetryInfo"):
-                        delay_str = d.get("retryDelay", "")
-                        wait_seconds = float(delay_str.rstrip("s")) + 1  # small buffer
-                        break
-            except (ValueError, AttributeError):
-                pass
-            time.sleep(wait_seconds)
-            backoff *= 2
-            continue
-
-        if resp.status_code == 429:
-            raise RuntimeError(
-                "Gemini's free-tier rate limit is temporarily full (this app shares "
-                "20 requests/minute across everyone using it). Wait about 20-30 seconds "
-                "and try again."
-            )
-
-        raise RuntimeError(f"Generation request failed: {resp.status_code} {resp.text[:500]}")
-
-    raise RuntimeError("Exceeded retries — likely hit the daily quota. Try again later.")
+    return _call_gemini(payload)
 
 
 # ---------------------------------------------------------------------------
@@ -355,13 +364,16 @@ if query:
         with st.spinner("Searching docs and thinking..."):
             hits = retrieve(embed_model, collection, search_text)
             turn_text = build_turn_text(query, hits, has_image=image_bytes is not None)
+            model_used = GEN_MODEL
             try:
-                answer = generate_answer(history_contents, turn_text, image_bytes, image_mime)
+                answer, model_used = generate_answer(history_contents, turn_text, image_bytes, image_mime)
             except RuntimeError as e:
                 answer = f"⚠️ {e}"
                 hits = []
 
         st.markdown(answer)
+        if model_used == FALLBACK_MODEL:
+            st.caption(f"ℹ️ Answered using {FALLBACK_MODEL} — {GEN_MODEL} was rate-limited.")
 
         sources = []
         seen = set()
