@@ -7,8 +7,9 @@ screenshot upload — if attached, the image is sent to Gemini alongside
 the retrieved docs so it can see what the user is looking at.
 
 Setup:
-  export GEMINI_API_KEY="your-key-here"
-  pip install streamlit
+  Create a .env file in this folder (see .env.example) with:
+    GEMINI_API_KEY=your-key-here
+  pip install -r requirements.txt
 
 Run:
   streamlit run 08_app.py
@@ -25,6 +26,9 @@ import time
 from pathlib import Path
 
 from PIL import Image
+from dotenv import load_dotenv
+
+load_dotenv()  # picks up a local .env file if present; no-op if it doesn't exist
 
 try:
     # Streamlit Community Cloud ships an old system sqlite3 that Chroma
@@ -51,7 +55,18 @@ EMBED_MODEL_NAME = "BAAI/bge-small-en-v1.5"
 QUERY_PREFIX = "Represent this sentence for searching relevant passages: "
 TOP_K = 10
 
-API_KEY = os.environ.get("GEMINI_API_KEY")
+def get_api_key() -> str | None:
+    """Streamlit Cloud stores secrets in st.secrets; locally, we read from
+    the environment (populated by the .env file loaded above, or a manual
+    `export`). Checking st.secrets first means the exact same code and
+    deployment work in both places without any branching elsewhere."""
+    try:
+        return st.secrets["GEMINI_API_KEY"]
+    except (KeyError, FileNotFoundError):
+        return os.environ.get("GEMINI_API_KEY")
+
+
+API_KEY = get_api_key()
 GEN_MODEL = "gemini-2.5-flash"
 GEN_ENDPOINT = f"https://generativelanguage.googleapis.com/v1beta/models/{GEN_MODEL}:generateContent"
 MAX_RETRIES = 4
@@ -261,8 +276,9 @@ st.caption("Ask a question about the platform, and optionally attach a screensho
 
 if not API_KEY:
     st.error(
-        "GEMINI_API_KEY is not set on the server. Set it before launching:\n\n"
-        '`export GEMINI_API_KEY="your-key-here"`'
+        "GEMINI_API_KEY is not set. Locally, create a .env file in this folder with:\n\n"
+        "`GEMINI_API_KEY=your-key-here`\n\n"
+        "On Streamlit Cloud, set it under Settings → Secrets instead."
     )
     st.stop()
 
