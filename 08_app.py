@@ -54,7 +54,7 @@ TOP_K = 10
 API_KEY = os.environ.get("GEMINI_API_KEY")
 GEN_MODEL = "gemini-2.5-flash"
 GEN_ENDPOINT = f"https://generativelanguage.googleapis.com/v1beta/models/{GEN_MODEL}:generateContent"
-MAX_RETRIES = 3
+MAX_RETRIES = 4
 INITIAL_BACKOFF = 5.0
 
 MAX_IMAGE_DIMENSION = 1600  # longest side, in pixels — plenty for Gemini to read UI text
@@ -183,9 +183,29 @@ def generate_answer(history_contents: list[dict], turn_text: str, image_bytes: b
             return data["candidates"][0]["content"]["parts"][0]["text"]
 
         if resp.status_code == 429 and attempt < MAX_RETRIES:
-            time.sleep(backoff)
+            # Google tells us exactly how long to wait in the error body
+            # (RetryInfo.retryDelay, e.g. "13s") — use that if present,
+            # since it's far more reliable than guessing with fixed backoff.
+            wait_seconds = backoff
+            try:
+                details = resp.json().get("error", {}).get("details", [])
+                for d in details:
+                    if d.get("@type", "").endswith("RetryInfo"):
+                        delay_str = d.get("retryDelay", "")
+                        wait_seconds = float(delay_str.rstrip("s")) + 1  # small buffer
+                        break
+            except (ValueError, AttributeError):
+                pass
+            time.sleep(wait_seconds)
             backoff *= 2
             continue
+
+        if resp.status_code == 429:
+            raise RuntimeError(
+                "Gemini's free-tier rate limit is temporarily full (this app shares "
+                "20 requests/minute across everyone using it). Wait about 20-30 seconds "
+                "and try again."
+            )
 
         raise RuntimeError(f"Generation request failed: {resp.status_code} {resp.text[:500]}")
 
@@ -252,9 +272,18 @@ if query:
     # request would bloat the payload and burn through the daily quota fast; the
     # model doesn't need to re-see an old image to remember what was *said* about it.
     history_contents = []
+    prior_user_texts = []
     for msg in st.session_state.messages:
         role = "model" if msg["role"] == "assistant" else "user"
         history_contents.append({"role": role, "parts": [{"text": msg["content"]}]})
+        if msg["role"] == "user":
+            prior_user_texts.append(msg["content"])
+
+    # The doc search only sees whatever text we hand it — a short follow-up like
+    # "hola" or "search better" carries no topic signal on its own. Fold in the
+    # last couple of prior questions so search still finds the right docs when
+    # someone is continuing a thread rather than starting a fresh, complete question.
+    search_text = " ".join(prior_user_texts[-2:] + [query])
 
     st.session_state.messages.append({"role": "user", "content": query, "image": display_image})
     with st.chat_message("user"):
@@ -264,7 +293,7 @@ if query:
 
     with st.chat_message("assistant"):
         with st.spinner("Searching docs and thinking..."):
-            hits = retrieve(embed_model, collection, query)
+            hits = retrieve(embed_model, collection, search_text)
             turn_text = build_turn_text(query, hits, has_image=image_bytes is not None)
             try:
                 answer = generate_answer(history_contents, turn_text, image_bytes, image_mime)
