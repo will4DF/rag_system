@@ -21,7 +21,9 @@ http://192.168.x.x:8501) with coworkers on the same office network.
 import base64
 import io
 import os
+import subprocess
 import sys
+import tempfile
 import time
 from pathlib import Path
 
@@ -81,6 +83,16 @@ def endpoint_for(model: str) -> str:
 
 MAX_IMAGE_DIMENSION = 1600  # longest side, in pixels — plenty for Gemini to read UI text
 JPEG_QUALITY = 85
+
+DEFAULT_VIDEO_MAX_SECONDS = 90  # default cap; can be lifted per-upload via an explicit opt-out
+VIDEO_MIME_TYPES = {
+    "mp4": "video/mp4", "mov": "video/mov", "webm": "video/webm",
+    "m4v": "video/mp4", "avi": "video/x-msvideo",
+}
+FILES_API_BASE = "https://generativelanguage.googleapis.com/v1beta"
+FILES_API_UPLOAD = "https://generativelanguage.googleapis.com/upload/v1beta/files"
+VIDEO_PROCESSING_POLL_SECONDS = 3
+VIDEO_PROCESSING_TIMEOUT_SECONDS = 120
 
 SYSTEM_INSTRUCTIONS = """You are a helpful assistant answering questions about the Element451 platform, using the documentation excerpts provided below.
 
@@ -234,7 +246,7 @@ def rewrite_query(history_contents: list[dict], query: str) -> str | None:
         return None
 
 
-def build_turn_text(query: str, hits: list[dict], has_image: bool) -> str:
+def build_turn_text(query: str, hits: list[dict], has_image: bool, has_video: bool = False) -> str:
     context_blocks = []
     for i, h in enumerate(hits, 1):
         context_blocks.append(f"[Excerpt {i}] From \"{h['title']}\" ({h['collection']}):\n{h['text']}")
@@ -245,11 +257,17 @@ def build_turn_text(query: str, hits: list[dict], has_image: bool) -> str:
         "use it as context for their overall goal, not just as an error message to diagnose.\n"
         if has_image else ""
     )
+    video_note = (
+        "\nThe user has attached a screen recording, likely narrating what they're trying to do or "
+        "an issue they're running into. Use both what's shown on screen and what's said out loud as "
+        "context for their overall goal.\n"
+        if has_video else ""
+    )
 
     return f"""--- DOCUMENTATION EXCERPTS ---
 {context}
 --- END EXCERPTS ---
-{image_note}
+{image_note}{video_note}
 Question: {query}
 
 Answer:"""
@@ -277,6 +295,95 @@ def prepare_image(raw_bytes: bytes) -> tuple[bytes, str]:
     return buf.getvalue(), "image/jpeg"
 
 
+def get_video_duration_seconds(raw_bytes: bytes, suffix: str) -> float | None:
+    """Uses ffprobe (installed via packages.txt) to read a video's duration
+    without needing to fully upload it first. Returns None if it can't be
+    determined — callers should treat that as "unknown, proceed with caution"
+    rather than blocking the upload outright."""
+    with tempfile.NamedTemporaryFile(suffix=f".{suffix}", delete=True) as tmp:
+        tmp.write(raw_bytes)
+        tmp.flush()
+        try:
+            result = subprocess.run(
+                ["ffprobe", "-v", "error", "-show_entries", "format=duration",
+                 "-of", "default=noprint_wrappers=1:nokey=1", tmp.name],
+                capture_output=True, text=True, timeout=30,
+            )
+            return float(result.stdout.strip())
+        except (subprocess.SubprocessError, ValueError, FileNotFoundError):
+            return None
+
+
+def upload_video_and_wait(raw_bytes: bytes, mime_type: str, status_callback=None) -> str:
+    """Uploads a video to Gemini's File API (required for anything past a
+    trivially short clip) and polls until it's finished processing server-side.
+    Returns the file_uri to reference in a generateContent request.
+    Raises RuntimeError on upload failure, processing failure, or timeout.
+    """
+    def report(msg: str):
+        if status_callback:
+            status_callback(msg)
+
+    report("Uploading video...")
+    start_resp = requests.post(
+        FILES_API_UPLOAD,
+        headers={
+            "x-goog-api-key": API_KEY,
+            "X-Goog-Upload-Protocol": "resumable",
+            "X-Goog-Upload-Command": "start",
+            "X-Goog-Upload-Header-Content-Length": str(len(raw_bytes)),
+            "X-Goog-Upload-Header-Content-Type": mime_type,
+            "Content-Type": "application/json",
+        },
+        json={"file": {"display_name": "screen-recording"}},
+        timeout=30,
+    )
+    if start_resp.status_code != 200:
+        raise RuntimeError(f"Video upload failed to start: {start_resp.status_code} {start_resp.text[:300]}")
+    upload_url = start_resp.headers.get("X-Goog-Upload-URL")
+    if not upload_url:
+        raise RuntimeError("Video upload failed: no upload URL returned")
+
+    finalize_resp = requests.post(
+        upload_url,
+        headers={
+            "Content-Length": str(len(raw_bytes)),
+            "X-Goog-Upload-Offset": "0",
+            "X-Goog-Upload-Command": "upload, finalize",
+        },
+        data=raw_bytes,
+        timeout=120,
+    )
+    if finalize_resp.status_code != 200:
+        raise RuntimeError(f"Video upload failed to finalize: {finalize_resp.status_code} {finalize_resp.text[:300]}")
+
+    file_info = finalize_resp.json().get("file", {})
+    file_name = file_info.get("name")  # e.g. "files/abc123"
+    file_uri = file_info.get("uri")
+    state = file_info.get("state", "PROCESSING")
+
+    waited = 0.0
+    while state == "PROCESSING" and waited < VIDEO_PROCESSING_TIMEOUT_SECONDS:
+        report(f"Google is processing the video... ({int(waited)}s)")
+        time.sleep(VIDEO_PROCESSING_POLL_SECONDS)
+        waited += VIDEO_PROCESSING_POLL_SECONDS
+        poll_resp = requests.get(
+            f"{FILES_API_BASE}/{file_name}",
+            headers={"x-goog-api-key": API_KEY},
+            timeout=30,
+        )
+        if poll_resp.status_code == 200:
+            file_info = poll_resp.json()
+            state = file_info.get("state", "PROCESSING")
+            file_uri = file_info.get("uri", file_uri)
+
+    if state != "ACTIVE":
+        raise RuntimeError(f"Video processing did not finish in time (last state: {state}). Try a shorter clip.")
+
+    report("Video ready — asking Gemini...")
+    return file_uri
+
+
 def generate_answer(
     history_contents: list[dict],
     turn_text: str,
@@ -284,9 +391,12 @@ def generate_answer(
     image_mime: str | None,
     status_callback=None,
     models: tuple[str, ...] = (GEN_MODEL, FALLBACK_MODEL),
+    video_file_uri: str | None = None,
+    video_mime: str | None = None,
 ) -> tuple[str, str, str]:
     """history_contents: prior turns as [{"role": "user"|"model", "parts": [...]}, ...]
     turn_text / image_*: the current question (and optional screenshot) to append.
+    video_file_uri: a file_uri from upload_video_and_wait(), if a video was attached.
     models: which model(s) to try, in order — defaults to flash then flash-lite fallback,
     but callers can pass a single model to force that exact one with no fallback.
     Returns (answer_text, model_that_answered, thought_summary).
@@ -297,6 +407,13 @@ def generate_answer(
             "inline_data": {
                 "mime_type": image_mime,
                 "data": base64.b64encode(image_bytes).decode("utf-8"),
+            }
+        })
+    if video_file_uri is not None:
+        current_parts.append({
+            "file_data": {
+                "mime_type": video_mime,
+                "file_uri": video_file_uri,
             }
         })
 
@@ -360,6 +477,8 @@ for msg in st.session_state.messages:
         st.markdown(msg["content"])
         if msg.get("image"):
             st.image(msg["image"], width=250)
+        if msg.get("video"):
+            st.video(msg["video"])
         if msg.get("thoughts"):
             with st.expander("🧠 Thinking"):
                 st.markdown(msg["thoughts"])
@@ -370,13 +489,33 @@ for msg in st.session_state.messages:
                 for title, url in msg["sources"]:
                     st.markdown(f"- [{title}]({url})")
 
-# Screenshot uploader lives above the chat box so it's attached to the *next* message
-st.caption("⚠️ Screenshots are sent to Google's Gemini API for processing. Avoid including SSNs, financial aid details, health information, or other sensitive student data — crop or blur first if a screen shows any.")
-uploaded_file = st.file_uploader(
-    "Attach a screenshot to show what you're working on (optional)",
-    type=["png", "jpg", "jpeg"],
-    key=f"uploader_{len(st.session_state.messages)}",
+# Screenshot / video uploader lives above the chat box so it's attached to the *next* message
+st.caption(
+    "⚠️ Screenshots and videos are sent to Google's Gemini API for processing, and Google keeps "
+    "uploaded videos for up to 48 hours before automatic deletion. Avoid including SSNs, financial "
+    "aid details, health information, or other sensitive student data — crop, blur, or avoid saying "
+    "it out loud if a screen or recording shows/mentions any."
 )
+attach_tab_image, attach_tab_video = st.tabs(["📷 Screenshot", "🎥 Screen recording"])
+
+with attach_tab_image:
+    uploaded_file = st.file_uploader(
+        "Attach a screenshot to show what you're working on (optional)",
+        type=["png", "jpg", "jpeg"],
+        key=f"uploader_{len(st.session_state.messages)}",
+    )
+
+with attach_tab_video:
+    uploaded_video = st.file_uploader(
+        "Attach a screen recording — talk through what you're trying to do (optional)",
+        type=list(VIDEO_MIME_TYPES.keys()),
+        key=f"video_uploader_{len(st.session_state.messages)}",
+    )
+    allow_long_video = st.checkbox(
+        f"Allow videos longer than {DEFAULT_VIDEO_MAX_SECONDS}s (uses noticeably more of the shared quota)",
+        value=False,
+        key=f"allow_long_video_{len(st.session_state.messages)}",
+    )
 
 query = st.chat_input("Ask a question...")
 
@@ -390,75 +529,105 @@ if query:
         except Exception as e:
             st.warning(f"Couldn't process that screenshot ({e}) — continuing without it.")
 
-    # Build history from prior turns (before this new question is appended).
-    # Only text is replayed for older turns — re-sending old screenshots on every
-    # request would bloat the payload and burn through the daily quota fast; the
-    # model doesn't need to re-see an old image to remember what was *said* about it.
-    history_contents = []
-    prior_user_texts = []
-    for msg in st.session_state.messages:
-        role = "model" if msg["role"] == "assistant" else "user"
-        history_contents.append({"role": role, "parts": [{"text": msg["content"]}]})
-        if msg["role"] == "user":
-            prior_user_texts.append(msg["content"])
+    video_bytes, video_mime_type, display_video = None, None, None
+    video_blocked = False
+    if uploaded_video is not None:
+        video_raw_bytes = uploaded_video.getvalue()
+        video_ext = uploaded_video.name.rsplit(".", 1)[-1].lower()
+        video_mime_type = VIDEO_MIME_TYPES.get(video_ext, "video/mp4")
 
-    # The doc search only sees whatever text we hand it — a short follow-up like
-    # "hola" or "search better" carries no topic signal on its own. Try an LLM
-    # rewrite into a standalone search query first (handles topic drift correctly);
-    # fall back to simple concatenation if that call fails or gets rate-limited.
-    rewritten = rewrite_query(history_contents, query)
-    if rewritten:
-        search_text = rewritten
-    else:
-        search_text = " ".join(prior_user_texts[-2:] + [query])
+        duration = get_video_duration_seconds(video_raw_bytes, video_ext)
+        if duration is not None and duration > DEFAULT_VIDEO_MAX_SECONDS and not allow_long_video:
+            st.error(
+                f"That video is about {duration:.0f}s long — over the {DEFAULT_VIDEO_MAX_SECONDS}s "
+                f"default cap. Trim it, or check \"Allow videos longer than "
+                f"{DEFAULT_VIDEO_MAX_SECONDS}s\" above and resend if you're sure."
+            )
+            video_blocked = True
+        else:
+            video_bytes = video_raw_bytes
+            display_video = video_raw_bytes
 
-    st.session_state.messages.append({"role": "user", "content": query, "image": display_image})
-    with st.chat_message("user"):
-        st.markdown(query)
-        if display_image:
-            st.image(display_image, width=250)
+    if not video_blocked:
+        # Build history from prior turns (before this new question is appended).
+        # Only text is replayed for older turns — re-sending old screenshots on every
+        # request would bloat the payload and burn through the daily quota fast; the
+        # model doesn't need to re-see an old image to remember what was *said* about it.
+        history_contents = []
+        prior_user_texts = []
+        for msg in st.session_state.messages:
+            role = "model" if msg["role"] == "assistant" else "user"
+            history_contents.append({"role": role, "parts": [{"text": msg["content"]}]})
+            if msg["role"] == "user":
+                prior_user_texts.append(msg["content"])
 
-    with st.chat_message("assistant"):
-        with st.status("Searching docs...", expanded=False) as status:
-            hits = retrieve(embed_model, collection, search_text)
-            turn_text = build_turn_text(query, hits, has_image=image_bytes is not None)
-            model_used = None
-            thoughts = ""
-            try:
-                answer, model_used, thoughts = generate_answer(
-                    history_contents, turn_text, image_bytes, image_mime,
-                    status_callback=lambda msg: status.update(label=msg),
-                    models=models_to_use,
-                )
-                status.update(label="Done", state="complete")
-            except RuntimeError as e:
-                answer = f"⚠️ {e}"
-                hits = []
-                status.update(label="Failed", state="error")
+        # The doc search only sees whatever text we hand it — a short follow-up like
+        # "hola" or "search better" carries no topic signal on its own. Try an LLM
+        # rewrite into a standalone search query first (handles topic drift correctly);
+        # fall back to simple concatenation if that call fails or gets rate-limited.
+        rewritten = rewrite_query(history_contents, query)
+        if rewritten:
+            search_text = rewritten
+        else:
+            search_text = " ".join(prior_user_texts[-2:] + [query])
 
-        st.markdown(answer)
-        if thoughts:
-            with st.expander("🧠 Thinking"):
-                st.markdown(thoughts)
-        if model_used:
-            st.caption(f"Answered by `{model_used}`" + (" — primary model was rate-limited" if model_used == FALLBACK_MODEL else ""))
+        st.session_state.messages.append({"role": "user", "content": query, "image": display_image, "video": display_video})
+        with st.chat_message("user"):
+            st.markdown(query)
+            if display_image:
+                st.image(display_image, width=250)
+            if display_video:
+                st.video(display_video)
 
-        sources = []
-        seen = set()
-        for h in hits:
-            if h["url"] not in seen:
-                sources.append((h["title"], h["url"]))
-                seen.add(h["url"])
-        if sources:
-            with st.expander("Sources"):
-                for title, url in sources:
-                    st.markdown(f"- [{title}]({url})")
+        with st.chat_message("assistant"):
+            with st.status("Searching docs...", expanded=False) as status:
+                hits = retrieve(embed_model, collection, search_text)
+                turn_text = build_turn_text(query, hits, has_image=image_bytes is not None, has_video=video_bytes is not None)
+                model_used = None
+                thoughts = ""
+                video_file_uri = None
+                try:
+                    if video_bytes is not None:
+                        video_file_uri = upload_video_and_wait(
+                            video_bytes, video_mime_type,
+                            status_callback=lambda msg: status.update(label=msg),
+                        )
+                    answer, model_used, thoughts = generate_answer(
+                        history_contents, turn_text, image_bytes, image_mime,
+                        status_callback=lambda msg: status.update(label=msg),
+                        models=models_to_use,
+                        video_file_uri=video_file_uri,
+                        video_mime=video_mime_type,
+                    )
+                    status.update(label="Done", state="complete")
+                except RuntimeError as e:
+                    answer = f"⚠️ {e}"
+                    hits = []
+                    status.update(label="Failed", state="error")
 
-    st.session_state.messages.append({
-        "role": "assistant",
-        "content": answer,
-        "sources": sources,
-        "thoughts": thoughts,
-        "model_used": model_used,
-    })
-    st.rerun()  # clears the file_uploader for the next question
+            st.markdown(answer)
+            if thoughts:
+                with st.expander("🧠 Thinking"):
+                    st.markdown(thoughts)
+            if model_used:
+                st.caption(f"Answered by `{model_used}`" + (" — primary model was rate-limited" if model_used == FALLBACK_MODEL else ""))
+
+            sources = []
+            seen = set()
+            for h in hits:
+                if h["url"] not in seen:
+                    sources.append((h["title"], h["url"]))
+                    seen.add(h["url"])
+            if sources:
+                with st.expander("Sources"):
+                    for title, url in sources:
+                        st.markdown(f"- [{title}]({url})")
+
+        st.session_state.messages.append({
+            "role": "assistant",
+            "content": answer,
+            "sources": sources,
+            "thoughts": thoughts,
+            "model_used": model_used,
+        })
+        st.rerun()  # clears the file_uploaders for the next question
