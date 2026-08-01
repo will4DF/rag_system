@@ -501,13 +501,13 @@ IMAGE_EXTENSIONS = ["png", "jpg", "jpeg"]
 col_image, col_video = st.columns(2)
 with col_image:
     uploaded_file = st.file_uploader(
-        "📷 Screenshot",
+        "Screenshot",
         type=IMAGE_EXTENSIONS,
         key=f"uploader_{len(st.session_state.messages)}",
     )
 with col_video:
     uploaded_video = st.file_uploader(
-        "🎥 Screen recording",
+        "Screen recording",
         type=list(VIDEO_MIME_TYPES.keys()),
         key=f"video_uploader_{len(st.session_state.messages)}",
     )
