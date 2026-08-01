@@ -489,8 +489,7 @@ for msg in st.session_state.messages:
                 for title, url in msg["sources"]:
                     st.markdown(f"- [{title}]({url})")
 
-# Screenshot / video uploader lives above the chat box so it's attached to the *next* message
-# Uploader lives above the chat box so it's attached to the *next* message
+# Uploaders live above the chat box so they're attached to the *next* message
 st.caption(
     "⚠️ Screenshots and videos are sent to Google's Gemini API for processing, and Google keeps "
     "uploaded videos for up to 48 hours before automatic deletion. Avoid including SSNs, financial "
@@ -498,24 +497,24 @@ st.caption(
     "it out loud if a screen or recording shows/mentions any."
 )
 IMAGE_EXTENSIONS = ["png", "jpg", "jpeg"]
-uploaded = st.file_uploader(
-    "Attach a screenshot or screen recording to show what you're working on (optional)",
-    type=IMAGE_EXTENSIONS + list(VIDEO_MIME_TYPES.keys()),
-    key=f"uploader_{len(st.session_state.messages)}",
-)
 
-uploaded_file, uploaded_video = None, None
-allow_long_video = False
-if uploaded is not None:
-    ext = uploaded.name.rsplit(".", 1)[-1].lower()
-    if ext in IMAGE_EXTENSIONS:
-        uploaded_file = uploaded
-    else:
-        uploaded_video = uploaded
-        # Only shown once a video is actually attached — no point cluttering
-        # the UI with this for the (far more common) screenshot case.
+col_image, col_video = st.columns(2)
+with col_image:
+    uploaded_file = st.file_uploader(
+        "📷 Screenshot",
+        type=IMAGE_EXTENSIONS,
+        key=f"uploader_{len(st.session_state.messages)}",
+    )
+with col_video:
+    uploaded_video = st.file_uploader(
+        "🎥 Screen recording",
+        type=list(VIDEO_MIME_TYPES.keys()),
+        key=f"video_uploader_{len(st.session_state.messages)}",
+    )
+    allow_long_video = False
+    if uploaded_video is not None:
         allow_long_video = st.checkbox(
-            f"Allow videos longer than {DEFAULT_VIDEO_MAX_SECONDS}s (uses noticeably more of the shared quota)",
+            f"Allow longer than {DEFAULT_VIDEO_MAX_SECONDS}s (uses noticeably more of the shared quota)",
             value=False,
             key=f"allow_long_video_{len(st.session_state.messages)}",
         )
