@@ -67,8 +67,8 @@ def get_api_key() -> str | None:
 
 
 API_KEY = get_api_key()
-GEN_MODEL = "gemini-2.5-flash"
-FALLBACK_MODEL = "gemini-2.5-flash-lite"  # separate free-tier quota pool from GEN_MODEL —
+GEN_MODEL = "gemini-3.6-flash"
+FALLBACK_MODEL = "gemini-3.5-flash-lite"  # separate free-tier quota pool from GEN_MODEL —
                                            # tried automatically if the primary model is rate-limited
 MAX_RETRIES = 2       # per model — kept low; with a fallback model available, it's better to
                        # move on to it quickly than sit waiting on a model that's still busy
@@ -225,7 +225,7 @@ def rewrite_query(history_contents: list[dict], query: str) -> str | None:
     payload = {
         "system_instruction": {"parts": [{"text": REWRITE_INSTRUCTIONS}]},
         "contents": history_contents + [{"role": "user", "parts": [{"text": query}]}],
-        "generationConfig": {"temperature": 0, "maxOutputTokens": 60},
+        "generationConfig": {"maxOutputTokens": 60},
     }
     try:
         text, _, _ = _call_gemini(payload)
@@ -422,7 +422,7 @@ if query:
         with st.status("Searching docs...", expanded=False) as status:
             hits = retrieve(embed_model, collection, search_text)
             turn_text = build_turn_text(query, hits, has_image=image_bytes is not None)
-            model_used = GEN_MODEL
+            model_used = None
             thoughts = ""
             try:
                 answer, model_used, thoughts = generate_answer(
@@ -440,7 +440,8 @@ if query:
         if thoughts:
             with st.expander("🧠 Thinking"):
                 st.markdown(thoughts)
-        st.caption(f"Answered by `{model_used}`" + (" — primary model was rate-limited" if model_used == FALLBACK_MODEL else ""))
+        if model_used:
+            st.caption(f"Answered by `{model_used}`" + (" — primary model was rate-limited" if model_used == FALLBACK_MODEL else ""))
 
         sources = []
         seen = set()
