@@ -283,9 +283,12 @@ def generate_answer(
     image_bytes: bytes | None,
     image_mime: str | None,
     status_callback=None,
+    models: tuple[str, ...] = (GEN_MODEL, FALLBACK_MODEL),
 ) -> tuple[str, str, str]:
     """history_contents: prior turns as [{"role": "user"|"model", "parts": [...]}, ...]
     turn_text / image_*: the current question (and optional screenshot) to append.
+    models: which model(s) to try, in order — defaults to flash then flash-lite fallback,
+    but callers can pass a single model to force that exact one with no fallback.
     Returns (answer_text, model_that_answered, thought_summary).
     """
     current_parts = [{"text": turn_text}]
@@ -303,7 +306,7 @@ def generate_answer(
         "generationConfig": {"thinkingConfig": {"includeThoughts": True}},
     }
 
-    return _call_gemini(payload, status_callback=status_callback)
+    return _call_gemini(payload, models=models, status_callback=status_callback)
 
 
 # ---------------------------------------------------------------------------
@@ -325,6 +328,25 @@ if not API_KEY:
 if not Path(DB_DIR).exists():
     st.error(f"'{DB_DIR}/' not found next to this app — run the vectorstore build step first.")
     st.stop()
+
+with st.sidebar:
+    st.subheader("Settings")
+    model_choice = st.selectbox(
+        "Model",
+        options=["Auto (recommended)", GEN_MODEL, FALLBACK_MODEL],
+        index=0,
+        help=(
+            f"**Auto**: tries {GEN_MODEL} first, automatically falls back to "
+            f"{FALLBACK_MODEL} if it's rate-limited.\n\n"
+            f"**{GEN_MODEL}**: more capable, but the free tier's limit is easier to hit.\n\n"
+            f"**{FALLBACK_MODEL}**: lighter and faster, separate free-tier quota — "
+            f"good if {GEN_MODEL} is busy and you don't want to wait."
+        ),
+    )
+    if model_choice == "Auto (recommended)":
+        models_to_use = (GEN_MODEL, FALLBACK_MODEL)
+    else:
+        models_to_use = (model_choice,)  # exactly what the user picked, no fallback
 
 embed_model = load_embed_model()
 collection = load_collection()
@@ -406,6 +428,7 @@ if query:
                 answer, model_used, thoughts = generate_answer(
                     history_contents, turn_text, image_bytes, image_mime,
                     status_callback=lambda msg: status.update(label=msg),
+                    models=models_to_use,
                 )
                 status.update(label="Done", state="complete")
             except RuntimeError as e:
