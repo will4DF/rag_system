@@ -387,26 +387,26 @@ def upload_video_and_wait(raw_bytes: bytes, mime_type: str, status_callback=None
 def generate_answer(
     history_contents: list[dict],
     turn_text: str,
-    image_bytes: bytes | None,
-    image_mime: str | None,
+    images: list[tuple[bytes, str]] | None,
     status_callback=None,
     models: tuple[str, ...] = (GEN_MODEL, FALLBACK_MODEL),
     video_file_uri: str | None = None,
     video_mime: str | None = None,
 ) -> tuple[str, str, str]:
     """history_contents: prior turns as [{"role": "user"|"model", "parts": [...]}, ...]
-    turn_text / image_*: the current question (and optional screenshot) to append.
+    turn_text: the current question to append.
+    images: list of (image_bytes, mime_type) pairs — one or more screenshots.
     video_file_uri: a file_uri from upload_video_and_wait(), if a video was attached.
     models: which model(s) to try, in order — defaults to flash then flash-lite fallback,
     but callers can pass a single model to force that exact one with no fallback.
     Returns (answer_text, model_that_answered, thought_summary).
     """
     current_parts = [{"text": turn_text}]
-    if image_bytes is not None:
+    for img_bytes, img_mime in (images or []):
         current_parts.append({
             "inline_data": {
-                "mime_type": image_mime,
-                "data": base64.b64encode(image_bytes).decode("utf-8"),
+                "mime_type": img_mime,
+                "data": base64.b64encode(img_bytes).decode("utf-8"),
             }
         })
     if video_file_uri is not None:
@@ -475,8 +475,8 @@ if "messages" not in st.session_state:
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
-        if msg.get("image"):
-            st.image(msg["image"], width=250)
+        if msg.get("images"):
+            st.image(msg["images"], width=250)
         if msg.get("video"):
             st.video(msg["video"])
         if msg.get("thoughts"):
@@ -503,6 +503,7 @@ with col_image:
     uploaded_file = st.file_uploader(
         "Screenshot",
         type=IMAGE_EXTENSIONS,
+        accept_multiple_files=True,
         key=f"uploader_{len(st.session_state.messages)}",
     )
 with col_video:
@@ -522,14 +523,15 @@ with col_video:
 query = st.chat_input("Ask a question...")
 
 if query:
-    image_bytes, image_mime, display_image = None, None, None
-    if uploaded_file is not None:
-        raw_bytes = uploaded_file.getvalue()
-        display_image = raw_bytes  # show the original in the chat history
+    prepared_images: list[tuple[bytes, str]] = []
+    display_images: list[bytes] = []
+    for f in (uploaded_file or []):
+        raw_bytes = f.getvalue()
+        display_images.append(raw_bytes)  # show the originals in the chat history
         try:
-            image_bytes, image_mime = prepare_image(raw_bytes)
+            prepared_images.append(prepare_image(raw_bytes))
         except Exception as e:
-            st.warning(f"Couldn't process that screenshot ({e}) — continuing without it.")
+            st.warning(f"Couldn't process \"{f.name}\" ({e}) — continuing without it.")
 
     video_bytes, video_mime_type, display_video = None, None, None
     video_blocked = False
@@ -573,18 +575,18 @@ if query:
         else:
             search_text = " ".join(prior_user_texts[-2:] + [query])
 
-        st.session_state.messages.append({"role": "user", "content": query, "image": display_image, "video": display_video})
+        st.session_state.messages.append({"role": "user", "content": query, "images": display_images, "video": display_video})
         with st.chat_message("user"):
             st.markdown(query)
-            if display_image:
-                st.image(display_image, width=250)
+            if display_images:
+                st.image(display_images, width=250)
             if display_video:
                 st.video(display_video)
 
         with st.chat_message("assistant"):
             with st.status("Searching docs...", expanded=False) as status:
                 hits = retrieve(embed_model, collection, search_text)
-                turn_text = build_turn_text(query, hits, has_image=image_bytes is not None, has_video=video_bytes is not None)
+                turn_text = build_turn_text(query, hits, has_image=len(prepared_images) > 0, has_video=video_bytes is not None)
                 model_used = None
                 thoughts = ""
                 video_file_uri = None
@@ -595,7 +597,7 @@ if query:
                             status_callback=lambda msg: status.update(label=msg),
                         )
                     answer, model_used, thoughts = generate_answer(
-                        history_contents, turn_text, image_bytes, image_mime,
+                        history_contents, turn_text, prepared_images,
                         status_callback=lambda msg: status.update(label=msg),
                         models=models_to_use,
                         video_file_uri=video_file_uri,
